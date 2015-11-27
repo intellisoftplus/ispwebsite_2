@@ -1,0 +1,38 @@
+application: intellisoftpluswebsite
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /static/*.png
+  static_dir: static
+  mime_type: bootstrap-3.3.5-dist/images
+
+- url: /css
+  static_dir: bootstrap-3.3.5-dist/css
+
+- url: /images
+  static_dir: bootstrap-3.3.5-dist/images
+
+# image files
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png|PNG))
+  static_files: static/\1
+  upload: static/(.*\.(bmp|gif|ico|jpeg|jpg|png|PNG))
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest
