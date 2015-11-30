@@ -168,18 +168,28 @@ Contact details
     opacity: 1;
   font-size: 1.4em;
 }
-.form-control::-webkit- placeholder {
-  color: #999;
-  opacity: 1;
-  font-size: 1.4em;
-}
-
 .contacts form .row input {
   height: 60px;
 }
-
 .contact-details {
   padding-top: 20px;
+}
+.contacts button {
+  border-radius: 2px;
+  width: 40%;
+  float: left;
+  background-color: #777;
+  border-color: #777;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.7em;
+}
+.contacts button .fa {
+  padding-left: 20px;
+}
+.contacts button:hover, .contacts button:active, .contacts button:focus {
+  background-color: #848886;
+  border-color: #848886;
 }
 /*  
 End of contact details
