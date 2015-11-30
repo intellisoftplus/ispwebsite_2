@@ -210,6 +210,16 @@ Contact details
 .contacts .contact-details hr:nth-child(1) {
   margin-top: -10px;
 }
+/***********************
+Map
+************************/
+
+#map {
+	width: 500px;
+    height: 400px;
+    background-color: #CCC;
+ }
+
 /*  
 End of contact details
 */
@@ -228,4 +238,9 @@ Footer
   padding-bottom: 5px;
   font-size: 1.5em;
   color: #333333;
+  transition: font-size, 0.5s;
+}
+.footer .social .fa:hover {
+  font-size: 1.8em;
+  color: #34A853;
 }

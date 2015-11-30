@@ -10,6 +10,32 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600' rel='stylesheet' type='text/css'>
+	<!-- This script downloads the code required to display maps on your page -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<!-- The function runs when the page has loaded -->
+	<script>
+	var myCenter=new google.maps.LatLng(-1.2997085,36.8202496);
+
+	function initialize()
+	{
+	var mapProp = {
+	  center:myCenter,
+	  zoom:16,
+	  mapTypeId:google.maps.MapTypeId.ROADMAP
+	  };
+
+	var map=new google.maps.Map(document.getElementById("map"),mapProp);
+
+	var marker=new google.maps.Marker({
+	  position:myCenter,
+	  });
+
+	marker.setMap(map);
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -214,10 +240,12 @@
 					<button class="btn btn-primary btn-lg" type="submit">Send Message<i class="fa fa-arrow-right"></i></button>
 				</form>
 				</div>
-				<div class="container">
-					<div id="googleMap"></div>
-				</div>	
+
+				<div class="col-sm-6">
+					<div id="map"></div>
+				</div>
 			</div>
+
 			<!-- contact details section -->
 				<div class="col-sm-6">
 					<div class="contact-details">	
@@ -253,9 +281,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="social">
-					<a href=""><i class="fa fa-facebook"></i></a>
-					<a href=""><i class="fa fa-twitter"></i></a>
-					<a href=""><i class="fa fa-google-plus"></i></a>
+					<a href="https://www.facebook.com/Intellisoftplus-194103337276735/?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://twitter.com/Intellisoftplus" target="_blank"><i class="fa fa-twitter"></i></a>
+					<a href="google.com/+IntellisoftplusSolutions" target="_blank"><i class="fa fa-google-plus"></i></a>
 				</div>
 				<p>&copy; copyright 2015</p>
 			</div>
@@ -267,28 +295,5 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="css/bootstrap.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-	var myCenter=new google.maps.LatLng(-1.2997085,36.8202496);
-
-	function initialize()
-	{
-	var mapProp = {
-	  center:myCenter,
-	  zoom:16,
-	  mapTypeId:google.maps.MapTypeId.ROADMAP
-	  };
-
-	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-	var marker=new google.maps.Marker({
-	  position:myCenter,
-	  });
-
-	marker.setMap(map);
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
 </body>
 </html>
