@@ -213,3 +213,19 @@ Contact details
 /*  
 End of contact details
 */
+/************************  
+Footer
+**************************/
+.footer {
+  background-color: #F0F0F0;
+  padding: 30px;
+}
+.footer .social, .footer p {
+  text-align: center;
+}
+.footer .social .fa {
+  padding-right: 10px;
+  padding-bottom: 5px;
+  font-size: 1.5em;
+  color: #333333;
+}

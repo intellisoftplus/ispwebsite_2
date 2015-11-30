@@ -93,7 +93,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="sec1-text">
-							<h3>Cloud Services</h3>
+							<h3>Increase Efficiency</h3>
 							<p>In partnership with Google Inc. we provide Google Apps, the world's most sort after state of the art communication and collaboration platform. Giving secure access to email and documents from anywhere through any device and armed with collaboration tools proven to improve business productivity by 80%; Google Apps is not only cost effective but gives you grade A business efficiency. No more server downtimes and hefty licence charges</p>
 						</div>
 					</div>
@@ -107,13 +107,13 @@
 				<div class="sec2">
 					<div class="col-sm-6">
 						<div class="sec1-text custom-apps">
-							<h3>Custom Apps</h3>
+							<h3>Tailored to suit you and your organization</h3>
 							<p>Our team of developers work tirelessly to provide custom solutions to business for process automation. Masters of cloud and on-premise systems, nothing is impossible to our Dev team.</p>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="sec1-text training">
-							<h3>Training</h3>
+							<h3>Improve and increase productivity</h3>
 							<p>Our training team is filled with qualified trainers with various certifications in the solutions we offer. Our training curriculum involving solutions training with main focus on change management and people productivity</p>
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="sec1-text">
-						<h3>Support</h3>
+						<h3>Around the clock assistance</h3>
 						<p>Intellisoftplus support department is governed by Service Level Agreements aligning our service delivery to you business efficiency.</p>
 						</div>
 					</div>
@@ -196,10 +196,10 @@
 		<div class="triangle service-end contacts"></div>
 		<div class="container">
 			<h1>Contact Us</h1>
-				<div class="row">
+			<div class="row">
+				<div class="col-sm-6">
 				<form class="form" role="form">
-					<div class="col-sm-6">
-					<div class="row ">
+					<div class="row name-email-inline">
 						<div class="form-group col-sm-6">
 							<input type="text" class="form-control" placeholder="Names">
 						</div>
@@ -207,39 +207,43 @@
 							<input type="text" class="form-control" placeholder="Email">
 						</div>
 					</div>	
-					
+						
 					<div class="form-group">
 						<textarea class="form-control" rows="6" placeholder="Message"></textarea>
 					</div>
 					<button class="btn btn-primary btn-lg" type="submit">Send Message<i class="fa fa-arrow-right"></i></button>
 				</form>
 				</div>
-			<!-- contact details section -->
-			<div class="col-sm-6">
-			<div class="contact-details">	
-				<hr>
-				<div class="row">
-					<div class="col-sm-4">
-						<p class="heading">Address</p>
-						<p>Lowerhill Duplex, Suite 18 </p>
-						<p>Upperhill Road, Upperhill </p>
-						<p>Nairobi, Kenya</p>
-					</div>
-					<div class="col-sm-4">
-						<p class="heading">Phone</p>
-						<p>Phone 1: +254 20 6009998</p>
-						<p>Phone 2: +254 20 6009999</p>
-					</div>
-					<div class="col-sm-4">
-						<p class="heading">Emails</p>
-						<p>info@intellisoftplus.com</p>
-						<p>support@intellisoftplus.com</p>
-					</div>	
-				<!-- end contact details section -->
+				<div class="container">
+					<div id="googleMap"></div>
+				</div>	
 			</div>
-			<hr>
-		</div>	
-		</div>
+			<!-- contact details section -->
+				<div class="col-sm-6">
+					<div class="contact-details">	
+						<hr>
+						<div class="row">
+							<div class="col-sm-4">
+								<p class="heading">Address</p>
+								<p>Lowerhill Duplex, Suite 18 </p>
+								<p>Upperhill Road, Upperhill </p>
+								<p>Nairobi, Kenya</p>
+							</div>
+							<div class="col-sm-4">
+								<p class="heading">Phone</p>
+								<p>Phone 1: +254 20 6009998</p>
+								<p>Phone 2: +254 20 6009999</p>
+							</div>
+							<div class="col-sm-4">
+								<p class="heading">Emails</p>
+								<p>info@intellisoftplus.com</p>
+								<p>support@intellisoftplus.com</p>
+							</div>	
+						<!-- end contact details section -->
+						</div>
+						<hr>
+					</div>	
+			</div>
 		</div>
 	</div>	
 	<!-- End of contacts section -->
@@ -249,8 +253,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="social">
-					<div class="col-sm-">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-google-plus"></i></a>
 				</div>
+				<p>&copy; copyright 2015</p>
 			</div>
 		</div>
 	</div>
@@ -260,5 +267,28 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="css/bootstrap.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+	var myCenter=new google.maps.LatLng(-1.2997085,36.8202496);
+
+	function initialize()
+	{
+	var mapProp = {
+	  center:myCenter,
+	  zoom:16,
+	  mapTypeId:google.maps.MapTypeId.ROADMAP
+	  };
+
+	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+	var marker=new google.maps.Marker({
+	  position:myCenter,
+	  });
+
+	marker.setMap(map);
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </body>
 </html>
