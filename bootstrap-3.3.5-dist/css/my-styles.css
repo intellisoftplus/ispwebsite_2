@@ -64,6 +64,7 @@ Section styles
 .about-us, .services, .enterprise, .education, .contacts  {
   text-align: center;  
   padding: 70px 0px;
+  
 }
 /*  
 End of section  styles
@@ -73,8 +74,9 @@ End of section  styles
 About us 
 */
 .about-us h1, .services h1, .enterprise h1, .education h1, .contacts h1{
+  font-family: 'Open Sans';
   font-weight: 600;
-  display: inline-block;
+  
 }
 .about-us p, .services-text p, .enterprise .sec1, .enterprise .sec2, .education-text p {
   font-size: 1.3em;
@@ -115,6 +117,10 @@ Enterprise
 .enterprise .sec1-text {
   margin-top: -10px;
 }
+.enterprise .custom-apps {
+  border-right: 1px solid #eee;
+  padding-right: 20px;
+}
 .enterprise .sec1-text p {
   max-width: 100%;
   font-family: 'Open Sans', 'Roboto', sans, helvetica;
@@ -124,9 +130,7 @@ Enterprise
 }
 .enterprise .sec1-text h3 {
   font-weight: 400;
-  font-size: 1.5em;
-  
-  
+  font-size: 1.5em;  
 }
 .enterprise .sec1-fig .fa{
   font-size: 10em;
@@ -135,6 +139,10 @@ Enterprise
 .enterprise .sec2 {
   background-color: #F0F0F0;
 }
+.enterprise hr {
+  border-color: #eee;
+}
+
 /********************
 End of Enterprise
 *********************/
@@ -147,6 +155,29 @@ Education
 /*  
 Contact details
 */
+.contacts form .row input, .contacts .form textarea {
+  border-radius: 1px;
+  border: 3px solid #777;
+}
+.contacts form .row input:focus, .contacts .form textarea:focus {
+  border: 2px solid #ccc;
+  box-shadow: none;
+}
+.form-control::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+  font-size: 1.4em;
+}
+.form-control::-webkit- placeholder {
+  color: #999;
+  opacity: 1;
+  font-size: 1.4em;
+}
+
+.contacts form .row input {
+  height: 60px;
+}
+
 .contact-details {
   padding-top: 20px;
 }
