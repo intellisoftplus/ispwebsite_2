@@ -155,6 +155,9 @@ Education
 /*  
 Contact details
 */
+.contacts h1 {
+  padding-bottom: 2.63157894737%;
+}
 .contacts form .row input, .contacts .form textarea {
   border-radius: 1px;
   border: 3px solid #777;
@@ -176,7 +179,7 @@ Contact details
 }
 .contacts button {
   border-radius: 2px;
-  width: 40%;
+  width: 46%;
   float: left;
   background-color: #777;
   border-color: #777;
@@ -190,6 +193,22 @@ Contact details
 .contacts button:hover, .contacts button:active, .contacts button:focus {
   background-color: #848886;
   border-color: #848886;
+}
+.contacts .contact-details .heading {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: 'Open Sans', 'Robto', sansa, helvetica;
+}
+.contacts .contact-details p {
+  font-family: 'Roboto', sans, helvetica;
+  font-weight: 300;
+}
+.contacts .contact-details hr {
+  border-style: dashed;
+  border-color: #000;
+}
+.contacts .contact-details hr:nth-child(1) {
+  margin-top: -10px;
 }
 /*  
 End of contact details
