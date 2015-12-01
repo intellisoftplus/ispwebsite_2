@@ -44,6 +44,16 @@
   <![endif]-->
 </head>
 <body>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68411233-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 	<!-- navigation -->
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -53,20 +63,29 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>	
-			<a class="navbar-brand" href="/">
-				<img src="images/logo.png">
-			</a>
+				<a class="navbar-brand" href="/">
+					<img src="images/logo.png">
+				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#About">About</a></li>
-					<li><a href="#Services">Services</a></li>
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle">Services <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#Enterprise">Enterprise</a></li>
+							<li><a href="#Education">Education</a></li>
+						</ul>
+					</li>
 					<li><a href="#Client">Clients</a></li>
 					<li><a href="#Contacts">Contacts</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>	
+
+
 	<!-- End of navigation -->
 
 	<!-- Slides Section -->
@@ -78,11 +97,11 @@
 			<p>Give to the African community, solutions that will have a great impact in simplifying along with enhancing how we live, work and play</p>
 		</div>
 	</div>
-	<div class="triangle"></div>
-	<!-- End of Slides section -->
+<!-- 	<div class="triangle"></div>
+ -->	<!-- End of Slides section -->
 
 	<!-- About us section -->
-	<div class="about-us">
+	<div class="about-us" id="About">
 		<div class="container">
 			<div class="about-us-text">
 				<h1><span class="left"></span>About Us<span class="right"></span></h1>
@@ -93,7 +112,7 @@
 	<!-- End of about us section -->
 
 	<!-- Services section -->
-	<div class="services">
+	<div class="services" id="Services">
 		<div class="container">
 			<div class="triangle service"></div>
 			<div class="services-text">
@@ -106,7 +125,7 @@
 	<!-- End of section services -->
 
 	<!-- Enterprise section -->
-	<div class="enterprise">
+	<div class="enterprise" id="Enterprise">
 		<div class="container">
 			<h1>Enterprise</h1>
 			<!-- Enterprise section 1 -->
@@ -170,7 +189,7 @@
 	<!-- End of enterprise section -->
 
 	<!-- Education section -->
-	<div class="education">
+	<div class="education" id="Education">
 		<div class="triangle service"></div>
 		<div class="container">
 			<div class="education-text">
@@ -218,9 +237,9 @@
 	<!-- End of cliens section -->
 
 	<!-- Contacts section -->
-	<div class="contacts">
+	<div class="contacts" >
 		<div class="triangle service-end contacts"></div>
-		<div class="container">
+		<div class="container" id="Contacts">
 			<h1>Contact Us</h1>
 			<div class="row">
 				<div class="col-sm-6">
@@ -293,6 +312,21 @@
 		
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="css/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><script>
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
+</script>
 </body>
 </html>
