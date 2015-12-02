@@ -251,29 +251,36 @@ Footer
   padding-bottom: 5px;
   font-size: 1.5em;
   color: #333333;
-  transition: font-size, 0.5s;
 }
 .footer .social .fa:hover {
-  font-size: 1.8em;
   color: #34A853;
 }
 /*******************
 Media Queries
 ********************/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 12000px) {
   .jumbotron h1 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .jumbotron h1 {
-    font-size: 1.8em;
+    font-size: 2.2em;
   }
   .jumbotron p {
     font-size: 1.3em;
   }
-  @media screen and (max-width: 640px) {
+}
+  @media screen and (max-width: 850px) {
     .jumbotron h1 {
-      font-size: 1.5em;
+      font-size: 1.8em;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .jumbotron h1 span {
+      border: none;
+    }
+    .jumbotron h1 {
+      margin-bottom: -4.52459016393%;
     }
   }
