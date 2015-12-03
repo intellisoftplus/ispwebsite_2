@@ -32,7 +32,13 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja2_env.get_template('bootstrap-3.3.5-dist/index.html')
         self.response.out.write(template.render(template_values))
 
+class Signup(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = jinja2_env.get_template('bootstrap-3.3.5-dist/signup.html')
+		self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/signup', Signup)
 ], debug=True)
