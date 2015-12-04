@@ -1,11 +1,11 @@
 body {
   font-family: 'Roboto', sans,helvetica;
 }
+
  .signup-page {
- 	padding-top: 70px;
 /*   background-image: url('../images/jimathi.jpg'); */
-  background: -moz-linear-gradient(bottom left,#5E94FF,#ABC7FF);
-   background: -webkit-linear-gradient(left ,#5E94FF,#ABC7FF);
+  background: -moz-linear-gradient(left,#2B8CF5,#ABC7FF);
+   background: -webkit-linear-gradient(left ,#2B8CF5,#ABC7FF);
   color: #fff;
    
 }
@@ -107,7 +107,8 @@ About us
 Servicess
 ******************/
 .services {
-  background-color: #F0F0F0;
+  background-color:#34A853;
+  color: #fff;
 }
 .triangle.service {
   border-top-color: #fff;
@@ -116,11 +117,12 @@ Servicess
 }
 .triangle.service-end {
   margin-top: 0;
-  border-top-color: #F0F0F0;
+  border-top-color: #34A853;
 }
 .triangle.service-end.contacts {
   margin-top: -70px;
   padding-bottom: 0px;
+  border-top-color: #124B65;
 }
 /********************  
 End of service
@@ -164,7 +166,8 @@ End of Enterprise
 Education
 *********************/
 .education {
-  background-color: #F0F0F0;
+  background-color: #124B65;
+  color: #fff;
 }
 /*  
 Contact details
@@ -297,13 +300,22 @@ Media Queries
 /******************
 Sign Up Form
 *******************/
+
+.navbar.nav-signup {
+  background-color: #fff;
+  margin-bottom: 70px;
+  border-radius: 0px;
+}
 .signup-form .form-wrapper{
   border: 1px solid #fff;
   max-width: 90%;
   padding: 30px;
   background-color: rgb(255,255,255);
   border-radius: 3px;
-  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.2);
+  box-shadow: 1px 3px 15px 5px rgba(0,0,0,0.2);
+}
+.signup-text {
+  margin-top: -18px;
 }
 .signup-form .heading h3{
   color: #000;
@@ -321,7 +333,7 @@ Sign Up Form
   width: 100%;
   height: 50px;
   background-color: #699BFF;
-  border-radius: 30px;
+  border-radius: 3px;
   color: #fff;
   font-size: 1.6em;
   font-weight: bold;
