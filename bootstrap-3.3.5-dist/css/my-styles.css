@@ -3,10 +3,11 @@ body {
 }
  .signup-page {
  	padding-top: 70px;
-  	background-image: url('../images/jimathi.jpg');
-  	background-repeat: no-repeat;
-	background-size: cover;
-	color: #fff;
+/*   background-image: url('../images/jimathi.jpg'); */
+  background: -moz-linear-gradient(bottom left,#5E94FF,#ABC7FF);
+   background: -webkit-linear-gradient(left ,#5E94FF,#ABC7FF);
+  color: #fff;
+   
 }
 /*  
 Navbar
@@ -302,7 +303,7 @@ Sign Up Form
   padding: 30px;
   background-color: rgb(255,255,255);
   border-radius: 3px;
-/*   box-shadow: 4px 2px 1px 1px rgba(3,3,3,0.9); */
+  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.2);
 }
 .signup-form .heading h3{
   color: #000;
@@ -319,9 +320,20 @@ Sign Up Form
 .signup-form form button {
   width: 100%;
   height: 50px;
-  background-color: #124B65;
+  background-color: #699BFF;
   border-radius: 30px;
   color: #fff;
   font-size: 1.6em;
   font-weight: bold;
+}
+.signup-form form button:hover {
+  color: #fff;
+  background-color: #5E94B5; 
+}
+.signup-text h2 {
+  font-family: 'Open Sans','Robto',sans, helvetica;
+}
+.signup-text p {
+  font-size: 1.3em;
+  font-weight: 300;
 }
