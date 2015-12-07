@@ -48,7 +48,7 @@ Jumbotron
   font-size: 3em;
   text-align: center;
   font-weight: 800;
-  padding-top: 6.19930774397%;
+  margin-top: -80px;
 }
 .jumbotron h1 span{
   border: 7px solid;
@@ -60,9 +60,16 @@ Jumbotron
   font-family: 'Open Sans','Roboto', sans, helvetica;
   font-weight: 300;
   text-align: center;
-  max-width: 50%;
+  background-color: rgba(0,0,0,0.7);
+  max-width: 80%;
   margin: 0 auto;
   margin-top: 50px;
+  padding: 10px;
+}
+.determined-text {
+  float: left;
+  margin-left: -150px;
+  margin-top: -20px;
 }
 .triangle {
   width: 0; 
