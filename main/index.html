@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/flickerplate.css">
 	<!-- This script downloads the code required to display maps on your page -->
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<!-- The function runs when the page has loaded -->
@@ -99,15 +100,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<!-- Slides Section -->
 	<div class="jumbotron">
-		<div class="slides">
+		<!-- <div class="slides">
 			<h1>
 				<span>A risen Africa with Lives and Work Transformed</span>
 			</h1>
 			<p>Give to the African community, solutions that will have a great impact in simplifying along with enhancing how we live, work and play</p>
-		</div>
+		</div> --> 
+
+		<div class="flicker-example">
+ 	<ul>
+ 		<li data-background="images/jimathi.jpg">
+ 			<h1>
+				<span>A risen Africa with Lives and Work Transformed</span>
+			</h1>
+			<p>Give to the African community, solutions that will have a great impact in simplifying along with enhancing how we live, work and play</p>
+ 		</li>
+ 		<li data-background="images/bit.jpg">
+ 			<div class="flick-title">Title </div>
+ 			<div class="flick-sub-text">Text line 1</div>
+ 		</li>
+ 		<li data-background="images/jimathi.jpg">
+ 			<div class="flick-title">Title </div>
+ 			<div class="flick-sub-text">Text line 1</div>
+ 		</li>
+ 	</ul>
+ </div>
 	</div>
-<!-- 	<div class="triangle"></div>
- -->	<!-- End of Slides section -->
+ <!-- End of Slides section -->
+
+ 	
 
 	<!-- About us section -->
 	<div class="about-us" id="About">
@@ -321,7 +342,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/min/modernizr-custom-v2.7.1min.js"></script>
+<script src="js/min/hammer-v2.0.3.min.js"></script>
+<script src="js/min/flickerplate.min.js"></script>
+<script>
+	$(function(){
+		$('.flicker-example').flickerplate(
+		{
+			arrows: true,
+			arrows_constraint: false,
+			auto_flick: false,
+			auto_flick_delay: 10,
+			block_text: true,
+			dot_alignment: 'center',
+			dot_navigation: true,
+			flick_animation: 'transition-slide',
+			flick_position: 1,
+			theme: 'light'
+
+		});
+
+	});
+</script>
+<script>
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
         || location.hostname == this.hostname) {
@@ -337,5 +381,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 });
 </script>
+
 </body>
 </html>

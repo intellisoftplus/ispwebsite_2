@@ -29,13 +29,13 @@ template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {}
-        template = jinja2_env.get_template('bootstrap-3.3.5-dist/index.html')
+        template = jinja2_env.get_template('main/index.html')
         self.response.out.write(template.render(template_values))
 
 class Signup(webapp2.RequestHandler):
 	def get(self):
 		template_values = {}
-		template = jinja2_env.get_template('bootstrap-3.3.5-dist/signup.html')
+		template = jinja2_env.get_template('main/signup.html')
 		self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([

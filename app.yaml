@@ -11,13 +11,19 @@ handlers:
 
 - url: /static/*.png
   static_dir: static
-  mime_type: bootstrap-3.3.5-dist/images
+  mime_type: main/images
 
 - url: /css
-  static_dir: bootstrap-3.3.5-dist/css
+  static_dir: main/css
+
+- url: /js
+  static_dir: main/js
+
+  - url: /js
+  static_dir: main/min/js
 
 - url: /images
-  static_dir: bootstrap-3.3.5-dist/images
+  static_dir: main/images
 
 # image files
 - url: /(.*\.(bmp|gif|ico|jpeg|jpg|png|PNG))

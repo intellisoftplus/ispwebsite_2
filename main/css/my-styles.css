@@ -6,8 +6,7 @@ body {
 /*   background-image: url('../images/jimathi.jpg'); */
   background: -moz-linear-gradient(left,#2B8CF5,#ABC7FF);
    background: -webkit-linear-gradient(left ,#2B8CF5,#ABC7FF);
-  color: #fff;
-   
+  color: #fff;   
 }
 /*  
 Navbar
@@ -38,11 +37,12 @@ Jumbotron
 .jumbotron {
 /*  background: linear-gradient(#124B65,#416F83);
 */  
-	background-image: url('../images/jimathi.jpg');
+/* 	background-image: url('../images/jimathi.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: #fff;
-  	height: 570px;
+  	height: 570px; */
+  	padding: 0px;
 }
 .jumbotron h1 {
   font-size: 3em;
