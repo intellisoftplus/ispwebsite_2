@@ -12,7 +12,8 @@ body {
 Navbar
 */
 .navbar-default {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,1);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
   padding: 10px;
   border: 1px solid #fff;
   border-radius: 0px
@@ -86,7 +87,7 @@ End of Jumbotron
 /* 
 Section styles
 */
-.about-us, .services, .enterprise, .education, .contacts  {
+.about-us, .services, .contacts {
   text-align: center;  
   padding: 70px 0px;
   
@@ -99,25 +100,33 @@ End of section  styles
 About us 
 */
 .about-us h1, .services h1, .enterprise h1, .education h1, .contacts h1{
+  font-size: 3em;
   font-family: 'Open Sans';
-  font-weight: 600;
+  font-weight: 300;
   
 }
-.about-us p, .services-text p, .enterprise .sec1, .enterprise .sec2, .education-text p {
+.services p {
+  font-family: 'Open Sans';
+  font-size: 2em;
+  font-weight: 400;
+}
+.about-us p, .enterprise .sec1, .enterprise .sec2, .education-text p {
   font-size: 1.3em;
   font-weight: 300;
-  max-width: 80%;
-  margin: 0 auto;
-  line-height: 1.5em;
+  text-align: center;
+  line-height: 1.em;
+}
+hr.custom {
+  width: 80%;
+  border-color: #DBD5D1;
 }
 /****************
 Servicess
 ******************/
 .services {
-  background-color:#34A853;
-  color: #fff;
+  
 }
-.triangle.service {
+/* .triangle.service {
   border-top-color: #fff;
   margin-top: -70px;
   padding-bottom: 40px;
@@ -125,11 +134,11 @@ Servicess
 .triangle.service-end {
   margin-top: 0;
   border-top-color: #34A853;
-}
+} */
 .triangle.service-end.contacts {
   margin-top: -70px;
   padding-bottom: 0px;
-  border-top-color: #124B65;
+  border-top-color: #1A6B90;
 }
 /********************  
 End of service
@@ -144,26 +153,31 @@ Enterprise
 .enterprise .sec1-text {
   margin-top: -10px;
 }
-.enterprise .custom-apps {
+/* .enterprise .custom-apps {
   border-right: 1px solid #eee;
   padding-right: 20px;
-}
+} */
 .enterprise .sec1-text p {
+  font-family: 'Open Sans';
   max-width: 100%;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.4;
 }
 .enterprise .sec1-text h3 {
-  font-weight: 400;
-  font-size: 1.5em;  
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 1.1em;  
 }
 .enterprise .sec1-fig .fa{
-  font-size: 10em;
+  font-size: 7em;
   color: #34A853;
 }
 .enterprise hr {
   border-color: #eee;
+}
+.learn-more {
+  padding-top: 140px;
 }
 
 /********************
@@ -173,8 +187,40 @@ End of Enterprise
 Education
 *********************/
 .education {
-  background-color: #124B65;
+  margin-top: 60px;
+  background-color: #1A6B90;
   color: #fff;
+  padding: 50px;
+}
+.education h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.education button, .enterprise button {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 2px;
+  padding: 13px;
+  width: 70%;
+  float: right;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+  margin-top: 10px;
+}
+.education button:hover, .enterprise button:hover {
+  background-color: #fff;
+  color: #777;
+}
+.enterprise button {
+  border: 1px solid;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.3em;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.7);
+}
+.education-text p {
+  font-size: 1.7em;
 }
 /*  
 Contact details

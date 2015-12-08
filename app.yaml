@@ -19,9 +19,6 @@ handlers:
 - url: /js
   static_dir: main/js
 
-  - url: /js
-  static_dir: main/min/js
-
 - url: /images
   static_dir: main/images
 
