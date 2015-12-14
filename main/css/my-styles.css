@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans,helvetica;
+  font-family: 'Roboto','Open Sans', sans, helvetica;
 }
 
  .signup-page {
@@ -45,7 +45,7 @@ Jumbotron
   	height: 570px; */
   	padding: 0px;
 }
-.jumbotron h1 {
+.jumbotron .flicker-example ul li h1 {
   font-size: 3em;
   text-align: center;
   font-weight: 800;
@@ -58,7 +58,7 @@ Jumbotron
   font-family: 'Open Sans', 'Roboto', sans-serif;
 }
 .jumbotron p {
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-family: 'Open Sans','Roboto', sans, helvetica;
   font-weight: 300;
   text-align: center;
@@ -68,11 +68,11 @@ Jumbotron
   margin-top: 5.19480519481%;
   padding: 10px;
 }
-.determined-text {
+/* .determined-text {
   float: left;
-  margin-left: -13.5844155844%;
-  margin-top: -2.07792207792%;
-}
+  margin-left: -13.5844155844%; 
+  margin-top: 5.07792207792%; 
+} */
 .triangle {
   width: 0; 
 	height: 0; 
@@ -103,6 +103,7 @@ About us
   font-size: 3em;
   font-family: 'Open Sans','Roboto',sans,helvetica;
   font-weight: 300;
+  padding-top: 15px;
   
 }
 .services p {
@@ -116,10 +117,10 @@ About us
   text-align: center;
   line-height: 1.em;
 }
-hr.custom {
+/* hr.custom {
   width: 80%;
   border-color: #DBD5D1;
-}
+} */
 /****************
 Servicess
 ******************/
