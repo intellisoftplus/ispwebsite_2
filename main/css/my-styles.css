@@ -13,7 +13,7 @@ Navbar
 */
 .navbar-default {
   background-color: rgba(255,255,255,1);
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.3);
   padding: 10px;
   border: 1px solid #fff;
   border-radius: 0px
@@ -49,12 +49,13 @@ Jumbotron
   font-size: 3em;
   text-align: center;
   font-weight: 800;
-  margin-top: -80px;
+  margin-top: -8.31168831169%;
+
 }
 .jumbotron h1 span{
   border: 7px solid;
   padding: 2.07141028922%;
-  font-family: 'Open Sans', sans-serif, 'Roboto'
+  font-family: 'Open Sans', 'Roboto', sans-serif;
 }
 .jumbotron p {
   font-size: 1.5em;
@@ -64,13 +65,13 @@ Jumbotron
   background-color: rgba(0,0,0,0.7);
   max-width: 80%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 5.19480519481%;
   padding: 10px;
 }
 .determined-text {
   float: left;
-  margin-left: -150px;
-  margin-top: -20px;
+  margin-left: -13.5844155844%;
+  margin-top: -2.07792207792%;
 }
 .triangle {
   width: 0; 
@@ -89,8 +90,7 @@ Section styles
 */
 .about-us, .services, .contacts {
   text-align: center;  
-  padding: 70px 0px;
-  
+  padding: 40px;
 }
 /*  
 End of section  styles
@@ -101,7 +101,7 @@ About us
 */
 .about-us h1, .services h1, .enterprise h1, .education h1, .contacts h1{
   font-size: 3em;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans','Roboto',sans,helvetica;
   font-weight: 300;
   
 }
@@ -125,20 +125,7 @@ Servicess
 ******************/
 .services {
   
-}
-/* .triangle.service {
-  border-top-color: #fff;
-  margin-top: -70px;
-  padding-bottom: 40px;
-}
-.triangle.service-end {
-  margin-top: 0;
-  border-top-color: #34A853;
-} */
-.triangle.service-end.contacts {
-  margin-top: -70px;
-  padding-bottom: 0px;
-  border-top-color: #1A6B90;
+  background-color: #F5F6FA;
 }
 /********************  
 End of service
@@ -150,18 +137,16 @@ Enterprise
 .enterprise .sec1, .enterprise .sec1-text {
   padding-top: 20px;
 }
-.enterprise .sec1-text {
-  margin-top: -10px;
-}
+
 /* .enterprise .custom-apps {
   border-right: 1px solid #eee;
   padding-right: 20px;
 } */
 .enterprise .sec1-text p {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', 'Roboto', sans, helvetica;
   max-width: 100%;
-  font-size: 0.8em;
-  font-weight: 300;
+  font-size: 0.9em;
+  font-weight: 400;
   line-height: 1.4;
 }
 .enterprise .sec1-text h3 {
@@ -170,24 +155,28 @@ Enterprise
   font-size: 1.1em;  
 }
 .enterprise .sec1-fig .fa{
-  font-size: 7em;
+  font-size: 9em;
   color: #34A853;
 }
 .enterprise hr {
   border-color: #eee;
 }
-.learn-more {
-  padding-top: 140px;
+.clouds, .custom, .productivity, .support {
+  
 }
-
+.clouds, .custom, .productivity, .support, .learn-more {
+  padding: 50px;
+} 
+.enterprise .custom, .support {
+  background-color: #F5F6FA;
+}
 /********************
 End of Enterprise
 *********************/
 /********************
 Education
 *********************/
-.education {
-  margin-top: 60px;
+.education { 
   background-color: #1A6B90;
   color: #fff;
   padding: 50px;
@@ -196,28 +185,24 @@ Education
   text-align: center;
   padding-bottom: 30px;
 }
-.education button, .enterprise button {
-  background-color: #fff;
-  color: #000;
+.education .ed-btn, .enterprise .learn-more {
+  text-align: center;
+}
+.education button, .enterprise .learn-more button {
+  background-color: #34A853;
+  color: #fff;
   font-weight: bold;
-  font-size: 1.5em;
+  border: 1px solid;
   border-radius: 2px;
-  padding: 13px;
-  width: 70%;
-  float: right;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+  padding: 10px;
+  font-size: 1.3em;
+  width: 20%;
+  box-shadow: 3px 3px 2px 1px rgba(0,0,0,0.3);
   margin-top: 10px;
 }
 .education button:hover, .enterprise button:hover {
   background-color: #fff;
   color: #777;
-}
-.enterprise button {
-  border: 1px solid;
-  width: 100%;
-  padding: 10px;
-  font-size: 1.3em;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.7);
 }
 .education-text p {
   font-size: 1.7em;
