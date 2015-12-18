@@ -74,9 +74,9 @@ Jumbotron
   max-width: 80%;
   color: #777;
 }
-.enterprise-details h3, .education-details {
+.enterprise-details h3, .education-details h3 {
   font-weight: 400;
-  padding-top: 20px;
+  
 }
 .enterprise-details h3 + p, .education-details h3 + p {
   max-width: 90%;
@@ -112,6 +112,40 @@ Jumbotron
   margin-left: -13.5844155844%; 
   margin-top: 5.07792207792%; 
 } */
+/**************************
+Services Background
+***************************/
+body.services-body {
+  background-color: #f5f5f5;
+}
+.services-background {
+  border: 1px solid #f5f5f5;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.3);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.services-box {
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 2px;
+  padding: 10px;
+  margin-right: 13px;
+}
+.services-box.top {
+  border-top: 3px solid #5AB0DD;
+  margin-bottom: 1px;
+  padding-top: 1px;
+  box-shadow: 0 0px 3px 0 rgba(0,0,0,0.26);
+    
+}
+.services-box.content {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.26);
+  padding: 20px;
+}
+/**************************
+End Of Services Background
+****************************/
 .triangle {
   width: 0; 
 	height: 0; 
