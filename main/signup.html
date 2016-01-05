@@ -4,6 +4,7 @@
 	<title>Intelli Soft Plus</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/my-styles.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/signup-styles.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600' rel='stylesheet' type='text/css'>
@@ -47,8 +48,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="row">
 		<div class="col-sm-6 signup-left">
 			<div class="signup-text">
-				<h2>We provide Google Apps that enables you to communicate & collaborate in a simple, easy & convenient way.</h2>
-				<h2><u>Benefits</u></h2>
+				<h2>Increase productivity and Employee Satisfaction by using our Email Services</h2>
+				<!-- <h2><u>Benefits</u></h2> -->
 				<p><i class="fa fa-check"></i>
  No more deleting emails, enjoy 15GB worth of email storage.</p>
 				<p><i class="fa fa-check"></i>
@@ -73,18 +74,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<hr>
 
 					</div>
+					<label>Full Names</label>
 					<div class="form-group">
-						<input type="text" name="name" class="form-control" placeholder="Full Names" required>
+						<input type="text" name="name" class="form-control" required>
 					</div>	
+					<label>Organizations</label>
 					<div class="form-group">
-						<input type="text" name="email" class="form-control" placeholder="Organization" required>
+						<input type="text" name="email" class="form-control"  required>
 					</div>
+					<label>Email</label>
 					<div class="form-group">
-						<input type="email" name="phone" class="form-control" placeholder="Email" required>
+						<input type="email" name="phone" class="form-control"  required>
 					</div>
+					<label>Current Email System</label>
 					<div class="form-group">
  						<select class="form-control" id="sel1">
- 							<option value="" disabled selected>Current Email System</option>
+ 							<!-- <option value="" disabled selected>Current Email System</option> -->
 						    <option>Exchange Servers</option>
 						    <option>Lotus Notes</option>
 						    <option>Group Wise</option>
@@ -93,9 +98,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						    <option>Others</option>
 					  	</select>
 					</div>
+					<label>No of Employees</label>
 					<div class="form-group">
  						<select class="form-control" id="sel1">
- 							<option value="" disabled selected>No of Employees</option>
+ 							<!-- <option value="" disabled selected>No of Employees</option> -->
 						    <option>1-10</option>
 						    <option>10-50</option>
 						    <option>50-100</option>
@@ -103,7 +109,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						    <option>500 and more</option>
 					  	</select>
 					</div>
-					<button type="submit" class="btn signup-next">Sign Up</button>
+					<div class="signup-btn">
+						<button type="submit" class="btn btn-lg btn-primary">Sign Up</button>
+					</div>	
+				</div>
 			</form>
 			</div>	
 		</div>

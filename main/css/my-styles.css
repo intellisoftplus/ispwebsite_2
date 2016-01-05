@@ -1,12 +1,12 @@
 body {
-  font-family: 'Roboto','Open Sans', sans, helvetica;
+  font-family: 'Roboto','Open Sans', sans;
 }
 
  .signup-page {
 /*   background-image: url('../images/jimathi.jpg'); */
-  background: -moz-linear-gradient(left,#2B8CF5,#ABC7FF);
+/*   background: -moz-linear-gradient(left,#2B8CF5,#ABC7FF);
    background: -webkit-linear-gradient(left ,#2B8CF5,#ABC7FF);
-  color: #fff;   
+  color: #fff;    */
 }
 /*  
 Navbar
@@ -36,13 +36,6 @@ End of Navbar
 Jumbotron
 */
 .jumbotron {
-/*  background: linear-gradient(#124B65,#416F83);
-*/  
-/* 	background-image: url('../images/jimathi.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: #fff;
-  	height: 570px; */
   	padding: 0px;
 }
 .jumbotron.services {
@@ -161,7 +154,7 @@ End of Jumbotron
 /* 
 Section styles
 */
-.about-us, .services, .contacts {
+.about-us, .services, .contacts, .education {
   text-align: center;  
   padding: 40px;
 }
@@ -174,75 +167,64 @@ About us
 */
 .about-us h1, .services h1, .enterprise h1, .education h1, .contacts h1{
   font-size: 3em;
-  font-family: 'Open Sans','Roboto',sans,helvetica;
+  font-family: 'Open Sans','Roboto',sans;
   font-weight: 300;
   padding-top: 15px;
   
 }
-.services p {
-  font-family: 'Open Sans';
-  font-size: 2em;
-  font-weight: 400;
+.about-us {
+  background-color: #F9F9F9;
+  margin-top: -30px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
-.about-us p, .enterprise .sec1, .enterprise .sec2, .education-text p {
-  font-size: 1.3em;
+.about-us p, .services p, .education p {
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: 1.250em;
+  line-height: 1.7;
+  font-family: 'Open Sans', 'Roboto',sans-serif;
+  color: #777;
   font-weight: 300;
-  text-align: center;
-  line-height: 1.em;
+  padding-top: 40px;
 }
-/* hr.custom {
-  width: 80%;
-  border-color: #DBD5D1;
-} */
 /****************
-Servicess
+Services
 ******************/
-.services {
-  
-  background-color: #F5F6FA;
+
+.services p, .education p {
+  padding-top: 20px;
 }
 /********************  
-End of service
+End of services
 *********************/
 
 /********************
 Enterprise
 *********************/
-.enterprise .sec1, .enterprise .sec1-text {
-  padding-top: 20px;
+.enterprise .enterprise-bg{
+ background-color: #f9f9f9; 
 }
-
-/* .enterprise .custom-apps {
-  border-right: 1px solid #eee;
-  padding-right: 20px;
-} */
-.enterprise .sec1-text p {
-  font-family: 'Open Sans', 'Roboto', sans, helvetica;
-  max-width: 100%;
-  font-size: 0.9em;
+.enterprise .enterprise-text p {
+  font-family: 'Open Sans', 'Roboto', sans-serif;
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 1.3;
+}
+.enterprise .enterprise-text h3 {
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.4;
+  font-size: 1.4em;  
 }
-.enterprise .sec1-text h3 {
-  font-family: 'Open Sans';
-  font-weight: 600;
-  font-size: 1.1em;  
-}
-.enterprise .sec1-fig .fa{
+.enterprise .enterprise-icon .fa{
   font-size: 9em;
   color: #34A853;
 }
-.enterprise hr {
-  border-color: #eee;
+.enterprise-text, .enterprise-icon, .learn-more-btn {
+  padding: 60px;
 }
-.clouds, .custom, .productivity, .support {
-  
-}
-.clouds, .custom, .productivity, .support, .learn-more {
-  padding: 50px;
-} 
-.enterprise .custom, .support {
-  background-color: #F5F6FA;
+.enterprise-icon {
+  text-align: center;
 }
 /********************
 End of Enterprise
@@ -251,35 +233,27 @@ End of Enterprise
 Education
 *********************/
 .education { 
-  background-color: #1A6B90;
-  color: #fff;
-  padding: 50px;
-}
-.education h1 {
-  text-align: center;
-  padding-bottom: 30px;
-}
-.education .ed-btn, .enterprise .learn-more {
-  text-align: center;
-}
-.education button, .enterprise .learn-more button {
-  background-color: #34A853;
-  color: #fff;
-  font-weight: bold;
-  border: 1px solid;
-  border-radius: 2px;
-  padding: 10px;
-  font-size: 1.3em;
-  width: 20%;
-  box-shadow: 3px 3px 2px 1px rgba(0,0,0,0.3);
-  margin-top: 10px;
-}
-.education button:hover, .enterprise button:hover {
   background-color: #fff;
   color: #777;
+  padding: 50px;
 }
-.education-text p {
-  font-size: 1.7em;
+.learn-more-btn {
+  text-align: center;
+}
+.learn-more-btn button {
+  background-color: #fff;
+  color: #34A853;
+  font-weight: 300;
+  border: 2px solid;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 1.4em;
+  width: 21%;
+}
+.learn-more-btn button:hover {
+  background-color: #fff;
+  color: #70C286;
+  border-color: #70C286;
 }
 /*  
 Contact details
@@ -414,9 +388,10 @@ Sign Up Form
 *******************/
 
 .navbar.nav-signup {
-  background-color: #fff;
+  background-color: transparent;
   margin-bottom: 70px;
   border-radius: 0px;
+  box-shadow: none;
 }
 .signup-form .form-wrapper{
   border: 1px solid #fff;
@@ -424,22 +399,22 @@ Sign Up Form
   padding: 30px;
   background-color: rgb(255,255,255);
   border-radius: 3px;
-  box-shadow: 1px 3px 15px 5px rgba(0,0,0,0.2);
+  box-shadow: 1px 3px 3px 1px rgba(0,0,0,0.2);
 }
 .signup-text {
-  margin-top: -18px;
+  margin-top: -moz-calc18px;
 }
 .signup-form .heading h3{
   color: #000;
-  font-weight: bold;
+  font-weight: 400;
 }
 .signup-form .heading p {
   color: #A3A3A3;
-  font-family: 'Open Sans'
+  font-family: 'Open Sans','Roboto',sans-serif;
 }
 .signup-form form input, .signup-form form select {
-  height: 50px;
-  border-radius: 3px;
+  height: 48px;
+  border-radius: 4px;
 }
 .signup-form form button {
   width: 100%;
@@ -455,9 +430,15 @@ Sign Up Form
   background-color: #5E94B5; 
 }
 .signup-text h2 {
-  font-family: 'Open Sans','Robto',sans, helvetica;
+  font-family: 'Open Sans','Robto',sans-serif, helvetica;
+  font-weight: 400;
+  font-size: 1.5em;
 }
 .signup-text p {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 300;
+  padding-top: 14px;
+}
+.signup-text .fa {
+  color: #34A853;
 }
