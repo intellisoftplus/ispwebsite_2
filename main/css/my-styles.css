@@ -220,7 +220,7 @@ Enterprise
   font-size: 9em;
   color: #34A853;
 }
-.enterprise-text, .enterprise-icon, .learn-more-btn {
+.enterprise-text, .enterprise-icon {
   padding: 60px;
 }
 .enterprise-icon {
@@ -233,12 +233,17 @@ End of Enterprise
 Education
 *********************/
 .education { 
-  background-color: #fff;
+  background-color: #f9f9f9;
   color: #777;
-  padding: 50px;
+}
+.education p {
+  padding-bottom: 20px;
 }
 .learn-more-btn {
   text-align: center;
+}
+.enterprise .learn-more-btn {
+  padding-bottom: 20px;
 }
 .learn-more-btn button {
   background-color: #fff;
