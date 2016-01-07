@@ -67,9 +67,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		
 		<div class="col-sm-6 signup-form">
 			<div class="form-wrapper signup">
-				<form role="form" action="signup" method="post">
+				<form role="form" action="/signup" method="post">
 					<div class="heading">
 						<h3>Sign Up</h3>
+
+							{% if signup == 'true' %}
+							<div class="form-group">
+								<div class="alert alert-success">
+								  <strong>Success!</strong> Your details have been recieved, we'll contact you soon.
+								</div>
+							</div>
+							{% else %}
+							{% endif %}
+
 						<p>Fill in the form and we will get back to you as soon as possible</p>
 						<hr>
 
@@ -80,15 +90,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					</div>	
 					<label>Organizations</label>
 					<div class="form-group">
-						<input type="text" name="email" class="form-control"  required>
+						<input type="text" name="organization" class="form-control"  required>
 					</div>
 					<label>Email</label>
 					<div class="form-group">
-						<input type="email" name="phone" class="form-control"  required>
+						<input type="email" name="email" class="form-control"  required>
 					</div>
 					<label>Current Email System</label>
 					<div class="form-group">
- 						<select class="form-control" id="sel1">
+ 						<select class="form-control" name="ces">
  							<!-- <option value="" disabled selected>Current Email System</option> -->
 						    <option>Exchange Servers</option>
 						    <option>Lotus Notes</option>
@@ -100,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					</div>
 					<label>No of Employees</label>
 					<div class="form-group">
- 						<select class="form-control" id="sel1">
+ 						<select class="form-control" name="employees" id="sel1">
  							<!-- <option value="" disabled selected>No of Employees</option> -->
 						    <option>1-10</option>
 						    <option>10-50</option>
