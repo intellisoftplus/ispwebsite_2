@@ -51,7 +51,7 @@ Typography
 	margin: 0 auto;
 	font-size: 1.250em;
 	line-height: 1.7;
-	color: #777;
+	color: #5F6260;
   	font-weight: 300;
   	padding-top: 0px;
 }
@@ -108,6 +108,7 @@ Button
 ********************************/
 .signup-btn {
 	text-align: center;
+	padding-bottom: 40px;
 }
 .signup-btn button {
 	background-color: #fff;
