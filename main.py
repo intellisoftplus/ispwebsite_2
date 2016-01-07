@@ -18,7 +18,12 @@
 import webapp2
 import jinja2
 import os
+from google.appengine.api import mail
 from jinja2 import Template
+
+
+contactus = []
+signup = []
 
 template_path = os.path.join(os.path.dirname(__file__))
 
@@ -28,24 +33,94 @@ template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        template_values = {}
+        global contactus
+
+        template_values = {
+            'contactus':contactus
+        }
         template = jinja2_env.get_template('main/index.html')
         self.response.out.write(template.render(template_values))
 
 class Signup(webapp2.RequestHandler):
 	def get(self):
-		template_values = {}
-		template = jinja2_env.get_template('main/signup.html')
-		self.response.out.write(template.render(template_values))
+
+            global signup
+            template_values = {
+                'signup':signup
+            }
+            template = jinja2_env.get_template('main/signup.html')
+            self.response.out.write(template.render(template_values))
+
+	def post(self):
+            global signup
+            name = self.request.get('name')
+            org = self.request.get('organization')
+            ces = self.request.get('ces')
+            email = self.request.get('email')
+            employees = self.request.get('employees')
+
+            message = mail.EmailMessage(sender="Contact Us form <ispwebsite@intellisoftpluswebsite.appspotmail.com>",
+                                        subject="NEW Contact")
+
+            message.to = 'reshiwani@intellisoftplus.com'
+            message.body = """
+                    Hi,
+
+                    The below client has field the online (isp website) contact form .
+
+                    Name: %s
+                    Organization: %s
+                    Email: %s
+                    Current Email System: %s
+                    No of Employees: %s
+
+                    Please follow up.
+                    """ % (name,org,email,ces,employees)
+
+            message.send()
+
+            signup = 'true'
+
+            self.redirect('/signup')
 
 class Services(webapp2.RequestHandler):
     def get(self):
         template_values = {}
         template = jinja2_env.get_template('main/services.html')
-        self.response.out.write(template.render(template_values))        
+        self.response.out.write(template.render(template_values))
+
+class ContactUs(webapp2.RequestHandler):
+	def post(self):
+            global contactus
+            name = self.request.get('name')
+            email = self.request.get('email')
+            msg = self.request.get('message')
+
+            message = mail.EmailMessage(sender="Contact Us form <ispwebsite@intellisoftpluswebsite.appspotmail.com>",
+                                        subject="NEW Contact")
+
+            message.to = 'reshiwani@intellisoftplus.com'
+            message.body = """
+                    Hi,
+
+                    The below client has field the online (isp website) contact form .
+
+                    Name: %s
+                    Email: %s
+                    Message.: %s
+
+                    Please follow up.
+                    """ % (name,email,msg)
+
+            message.send()
+
+            contactus = 'true'
+
+            self.redirect('/#Contacts')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/signup', Signup),
-    ('/services', Services)
+    ('/services', Services),
+    ('/contactus', ContactUs)
 ], debug=True)

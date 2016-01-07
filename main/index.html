@@ -262,18 +262,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<h1>Contact Us</h1>
 			<div class="row">
 				<div class="col-sm-6">
-					<form class="form" role="form">
+					<form class="form" method="post" action="/contactus" role="form">
+
+						{% if contactus == 'true' %}
+						<div class="form-group">
+							<div class="alert alert-success">
+							  <strong>Success!</strong> Your details have been recieved, we'll contact you soon.
+							</div>
+						</div>
+						{% else %}
+						{% endif %}
+
 						<div class="row name-email-inline">
 							<div class="form-group col-sm-6">
-								<input type="text" class="form-control" placeholder="Names">
+								<input type="text" class="form-control" name="name" placeholder="Names" required>
 							</div>
 							<div class="form-group col-sm-6">
-								<input type="text" class="form-control" placeholder="Email">
+								<input type="text" class="form-control" name="email" placeholder="Email" required>
 							</div>
 						</div>	
 							
 						<div class="form-group">
-							<textarea class="form-control" rows="6" placeholder="Message"></textarea>
+							<textarea class="form-control" rows="6" name="message" placeholder="Message" required></textarea>
 						</div>
 						<button class="btn btn-primary btn-lg" type="submit">Send Message<i class="fa fa-arrow-right"></i></button>
 					</form>
