@@ -30,10 +30,6 @@ Typography
 .jumbotron.services h1 {
 	padding-top: 5.77192982456%;
 	font-size: 5em;
-	color: #000;
-	font-weight: 300;
-}
-.jumbotron.services h1 {
 	color: #fff;
 	font-weight: 400;
 }
@@ -45,12 +41,12 @@ Typography
 	 max-width: 80%;
 	 margin: 0 auto;
 }
-.enterprise-details h1, .education-details h1 {
+.enterprise-details h1, .education-details h1, .contacts h1{
 	font-size: 3em;
 	font-weight: 300;
 	text-align: center;
 }
-.enterprise-details p, .education-details p {
+.enterprise-details p, .education-details p, .contacts p, .contacts .signup-text h2 {
 	max-width: 80%;
 	margin: 0 auto;
 	font-size: 1.250em;
@@ -63,10 +59,22 @@ Typography
 	max-width: 80%;
 	margin: 0 auto;
 }
-.services-content p {
+.services-content p, .contacts p {
 	font-size: 1.1em;
 	line-height: 1.5;
 	padding-top: 10px;
+}
+.contacts p, .contacts h2 {
+	text-align: center;
+}
+.contacts .signup-text h2 {
+	font-size: 2em;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.contacts .heading {
+	font-weight: 600;
+	color: #000;
 }
 /*******************************
 Color
@@ -94,4 +102,25 @@ Cards
 }
 .services-content:hover {
   margin-top: 5px;
+}
+/*******************************
+Button
+********************************/
+.signup-btn {
+	text-align: center;
+}
+.signup-btn button {
+	background-color: #fff;
+	color: #34a853;
+	font-weight: 300;
+	border: 2px solid;
+	border-radius: 50px;
+	padding: 10px;
+	font-size: 1.4em;
+	width: 50%;
+}
+.signup-btn button:hover {
+	background-color: #fff;
+	color: #70c286;
+	border-color: #70c286;
 }
