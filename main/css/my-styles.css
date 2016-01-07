@@ -230,7 +230,7 @@ Education
   border-radius: 50px;
   padding: 10px;
   font-size: 1.4em;
-  width: 21%;
+  width: 30%;
 }
 .learn-more-btn button:hover, .signup-form form button:hover {
   background-color: #fff;
@@ -356,7 +356,6 @@ Media Queries
       border: none;
     }
     .about-us p,.services p, .education-text p{
-
       font-size: 1.2em;
       font-weight: 300;
       line-height: 1.5;
@@ -364,7 +363,41 @@ Media Queries
     .jumbotron h1 {
       margin-bottom: -4.52459016393%;
     }
+    .about-us h1, .services h1, .education h1, .contacts h1 {
+      font-size: 2.5em;
+    }
+    .about-us p, .services p, .education p, .enterprise .enterprise-text p{
+      font-size: 1.1em;
+    }
+    .enterprise .enterprise-text h3 {
+      font-size: 1.35em;
+    }   
   }
+@media screen and (max-width: 767px) {
+  .enterprise-icon, .enterprise-text {
+    padding: 20px;
+    text-align: center;
+  }
+  .learn-more-btn button {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 600px ) {
+  .about-us p, .services p, .education p{
+    max-width: 100%;
+    font-size: 1em;
+  }
+ } 
+@media screen and (max-width: 500px) {
+  .learn-more-btn button {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .learn-more-btn button {
+   width: 80%;
+  }
+}
 /******************
 Sign Up Form
 *******************/
