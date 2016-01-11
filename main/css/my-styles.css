@@ -222,6 +222,7 @@ Education
 }
 .enterprise .learn-more-btn {
   padding-bottom: 20px;
+  
 }
 .learn-more-btn button, .signup-form form button {
   background-color: #fff;
@@ -286,26 +287,17 @@ Contact details
   font-family: 'Roboto', sans, helvetica;
   font-weight: 300;
 }
-.contacts .contact-details hr {
-  border-style: dashed;
-  border-color: #000;
-}
-.contacts .contact-details hr:nth-child(1) {
-  margin-top: -10px;
-}
 /***********************
 Map
 ************************/
 
 #map {
-	width: 100%;
+    width: 100%;
     height: 361px;
 }
 .contact-details {
   padding-top: 40px;
 }
-
-
 /*  
 End of contact details
 */
@@ -401,11 +393,13 @@ Media Queries
   .contacts form button {
     margin-bottom: 40px;
   }
+  .contacts button {
+    font-size: 1.2em;
+  }
 }
 @media screen and (max-width: 600px ) {
   .about-us p, .services p, .education p{
-    max-width: 100%;
-    font-size: 1em;
+    width: 100%;
   }
  } 
 @media screen and (max-width: 500px) {
