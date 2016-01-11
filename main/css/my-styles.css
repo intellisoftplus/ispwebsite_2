@@ -260,9 +260,6 @@ Contact details
 .contacts form .row input {
   height: 60px;
 }
-.contact-details {
-  padding-top: 20px;
-}
 .contacts button {
   border-radius: 2px;
   width: 100%;
@@ -296,18 +293,18 @@ Contact details
 .contacts .contact-details hr:nth-child(1) {
   margin-top: -10px;
 }
-.contacts .contact-details {
-	display: inline-block;
-}
 /***********************
 Map
 ************************/
 
 #map {
 	width: 100%;
-    height: 480px;
-    background-color: #CCC;
- }
+    height: 361px;
+}
+.contact-details {
+  padding-top: 40px;
+}
+
 
 /*  
 End of contact details
@@ -400,6 +397,9 @@ Media Queries
     font-size: 90%;
     max-width: 90%;
     margin: 0 auto;
+  }
+  .contacts form button {
+    margin-bottom: 40px;
   }
 }
 @media screen and (max-width: 600px ) {
