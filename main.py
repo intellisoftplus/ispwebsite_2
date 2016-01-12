@@ -118,9 +118,16 @@ class ContactUs(webapp2.RequestHandler):
 
             self.redirect('/#Contacts')
 
+class Team(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/team.html')
+        self.response.out.write(template.render(template_values))       
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/signup', Signup),
     ('/services', Services),
-    ('/contactus', ContactUs)
+    ('/contactus', ContactUs),
+    ('/team', Team)
 ], debug=True)
