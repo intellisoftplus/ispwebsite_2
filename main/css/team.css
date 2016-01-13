@@ -30,6 +30,9 @@ Layouts
 .team .col-sm-4 {
 	padding: 20px 0px;
 }
+.quote {
+	background-color:  #3498DB;
+}
 /*******************************
 Images
 ********************************/
@@ -65,6 +68,20 @@ Typography
 .team .user-card .user-info .fa {
 	font-size: 1.3em;
 }
+.quote-text {
+	text-align: center;
+	color: #fff;
+	padding: 50px;
+}
+.quote-text h2 {
+  font-size: 2.4em;
+}
+.quote-text p {
+	font-size: 2em;
+}
+.quote-text h2, .quote-text p {
+	font-weight: 300;
+}
 /*******************************
 Media Queries
 ********************************/
@@ -81,6 +98,12 @@ Media Queries
 	.team .user-card {
 		 max-width: 80%;
 	}	
+		.quote-text h2 {
+			font-size: 2em;
+		}
+		.quote-text p {
+			font-size: 1.5em;
+		}
 }
 	@media screen and (max-width: 767px) {
 		.team .user-img img {
@@ -94,6 +117,12 @@ Media Queries
 	@media screen and (max-width: 600px) {
 		.team .user-img img, .team .user-card {
 			max-width: 60%;
+		}
+		.quote-text h2 {
+			font-size: 1.5em;
+		}
+		.quote-text p {
+			font-size: 1.1em;
 		}
 }
 	@media screen and (max-width: 400px) {
