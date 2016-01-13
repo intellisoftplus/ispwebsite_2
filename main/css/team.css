@@ -14,24 +14,34 @@ body {
   margin-top: -14px;
 }
 .jumbotron {
-/*   background-color: #84CAF2; */
-	background: url("../images/bg-home-header.jpg");
+	background-color: #3498DB;
 	color: #fff;
 	height: 400px;
 	text-align: center;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 	margin-bottom: 0;		
 }
+/*******************************
+Layouts
+********************************/
 .team {
 	padding-top: 50px;
 	background-color: #f9f9f9;
 }
-.team .user-img img {
-	width: 60%;
-	max-height: 310px;
-	
+.team .col-sm-4 {
+	padding: 20px 0px;
 }
+/*******************************
+Images
+********************************/
+.team .user-img img {
+	max-width: 60%;
+}
+.team .user-img {
+	text-align: center;
+}
+/*******************************
+Cards
+********************************/
 .team .user-card {
 	max-width: 60%;
 	min-height: 50px;
@@ -41,21 +51,53 @@ body {
 	margin-top: 2px;
 	margin: 0 auto;
 }
-
-.team .user-img {
-	text-align: center;
-}
-.team .col-sm-4 {
-	padding: 20px 0px;
-}
 .team .user-card .user-info {
 	text-align: center;
 	font-size: 1.1em;
 	font-weight: 300;
 }
-.team .user-card .user-info .fa {
-	font-size: 1.3em;
-}
+/*******************************
+Typography
+********************************/
 .team .user-card .user-info p:nth-child(1) {
 	font-weight: 600;
 }
+.team .user-card .user-info .fa {
+	font-size: 1.3em;
+}
+/*******************************
+Media Queries
+********************************/
+@media screen and (max-width: 1199px) {
+  .team .user-img img {
+    max-width: 70%;}	
+	.team .user-card {
+		max-width: 70%;
+	}
+	@media screen and (max-width: 991px) {
+	 .team .user-img img {
+     max-width: 80%;
+		}	
+	.team .user-card {
+		 max-width: 80%;
+	}	
+}
+	@media screen and (max-width: 767px) {
+		.team .user-img img {
+			max-width: 50%;
+		}
+		.team .user-card {
+			max-width: 50%;
+			margin-top: 2px;
+		}
+	}		
+	@media screen and (max-width: 600px) {
+		.team .user-img img, .team .user-card {
+			max-width: 60%;
+		}
+}
+	@media screen and (max-width: 400px) {
+		.team .user-img img, .team .user-card {
+			max-width: 80%;
+		}
+	}
