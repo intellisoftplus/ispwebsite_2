@@ -42,6 +42,15 @@ Images
 .team .user-img {
 	text-align: center;
 }
+.tgif img {
+	width: 100%;
+}
+.pic-beside  {
+	padding-top: 60px;
+}
+.pic-beside .col-sm-3, .pic-under .col-sm-6 {
+	padding: 0;
+}
 /*******************************
 Cards
 ********************************/
@@ -73,7 +82,8 @@ Typography
 	color: #fff;
 	padding: 50px;
 }
-.quote-text h2 {
+.quote-text h
+ {
   font-size: 2.4em;
 }
 .quote-text p {
@@ -82,6 +92,25 @@ Typography
 .quote-text h2, .quote-text p {
 	font-weight: 300;
 }
+.culture-text h1{
+	text-align: center;
+	font-size: 3em;
+}
+.culture-text {
+	padding: 50px;
+	background-color: #f9f9f9;
+}
+.culture-text p { 
+	font-size: 1.3em;
+	font-weight: 300;
+	color: #777;
+}
+.tgif .pic-text p {
+	font-size: 1.1em;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
 /*******************************
 Media Queries
 ********************************/

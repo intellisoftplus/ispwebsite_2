@@ -453,6 +453,12 @@ Sign Up Form
 .signup-form label {
   font-size: 1.2em;
 }
+.signup-form form .checkbox label {
+ font-size: 1em;
+}
+.signup-form form .checkbox input {
+  margin-top: -11px;
+}
 .signup-form form button {
   width: 100%;
 }
