@@ -375,11 +375,11 @@ Media Queries
     text-align: center;
   }
   .google-pics .work img {
-    width: 65%;
+    width: 43%;
   }
   .google-pics .edu img {
     margin-bottom: 20px;
-    width: 60%;
+    width: 40%;
   }
   .signup-form .form-wrapper {
     margin: 0 auto;
@@ -407,6 +407,14 @@ Media Queries
     width: 60%;
   }
 }
+@media screen and (max-width: 360px) {
+  .google-pics .edu img {
+    width: 50%;
+  }
+  .google-pics .work img {
+    width: 54%;
+  }
+}
 @media screen and (max-width: 320px) {
   .learn-more-btn button {
    width: 80%;
@@ -422,7 +430,7 @@ Sign Up Form
   border-radius: 0px;
   box-shadow: none;
   border-color: #f9f9f9;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .signup-form .form-wrapper{
   background-color: #fff;
