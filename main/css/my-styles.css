@@ -7,6 +7,7 @@ body {
 /*   background: -moz-linear-gradient(left,#2B8CF5,#ABC7FF);
    background: -webkit-linear-gradient(left ,#2B8CF5,#ABC7FF);
   color: #fff;    */
+   background-color: #f9f9f9;
 }
 /*  
 Navbar
@@ -221,6 +222,7 @@ Education
 }
 .enterprise .learn-more-btn {
   padding-bottom: 20px;
+  
 }
 .learn-more-btn button, .signup-form form button {
   background-color: #fff;
@@ -230,7 +232,7 @@ Education
   border-radius: 50px;
   padding: 10px;
   font-size: 1.4em;
-  width: 21%;
+  width: 30%;
 }
 .learn-more-btn button:hover, .signup-form form button:hover {
   background-color: #fff;
@@ -259,9 +261,6 @@ Contact details
 .contacts form .row input {
   height: 60px;
 }
-.contact-details {
-  padding-top: 20px;
-}
 .contacts button {
   border-radius: 2px;
   width: 100%;
@@ -288,26 +287,17 @@ Contact details
   font-family: 'Roboto', sans, helvetica;
   font-weight: 300;
 }
-.contacts .contact-details hr {
-  border-style: dashed;
-  border-color: #000;
-}
-.contacts .contact-details hr:nth-child(1) {
-  margin-top: -10px;
-}
-.contacts .contact-details {
-	display: inline-block;
-}
 /***********************
 Map
 ************************/
 
 #map {
-	width: 100%;
-    height: 480px;
-    background-color: #CCC;
- }
-
+    width: 100%;
+    height: 361px;
+}
+.contact-details {
+  padding-top: 40px;
+}
 /*  
 End of contact details
 */
@@ -356,7 +346,6 @@ Media Queries
       border: none;
     }
     .about-us p,.services p, .education-text p{
-
       font-size: 1.2em;
       font-weight: 300;
       line-height: 1.5;
@@ -364,7 +353,73 @@ Media Queries
     .jumbotron h1 {
       margin-bottom: -4.52459016393%;
     }
+    .about-us h1, .services h1, .education h1, .contacts h1 {
+      font-size: 2.5em;
+    }
+    .about-us p, .services p, .education p, .enterprise .enterprise-text p{
+      font-size: 1.1em;
+    }
+    .enterprise .enterprise-text h3 {
+      font-size: 1.35em;
+    }   
   }
+@media screen and (max-width: 767px) {
+  .enterprise-icon, .enterprise-text {
+    padding: 20px;
+    text-align: center;
+  }
+  .learn-more-btn button {
+    width: 40%;
+  }
+  .google-pics {
+    text-align: center;
+  }
+  .google-pics .work img {
+    width: 43%;
+  }
+  .google-pics .edu img {
+    margin-bottom: 20px;
+    width: 40%;
+  }
+  .signup-form .form-wrapper {
+    margin: 0 auto;
+  }
+  .signup-text {
+    text-align: center;
+    font-size: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .contacts form button {
+    margin-bottom: 40px;
+  }
+  .contacts button {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 600px ) {
+  .about-us p, .services p, .education p{
+    width: 100%;
+  }
+ } 
+@media screen and (max-width: 500px) {
+  .learn-more-btn button {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .google-pics .edu img {
+    width: 50%;
+  }
+  .google-pics .work img {
+    width: 54%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .learn-more-btn button {
+   width: 80%;
+  }
+}
 /******************
 Sign Up Form
 *******************/
@@ -374,13 +429,16 @@ Sign Up Form
   margin-bottom: 0px;
   border-radius: 0px;
   box-shadow: none;
+  border-color: #f9f9f9;
+  margin-bottom: 30px;
 }
 .signup-form .form-wrapper{
+  background-color: #fff;
   border: 1px solid #fff;
   max-width: 90%;
   padding: 30px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 13px 1px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
 }
 .signup-text {
   margin-top: -18px;
@@ -403,6 +461,12 @@ Sign Up Form
 .signup-form label {
   font-size: 1.2em;
 }
+.signup-form form .checkbox label {
+ font-size: 1em;
+}
+.signup-form form .checkbox input {
+  margin-top: -11px;
+}
 .signup-form form button {
   width: 100%;
 }
@@ -421,4 +485,13 @@ Sign Up Form
 .signup-text .fa {
   color: #34A853;
   padding: 3px;
+}
+.google-pics img {
+    width: 100%;
+  }
+  .google-pics .edu img {
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
+  }
+.rs img {
+  width: 100%;
 }

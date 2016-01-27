@@ -91,7 +91,7 @@ Cards
 .services-content {
 	border-radius: 2px;
 	box-shadow: 1px 1px 2px 0.2px rgba(0,0,0,0.35);
-	max-width: 80%;
+	max-width: 100%;
 	margin: 0 auto;
 	background-color: #fff;
 	min-height: 300px;
@@ -99,9 +99,6 @@ Cards
 	margin-top: 30px;
 	margin-bottom: 30px;
 	transition: margin-top, 0.5s;
-}
-.services-content:hover {
-  margin-top: 5px;
 }
 /*******************************
 Button
@@ -125,3 +122,29 @@ Button
 	color: #70c286;
 	border-color: #70c286;
 }
+/*******************************
+Media Queries
+********************************/
+
+/*******************************
+Typograpgy
+********************************/
+@media screen and (max-width: 360px) {
+  .jumbotron.services p {
+		font-size: 1.1em;
+		max-width: 90%;
+}
+	.enterprise-details p, .education-details p {
+		font-size: 1.1em;
+		max-width: 100%;
+	}
+	.services-content p {
+		max-width: 100%;
+		font-size: 1.1em;
+		
+	}
+	.services-content h3 {
+		text-align: center;
+	}
+}
+
