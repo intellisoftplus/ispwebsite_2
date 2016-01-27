@@ -22,9 +22,6 @@ from google.appengine.api import mail
 from jinja2 import Template
 
 
-contactus = []
-signup = []
-
 template_path = os.path.join(os.path.dirname(__file__))
 
 jinja2_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_path))
@@ -33,11 +30,15 @@ template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        global contactus
+
 
         template_values = {
-            'contactus':contactus
+
         }
+        notification = self.request.get('notification')
+        if notification:
+            template_values['notification'] = notification
+        self.response.set_status(200)
         template = jinja2_env.get_template('main/index.html')
         self.response.out.write(template.render(template_values))
 
@@ -46,8 +47,12 @@ class Signup(webapp2.RequestHandler):
 
             global signup
             template_values = {
-                'signup':signup
+
             }
+            notification = self.request.get('notification')
+            if notification:
+                template_values['notification'] = notification
+            self.response.set_status(200)
             template = jinja2_env.get_template('main/signup.html')
             self.response.out.write(template.render(template_values))
 
@@ -79,9 +84,7 @@ class Signup(webapp2.RequestHandler):
 
             message.send()
 
-            signup = 'true'
-
-            self.redirect('/signup')
+            self.redirect('/signup?notification=Successfu!')
 
 class Services(webapp2.RequestHandler):
     def get(self):
@@ -114,9 +117,7 @@ class ContactUs(webapp2.RequestHandler):
 
             message.send()
 
-            contactus = 'true'
-
-            self.redirect('/#Contacts')
+            self.redirect('/?notification=Successfu!#Contacts')
 
 class Team(webapp2.RequestHandler):
     def get(self):
