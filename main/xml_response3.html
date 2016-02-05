@@ -1,10 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+  <title>zoho</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-{{xml_response}}
+
+<div class="container">
+  <h2>Zoho lead insert form</h2>
+  <form class="form-inline" role="form" action="/crm3" method="post">
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="fname">First Name:</label>
+      <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter first name" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="lname">Last Name:</label>
+      <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter last name" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="phone">Contact:</label>
+      <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter contact no." required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="industry">Industry:</label>
+      <input type="text" class="form-control" id="industry" name="industry" placeholder="Industry" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="company">Company:</label>
+      <input type="text" class="form-control" id="company" name="company" placeholder="company" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="website">Website:</label>
+      <input type="text" class="form-control" id="website" name="website" placeholder="Website" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="no_of_employees">No of Employees:</label>
+      <input type="text" class="form-control" id="no_of_employees" name="no_of_employees" placeholder="No of employees" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="Number_of_Email_users">Number of Email users:</label>
+      <input type="text" class="form-control" id="Number_of_Email_users" name="Number_of_Email_users" placeholder="Number of Email users" required>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+      <label for="email">Secondary Email:</label>
+      <input type="email" class="form-control" id="secondary_email" name="secondary_email" placeholder="Enter secondary email" required>
+    </div>
+      </div>
+    <br/><br/>
+    <div class="col-sm-4" align="right">
+    <button type="submit" name="submit" value="1" class="btn btn-default">Submit</button>
+      </div>
+  </form>
+</div>
+
 </body>
 </html>
