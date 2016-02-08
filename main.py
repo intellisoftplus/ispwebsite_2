@@ -19,6 +19,10 @@ import webapp2
 import jinja2
 import os
 from google.appengine.api import mail
+
+import urllib
+
+import urllib2
 from jinja2 import Template
 
 
@@ -71,7 +75,7 @@ class Signup(webapp2.RequestHandler):
             message.body = """
                     Hi,
 
-                    The below client has field the online (isp website) contact form .
+                    The below client has filled the online (isp website) contact form .
 
                     Name: %s
                     Organization: %s
@@ -123,12 +127,110 @@ class Team(webapp2.RequestHandler):
     def get(self):
         template_values = {}
         template = jinja2_env.get_template('main/team.html')
-        self.response.out.write(template.render(template_values))       
+        self.response.out.write(template.render(template_values))
+
+class Crm(webapp2.RequestHandler):
+
+    def get(self):
+        module_name = 'Leads'
+        authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        params = {'authtoken':authtoken,'scope':'crmapi'}
+        final_URL = "https://crm.zoho.com/crm/private/xml/"+module_name+"/getRecords"
+        data = urllib.urlencode(params)
+        request = urllib2.Request(final_URL,data)
+        response = urllib2.urlopen(request)
+        xml_response = response.read()
+        #print xml_response
+
+        template_values = {
+            'xml_response':xml_response,
+        }
+        template = jinja2_env.get_template('main/xml_response.html')
+        self.response.out.write(template.render(template_values))
+
+class Crm3(webapp2.RequestHandler):
+
+    def get(self):
+
+        template_values = {
+
+        }
+        template = jinja2_env.get_template('main/xml_response3.html')
+        self.response.out.write(template.render(template_values))
+
+    def post(self):
+
+        fname = self.request.get('fname')
+        lname = self.request.get('lname')
+        status = 'Not Contacted'
+        phone = self.request.get('phone')
+        email = self.request.get('email')
+        industry = self.request.get('industry')
+        Lead_Source = 'isp website'
+        Company = self.request.get('company')
+        Website = self.request.get('website')
+        No_of_Employees = self.request.get('no_of_employees')
+        Secondary_Email = self.request.get('secondary_email')
+        Number_of_Email_users = self.request.get('Number_of_Email_users')
+
+
+        authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users)
+        self.redirect('/crm3')
+
+
+def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users):
+
+
+
+        params = {'authtoken':authtoken,'scope':'crmapi','xmlData':'<Leads>'
+                                                                       '<row no="1">'
+                                                                            '<FL val="First Name">%s</FL>'
+                                                                            '<FL val="Last Name">%s</FL>'
+                                                                            '<FL val="Lead Status">%s</FL>'
+                                                                            '<FL val="Phone">%s</FL>'
+                                                                            '<FL val="Email">%s</FL>'
+                                                                            '<FL val="Industry">%s</FL>'
+                                                                            '<FL val="Lead Source">%s</FL>'                                                                           '<FL val="Closing Date">2014-06-28</FL>'
+                                                                            '<FL val="Company">%s</FL>'
+                                                                            '<FL val="Website">%s</FL>'
+                                                                            '<FL val="No of Employees">%s</FL>'
+                                                                            '<FL val="Secondary Email">%s</FL>'
+                                                                            '<FL val="Number of Email users">%s</FL>'
+                                                                       '</row>'
+                                                                   '</Leads>'% (fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users)
+                  }
+
+        final_URL = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords"
+
+        data = urllib.urlencode(params)
+
+        #print data
+
+        request = urllib2.Request(final_URL,data)
+
+        response = urllib2.urlopen(request)
+
+        xml_response = response.read()
+
+        print xml_response
+
+
+
+class Crm2(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/xml.xml')
+        self.response.out.write(template.render(template_values))
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/signup', Signup),
     ('/services', Services),
     ('/contactus', ContactUs),
-    ('/team', Team)
+    ('/team', Team),
+    ('/crm', Crm),
+    ('/crm2', Crm2),
+    ('/crm3', Crm3)
 ], debug=True)
