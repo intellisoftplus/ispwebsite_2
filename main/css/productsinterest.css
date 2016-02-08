@@ -1,0 +1,53 @@
+body {
+  font-family: 'Open Sans','Roboto', sans-serif;
+  line-height: 1.7;
+}
+
+.navbar-default {
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+  padding: 10px;
+  border: none;
+  border-radius: 0px;
+}
+.navbar-brand img {
+  margin-top: -10px;
+}
+.products {
+  font-size: 1.3em;
+}
+.products a:hover {
+  text-decoration: none;
+}
+.products p {
+  display:  inline-block;
+}
+.fill-form{
+ text-align: center;
+}
+.fill-form h1 {
+  color: #34A853;
+  font-size: 3em;
+  font-weight: 300;
+}
+.fill-form p {
+  font-size: 1.2em;
+}
+form {
+  width: 45%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+form label {
+  font-weight: 400;
+  font-size: 1.1em;
+}
+.signup-btn button{
+  width: 100%;
+  font-size: 1.3em;
+  border: none;
+}
+.container form input, .signup-btn button {
+  height: 45px;
+  border-radius: 2px;
+}
