@@ -162,30 +162,65 @@ class Crm3(webapp2.RequestHandler):
 
     def get(self):
 
+
+        #authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        
+        template_values = {
+
+        }
+        template = jinja2_env.get_template('main/xml_response3.html')
+        self.response.out.write(template.render(template_values))
+
+    def post(self):
+
+        fname = self.request.get('fname')
+        lname = self.request.get('lname')
+        status = 'Not Contacted'
+        phone = self.request.get('phone')
+        email = self.request.get('email')
+        industry = self.request.get('industry')
+        Lead_Source = 'isp website'
+        Company = self.request.get('company')
+        Website = self.request.get('website')
+        No_of_Employees = self.request.get('no_of_employees')
+        Secondary_Email = self.request.get('secondary_email')
+        Number_of_Email_users = self.request.get('Number_of_Email_users')
+
+
         #authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
         authtoken = random.choice(['0f6d5b3e2cb345f1780860a34c154fc9', 'b72f0f5ed3d2afa9b8a314649d3cf66f', '28c0030acc0560e35c24edf7917d9228' ])
+        insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users)
+        self.redirect('/crm3')
+
+
+def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users):
+
+
+
 
         params = {'authtoken':authtoken,'scope':'crmapi','xmlData':'<Leads>'
                                                                        '<row no="1">'
-                                                                           '<FL val="Lead Source">internal (dev test)</FL>'                                                                           '<FL val="Closing Date">2014-06-28</FL>'
-                                                                           '<FL val="Company">Intellisoftplus Solutions</FL>'
-                                                                           '<FL val="First Name">Phares</FL>'
-                                                                            '<FL val="Last Name">Machira</FL>'
-                                                                            '<FL val="Email">pmachira@intellisoftplus.com.com</FL>'
-                                                                            '<FL val="Phone">0719301140</FL>'
-                                                                            '<FL val="City">Nairobi</FL>'
-                                                                            '<FL val="State">Upperhill</FL>'
-                                                                            '<FL val="Country">Kenya</FL>'
-                                                                            '<FL val="Zip Code">20100</FL>'
+                                                                            '<FL val="First Name">%s</FL>'
+                                                                            '<FL val="Last Name">%s</FL>'
+                                                                            '<FL val="Lead Status">%s</FL>'
+                                                                            '<FL val="Phone">%s</FL>'
+                                                                            '<FL val="Email">%s</FL>'
+                                                                            '<FL val="Industry">%s</FL>'
+                                                                            '<FL val="Lead Source">%s</FL>'                                                                           '<FL val="Closing Date">2014-06-28</FL>'
+                                                                            '<FL val="Company">%s</FL>'
+                                                                            '<FL val="Website">%s</FL>'
+                                                                            '<FL val="No of Employees">%s</FL>'
+                                                                            '<FL val="Secondary Email">%s</FL>'
+                                                                            '<FL val="Number of Email users">%s</FL>'
                                                                        '</row>'
-                                                                   '</Leads>'
+                                                                   '</Leads>'% (fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users)
                   }
 
         final_URL = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords"
 
         data = urllib.urlencode(params)
 
-        print data
+        #print data
 
         request = urllib2.Request(final_URL,data)
 
@@ -193,13 +228,11 @@ class Crm3(webapp2.RequestHandler):
 
         xml_response = response.read()
 
-        print xml_response
 
-        template_values = {
-            'xml_response':xml_response,
-        }
-        template = jinja2_env.get_template('main/xml_response3.html')
-        self.response.out.write(template.render(template_values))
+        print xml_response
+        
+
+
 
 class Crm2(webapp2.RequestHandler):
     def get(self):
@@ -216,5 +249,6 @@ app = webapp2.WSGIApplication([
     ('/team', Team),
     ('/crm', Crm),
     ('/crm2', Crm2),
-    ('/crm3', Crm3)
+    ('/crm3', Crm3),
+    #('/signup', Crm3)
 ], debug=True)
