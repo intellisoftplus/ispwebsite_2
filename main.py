@@ -24,6 +24,7 @@ import urllib
 
 import urllib2
 from jinja2 import Template
+import random
 
 
 template_path = os.path.join(os.path.dirname(__file__))
@@ -133,7 +134,16 @@ class Crm(webapp2.RequestHandler):
 
     def get(self):
         module_name = 'Leads'
-        authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+
+        authtoken_d = '0f6d5b3e2cb345f1780860a34c154fc9'
+        authtoken_r = 'b72f0f5ed3d2afa9b8a314649d3cf66f'
+        authtoken_i = '28c0030acc0560e35c24edf7917d9228'
+
+        authtoken = random.choice(['0f6d5b3e2cb345f1780860a34c154fc9', 'b72f0f5ed3d2afa9b8a314649d3cf66f', '28c0030acc0560e35c24edf7917d9228' ])
+
+
+
+
         params = {'authtoken':authtoken,'scope':'crmapi'}
         final_URL = "https://crm.zoho.com/crm/private/xml/"+module_name+"/getRecords"
         data = urllib.urlencode(params)
@@ -152,6 +162,9 @@ class Crm3(webapp2.RequestHandler):
 
     def get(self):
 
+
+        #authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        
         template_values = {
 
         }
@@ -174,12 +187,14 @@ class Crm3(webapp2.RequestHandler):
         Number_of_Email_users = self.request.get('Number_of_Email_users')
 
 
-        authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        #authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        authtoken = random.choice(['0f6d5b3e2cb345f1780860a34c154fc9', 'b72f0f5ed3d2afa9b8a314649d3cf66f', '28c0030acc0560e35c24edf7917d9228' ])
         insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users)
         self.redirect('/crm3')
 
 
 def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users):
+
 
 
 
@@ -213,7 +228,9 @@ def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Co
 
         xml_response = response.read()
 
+
         print xml_response
+        
 
 
 
@@ -232,5 +249,6 @@ app = webapp2.WSGIApplication([
     ('/team', Team),
     ('/crm', Crm),
     ('/crm2', Crm2),
-    ('/crm3', Crm3)
+    ('/crm3', Crm3),
+    #('/signup', Crm3)
 ], debug=True)
