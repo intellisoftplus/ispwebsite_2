@@ -191,7 +191,7 @@ def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Co
                                                                             '<FL val="Phone">%s</FL>'
                                                                             '<FL val="Email">%s</FL>'
                                                                             '<FL val="Industry">%s</FL>'
-                                                                            '<FL val="Lead Source">%s</FL>'                                                                           '<FL val="Closing Date">2014-06-28</FL>'
+                                                                            '<FL val="Lead Source">%s</FL>'
                                                                             '<FL val="Company">%s</FL>'
                                                                             '<FL val="Website">%s</FL>'
                                                                             '<FL val="No of Employees">%s</FL>'
