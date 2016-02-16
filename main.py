@@ -64,6 +64,7 @@ class Signup(webapp2.RequestHandler):
 	def post(self):
             global signup
             name = self.request.get('name')
+            phone = self.request.get('phone')
             org = self.request.get('organization')
             ces = self.request.get('ces')
             email = self.request.get('email')
@@ -79,13 +80,14 @@ class Signup(webapp2.RequestHandler):
                     The below client has filled the online (isp website) contact form .
 
                     Name: %s
+                    Phone: %s
                     Organization: %s
                     Email: %s
                     Current Email System: %s
                     No of Employees: %s
 
                     Please follow up.
-                    """ % (name,org,email,ces,employees)
+                    """ % (name,phone,org,email,ces,employees)
 
             message.send()
 
@@ -187,7 +189,6 @@ class Crm3(webapp2.RequestHandler):
         Number_of_Email_users = self.request.get('Number_of_Email_users')
 
 
-        #authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
         authtoken = random.choice(['0f6d5b3e2cb345f1780860a34c154fc9', 'b72f0f5ed3d2afa9b8a314649d3cf66f', '28c0030acc0560e35c24edf7917d9228' ])
         insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Company,Website,No_of_Employees,Secondary_Email,Number_of_Email_users)
         self.redirect('/crm3')
