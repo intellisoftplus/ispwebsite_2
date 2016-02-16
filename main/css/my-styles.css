@@ -140,36 +140,51 @@ Section styles
 /*  
 End of section  styles
 */
+/****************
+Typography
+******************/
 
-/*  
-About us 
-*/
-.about-us h1, .services h1, .enterprise h1, .education h1, .contacts h1, .enterprise-details h1, .education-details h1{
-  font-size: 4em;
-  font-family: 'Open Sans','Roboto',sans;
-}
-.services p, .benefits-card, .partners, .education p, .enterprise-details p, .education-details p {
+.services p, .benefits-card p, .partners p{
   max-width: 90%;
   margin: 0px auto;
-  font-size: 1.1em;
   line-height: 1.5;
   font-family: 'Roboto',sans-serif;
   font-weight: 300;
+  color: #777;
+}
+.partners h1, .benefits h1, .services h1 {
+  text-align: center;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+.services h3  {
+  padding-top: 20px;
+  font-weight: 600;
+  color: #34A853;
+}
+.services .ent-services-item p {
+  max-width: 75%;
+  font-size: 1.15em;
+}
+.benefits-card .fa {
+  font-size: 4em;
+  color: #34A853;
+}
+.benefits-card h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+.benefits-card p {
+  font-size: 1.2em;
+}
+.partners-card p {
+  font-size: 1.24em;
+  max-width: 100%;
+  padding-bottom: 10px;
 }
 /****************
 Services
 ******************/
-.services {
-  margin-top: -30px;
-}
- .services h3  {
-  padding-top: 20px;
-}
-.services h1 {
-padding-bottom: 30px;}
-/********************  
-End of services
-*********************/
 
 /********************
 Benefits
@@ -187,35 +202,38 @@ Benefits
 	padding: 30px;
   margin-top: 30px;
 }
-.benefits-card .fa {
-  font-size: 4em;
-  color: #34A853;
-}
 /********************
 Partners
 *********************/
-.partners h2 {
-text-align: center;
+.partners {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .partners .partners-card {
-  border-radius: 2px;
-	box-shadow: 1px 1px 2px rgba(0,0,0,0.);
 	max-width: 80%;
 	margin: 0 auto;
-	background-color: #fff;
 	padding: 20px;
-  margin-top: 21px;
-  min-height: 250px;
- 
 }
 .partners img {
   max-width: 100%;
-  border-radius: 2px;
 }
 .partners img.microsoft {
-  margin-top: -60px;
-  
-  
+  max-width: 90%;
+  margin-top: -90px;
+}
+.partners-card button {
+  background-color: rgb(52,168,83);
+  color: #fff;
+  width: 50%;
+  border: none;
+  border-radius: 2px;
+}
+.partners-card button:hover {
+  background-color:rgba(52,168,83,0.7);
+  color: #fff;
+}
+.partners .partners-card:nth-child(1) {
+  margin-bottom: 30px;
 }
 /********************
 Education
