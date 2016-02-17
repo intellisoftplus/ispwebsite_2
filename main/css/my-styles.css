@@ -183,6 +183,18 @@ Typography
   max-width: 100%;
   padding-bottom: 10px;
 }
+.partners h2 {
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 20px;
+}
+.partners h2.edu-partner {
+  padding-top: 40px;
+}
+.navbar-default .navbar-nav li a {
+  color: #777;
+  font-weight: 600;
+}
 /****************
 Services
 ******************/
