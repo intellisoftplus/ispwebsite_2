@@ -213,12 +213,20 @@ Partners
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.partners .partners-card {
+	
+	
+	
+}
 .partners img {
   max-width: 100%;
 }
-.partners .microsoft img {
-  max-width: 70%;
-  margin-top: -80px;
+.partners img.microsoft {
+  max-width: 80%;
+  margin-top: -90px;
+}
+.partners img {
+  max-width: 90%;
 }
 .partners .microsoft {
   padding-top: 50px;
@@ -365,11 +373,8 @@ Media Queries
 }
 @media screen and (max-width: 806px) {
   .partners img {
-    max-width: 80%;
+    max-width: 70%;
   }
-  .partners p {
-    font-size: 1.15em;
-}
   .benefits .benefits-card, .services .ent-services-item p{
     max-width: 82%;
   }
@@ -377,9 +382,59 @@ Media Queries
     font-size: 1.2em;
   }
   .benefits .benefits-card p, .services .ent-services-item p {
+    font-size: 1.1em;
+  }
+  .partners p {
+    font-size: 1em;
+}
+}
+@media screen and (max-width: 767px) {
+  .benefits .benefits-card {
+    max-width: 60%;
+    min-height: 280px;
+  }
+  .partners img {
+    max-width: 70%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .partners {
+    text-align: center;
+  }
+  .partners .microsoft img {
+    margin-top: 0px;
+    max-height: 250px;
+ }
+  .partners .microsoft {
+    padding-top: 0px;
+  }
+  .partners p {
+    max-width: 80%;
+    font-size: 1.2em;
+} 
+}
+@media screen and (max-width: 500px) {
+  .services .ent-services-item p, .partners p {
+    max-width: 100%;
+  }
+  .benefits .benefits-card {
+    max-width: 100%;
+  }
+  .partners p {
+    font-size: 1.1em;
+  }  
+}
+@media screen and (max-width: 360px) {
+  .services .ent-services-item p {
+    font-size: 1.05em;
+  }
+  .benefits .benefits-card {
     font-size: 1em;
   }
-}
+  .benefits .benefits-card p {
+    font-size: 1em;
+} 
+} 
 @media screen and (max-width: 960px) {
   .jumbotron h1 {
     font-size: 2.2em;
