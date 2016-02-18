@@ -230,6 +230,11 @@ Partners
 }
 .partners .microsoft {
   padding-top: 50px;
+  padding-bottom: 50px;
+}
+.partners .microsoft img{
+  max-width: 70%;
+  margin-top: -90px;
 }
 .partners button {
   background-color: rgb(52,168,83);
