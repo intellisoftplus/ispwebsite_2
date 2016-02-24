@@ -26,6 +26,12 @@ body {
 img {
 	max-width: 100%;
 }
+.statement p {
+	font-weight: 600;
+	font-size: 1.9em;
+	text-align: center;
+	padding: 50px;
+}
 .about-card {
   background-color: #f4f4f4;
   text-align: center;
@@ -56,18 +62,6 @@ img {
 /******************
 Typography
 *******************/
-.jumbotron h1 {
-	font-size: 3em;
-	font-weight: 300;
-	padding-top: 50px;
-}
-
-.statement p {
-	font-weight: 400;
-	font-size: 1.9em;
-	text-align: center;
-	padding: 50px;
-}
 .about-card h3 {
 	font-weight: 800;
 	font-size: 2em;

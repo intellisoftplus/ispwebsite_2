@@ -93,10 +93,10 @@ class Signup(webapp2.RequestHandler):
 
             self.redirect('/signup?notification=Successfu!')
 
-class Services(webapp2.RequestHandler):
+class Careers(webapp2.RequestHandler):
     def get(self):
         template_values = {}
-        template = jinja2_env.get_template('main/services.html')
+        template = jinja2_env.get_template('main/careers.html')
         self.response.out.write(template.render(template_values))
 
 class ContactUs(webapp2.RequestHandler):
@@ -245,7 +245,7 @@ class Crm2(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/signup', Signup),
-    ('/services', Services),
+    ('/careers', Careers),
     ('/contactus', ContactUs),
     ('/team', Team),
     ('/crm', Crm),
