@@ -27,26 +27,27 @@ img {
 	max-width: 100%;
 }
 .about-card {
-  background-color: #f4f4f4;
   text-align: center;
 }
 .about-card.family, .about-card.entre, .about-card.moon, .about-card.trans  {
 	height: 460px;
 }
+/******************
+Images
+*******************/
+.about-card.family, .about-card.entre, .about-card.moon{
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	
+}
 .about-card.family {
 	background-image: url("../images/fam.JPG");
-	background-size: 100% auto;
-		
 }
 .about-card.entre {
 	background-image: url("../images/africanchild.jpg");
-	background-size: 100% auto;
 }
 .about-card.moon {
-	background-image: url("../images/Space.jpg");
-	background-size: 100% auto;
-	color: #fff;
-	background-repeat: none;
+	background-image: url("../images/Space.jpg");	
 }
 .about-card.trans {
 	background-image: url("../images/open.jpg");
