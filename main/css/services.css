@@ -73,6 +73,8 @@ Images
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	height: 350px;	
+	margin-bottom: 10px;
+	border-radius: 2px;
 }
 /******************
 Typography
@@ -89,23 +91,26 @@ Typography
 	text-align: center;
 	padding: 50px;
 }
-.about-card h3 {
+.about-card h3, .inspired-card h3 {
+	max-width: 80%;
+	margin: 0 auto;
 	font-weight: 800;
 	font-size: 2em;
 	padding-top: 80px;
 	color: #fff;
 }
-.about-card p {
+.about-card p, .inspired-card p {
 	font-size: 1.3em;
 	max-width: 80%;
 	margin: 0 auto;
 	color: #fff;
 }
-.we-are-about h1, .services, .jobs-text, .openings-card p, .applications p {
+.we-are-about h1, .inspired h1,.inspired-card h3,.inspired-card p, .jobs-text, .openings-card p, .applications p {
   text-align: center;
 }
-.we-are-about h1, .services, .jobs-text h1 {
+.we-are-about h1, .inspired h1, .jobs-text h1 {
 	font-weight: 800;
+	padding: 20px 0px;
 }
 .jobs-text p {
 	font-size: 1.5em;
@@ -119,11 +124,52 @@ Typography
 	font-size: 1.3em;
 	padding: 20px 0px;
 }
+.inspired-card h3, .inspired-card p {
+	color: rgba(0,0,0,0.8);
+}
+.applications a {
+	color: #fff;
+	text-decoration: underline;
+}
+/******************
+Color
+*******************/
 /******************
 Cards
 *******************/
 .openings-card {
-	background-color: #f4f4f4;
+	background-color: #fff;
 	border-radius: 3px;
 	padding: 50px;
+	color: #000;
+	max-width: 90%;
+	margin: 0 auto;
+	min-height: 150px;
+}
+.inspired {
+	background-color: rgba(225,225,225,.9);
+}
+.inspired-card {
+	background-color: #f4f4f4;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.inspired-pics, .inspired-card {
+	height: 376.859px;
+	overflow: hidden;
+}
+.inspired-pics.istan img {
+	height: 376.859px;;
+}
+.jobs {
+	background-color: #23829E;
+	color: #fff;
 }
