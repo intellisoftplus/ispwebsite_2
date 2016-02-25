@@ -2,26 +2,29 @@ body {
 	font-family: 'Open Sans','Roboto', sans-serif;
 }
 .navbar-default {
-	background-color: rgba(255,255,255,1);
-	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
-	padding: 10px;
-	border: 1px solid #fff;
-	border-radius: 0px
-	box-shadow: 0px 3px 3px 1px #fff; 
-	margin-bottom: 0;
+  background-color: #fff;
+	border: none;
+	height: 60px;
+	border-radius: 0px;
 }
-.navbar-default .navbar-brand img {
-  margin-top: -14px;
+.navbar-brand img {
+	margin-top: -7px;
 }
+
 .jumbotron.services {
-/*   background-color: #84CAF2; */
-	background: url("../images/urban.jpg");
+	margin-top: -20px;
+  background:  linear-gradient(
+  rgba(74,174,72, 0.5), 
+  rgba(74,174,72, 0.5)
+  ),url("../images/fam.jpg");
 	color: #fff;
-	height: 400px;
+	height: 600px;
 	text-align: center;
 	background-repeat: no-repeat;
-	background-position: 100% 50%;
+	background-size: 100% auto;
+	background-position: 
 	margin-bottom: 0;
+	background-position: 100% 30%;
 }
 img {
 	max-width: 100%;
@@ -29,42 +32,59 @@ img {
 .about-card {
   text-align: center;
 }
-.about-card.family, .about-card.entre, .about-card.moon, .about-card.trans  {
-	height: 460px;
-}
 /******************
 Images
 *******************/
-.about-card.family, .about-card.entre, .about-card.moon{
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	
+.we-are-about .col-sm-6 {
+	overflow: hidden;
+}
+.about-card {
+	transition: all .5s ease-in-out;
+}
+.about-card:hover {
+	transform: scale(1.1);
 }
 .about-card.family {
-	background-image: url("../images/fam.JPG");
+	background:  linear-gradient(
+  rgba(18,75,101, 0.4), 
+  rgba(18,75,101, 0.4)
+  ), url("../images/fam.JPG");
 }
 .about-card.entre {
-	background-image: url("../images/africanchild.jpg");
+	background: linear-gradient(
+  rgba(18,75,101, 0.4), 
+  rgba(18,75,101, 0.4)
+  ), url("../images/africanchild.jpg");
 }
 .about-card.moon {
-	background-image: url("../images/Space.jpg");	
+	background:  linear-gradient(
+  rgba(18,75,101, 0.4), 
+  rgba(18,75,101, 0.4)
+  ), url("../images/Space.jpg");	
 }
 .about-card.trans {
-	background-image: url("../images/open.jpg");
-	background-position: 70% 50%;
-	color: #fff;	
+	background: linear-gradient(
+  rgba(18,75,101, 0.4), 
+  rgba(18,75,101, 0.4)
+  ), url("../images/open.jpg");
+	
+}
+.about-card.family, .about-card.entre, .about-card.moon, .about-card.trans{
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	height: 350px;	
 }
 /******************
 Typography
 *******************/
 .jumbotron h1 {
 	font-size: 3em;
-	font-weight: 300;
+	font-weight: 400;
 	padding-top: 50px;
 }
 
 .statement p {
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 1.9em;
 	text-align: center;
 	padding: 50px;
