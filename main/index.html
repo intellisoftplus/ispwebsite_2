@@ -280,8 +280,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</div>	
 							
 						<div class="form-group">
-							<textarea class="form-control" rows="10" name="message" placeholder="Message" required></textarea>
+							<textarea class="form-control" rows="10" name="message" id="message" placeholder="Message" onkeyup="countChar(this)" required></textarea>
 						</div>
+
+						<div id="charNum"></div>
+
 						<button class="btn btn-primary btn-lg" type="submit">Send Message<i class="fa fa-arrow-right"></i>
 						</button>
 					</form>
@@ -380,6 +383,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 });
 </script>
+
+    <script>
+      function countChar(val) {
+        var len = val.value.length;
+        if (len >= 250) {
+          val.value = val.value.substring(0, 250);
+        } else {
+          $('#charNum').text(250 - len);
+        }
+      };
+    </script>
 
 </body>
 </html>
