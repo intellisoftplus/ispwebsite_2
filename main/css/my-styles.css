@@ -601,7 +601,7 @@ Sign Up Form
 .google-pics img {
     width: 100%;
   }
-  .google-pics .edu img {
+  .google-pics .edu img, .google-pics .work img {
     box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
   }
 .rs img {
