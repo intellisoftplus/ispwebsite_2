@@ -237,6 +237,19 @@ def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Co
 
 
         print xml_response
+
+class Records(webapp2.RequestHandler):
+
+    def get(self):
+        module_name = 'Leads'
+        authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
+        params = {'authtoken':authtoken,'scope':'crmapi'}
+        final_URL = "https://crm.zoho.com/crm/private/xml/"+module_name+"/getRecords"
+        data = urllib.urlencode(params)
+        request = urllib2.Request(final_URL,data)
+        response = urllib2.urlopen(request)
+        xml_response = response.read()
+        print xml_response
         
 
 
@@ -257,6 +270,10 @@ app = webapp2.WSGIApplication([
     ('/crm', Crm),
     ('/crm2', Crm2),
     ('/crm3', Crm3),
+<<<<<<< HEAD
     ('/saleslogin', SalesLogin)
+=======
+    ('/records', Records)
+>>>>>>> 815ac92d0272539ff7325b9b0410f7a1f3bef4fa
     #('/signup', Crm3)
 ], debug=True)
