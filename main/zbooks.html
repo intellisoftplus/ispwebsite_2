@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+h1 {
+    border-bottom: 3px solid #cc9900;
+    color: #996600;
+    font-size: 30px;
+}
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(odd)	{
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Invoices</h1>
+<div>
+            {{data_invoice.code}} <br/>
+            {{data_invoice.message}} <br/>
+    <table id="t01bcd">
+
+
+
+  <tr>
+        <th>Invoice ID</th>
+        <th>Customer Name</th>
+        <th>Customer ID</th>
+        <th>Status</th>
+        <th>INV No.</th>
+        <th>Ref No.</th>
+        <th>Date</th>
+        <th>Due Date</th>
+        <th>Due Days</th>
+        <th>Currency ID</th>
+        <th>Currency Code</th>
+        <th>Total</th>
+        <td>Balance</td>
+        <td>Created</td>
+        <td>is Emailed</td>
+        <td>Reminders Sent</td>
+        <td>Payment Expected</td>
+        <td>Last Payment</td>
+
+  </tr>
+              {% for iv in data_invoice.invoices %}
+  <tr>
+
+        <td>{{iv.invoice_id}}</td>
+        <td>{{iv.customer_name}}</td>
+        <td>{{iv.customer_id}}</td>
+        <td>{{iv.status}}</td>
+        <td>{{iv.invoice_number}}</td>
+        <td>{{iv.reference_number}}</td>
+        <td>{{iv.date}}</td>
+        <td>{{iv.due_date}}</td>
+        <td>{{iv.due_days}}</td>
+        <td>{{iv.currency_id}}</td>
+        <td>{{iv.currency_code}}</td>
+        <td>{{iv.total}}</td>
+        <td>{{iv.balance}}</td>
+        <td>{{iv.created_time}}</td>
+        <td>{{iv.is_emailed}}</td>
+        <td>{{iv.reminders_sent}}</td>
+        <td>{{iv.payment_expected_date}}</td>
+        <td>{{iv.last_payment_date}}</td>
+  </tr>
+              {% endfor %}
+</table>
+
+<h1>Customers</h1>
+<div>
+            {{data.code}} <br/>
+            {{data.message}} <br/>
+    <table id="t01cd">
+
+
+
+  <tr>
+        <th>customer_name</th>
+        <th>payment_id</th>
+        <th>payment_number</th>
+        <th>date</th>
+        <th>payment_mode</th>
+        <th>amount</th>
+        <th>bcy_amount</th>
+        <th>unused_amount</th>
+        <th>bcy_unused_amount</th>
+        <th>account_id</th>
+        <th>reference_number</th>
+        <th>customer_id</th>
+        <td>invoice_numbers</td>
+        <td>account_name</td>
+        <td>description</td>
+
+  </tr>
+              {% for cp in data.customerpayments %}
+  <tr>
+
+        <td>{{cp.customer_name}}</td>
+        <td>{{cp.payment_id}}</td>
+        <td>{{cp.payment_number}}</td>
+        <td>{{cp.date}}</td>
+        <td>{{cp.payment_mode}}</td>
+        <td>{{cp.amount}}</td>
+        <td>{{cp.bcy_amount}}</td>
+        <td>{{cp.unused_amount}}</td>
+        <td>{{cp.bcy_unused_amount}}</td>
+        <td>{{cp.account_id}}</td>
+        <td>{{cp.reference_number}}</td>
+        <td>{{cp.customer_id}}</td>
+        <td>{{cp.invoice_numbers}}</td>
+        <td>{{cp.account_name}}</td>
+        <td>{{cp.description}}</td>
+
+  </tr>
+              {% endfor %}
+</table>
+
+</div>
+
+</body>
+</html>
