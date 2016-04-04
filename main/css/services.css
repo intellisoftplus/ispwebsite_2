@@ -10,6 +10,10 @@ body {
 .navbar-brand img {
 	margin-top: -7px;
 }
+.navbar-default .navbar-nav li a {
+  color: #777;
+  font-weight: 600;
+}
 
 .jumbotron.services {
 	margin-top: -20px;

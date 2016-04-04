@@ -360,6 +360,28 @@ Footer
 .footer .social .fa:hover {
   color: #34A853;
 }
+.signin {
+  text-align: center;
+}
+.saleslogin-card {
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  padding: 50px;
+}
+.signin h1 {
+  
+}
+.signin button {
+  width: 100%;
+  padding: 20px;
+  border-radius: 2px;
+  border: none;
+  font-size: 1.5em;
+  font-weight: 600;
+  
+}
 /*******************
 Media Queries
 ********************/
@@ -601,7 +623,7 @@ Sign Up Form
 .google-pics img {
     width: 100%;
   }
-  .google-pics .edu img {
+  .google-pics .edu img, .google-pics .work img {
     box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
   }
 .rs img {
