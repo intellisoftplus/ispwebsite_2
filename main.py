@@ -19,6 +19,8 @@ import webapp2
 import jinja2
 import os
 from google.appengine.api import mail
+import re
+from google.appengine.api import users
 
 import urllib
 
@@ -110,9 +112,31 @@ class SalesLogin(webapp2.RequestHandler):
 
 class CustomerInfo(webapp2.RequestHandler):
     def get(self):
-        template_values = {} 
-        template = jinja2_env.get_template('main/customerinfo.html')
-        self.response.out.write(template.render(template_values))               
+
+        if users.get_current_user():
+
+
+            staff = (str(users.get_current_user().email()))
+            #check if user is admin method goes here
+            domain = re.search("(?<=@)[\w.]+", staff)
+            mydomain = domain.group()
+
+            if mydomain == 'intellisoftplus.com':
+
+                url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
+                response_invoice = urllib.urlopen(url_invoice)
+                data_invoice = json.loads(response_invoice.read())
+
+                template_values = {
+                    'data_invoice':data_invoice
+                }
+                template = jinja2_env.get_template('main/customerinfo.html')
+                self.response.out.write(template.render(template_values))
+            else:
+                self.redirect(users.create_login_url(self.request.uri))
+
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
 
 class ContactUs(webapp2.RequestHandler):
 	def post(self):
@@ -306,16 +330,11 @@ app = webapp2.WSGIApplication([
     ('/crm', Crm),
     ('/crm2', Crm2),
     ('/crm3', Crm3),
-<<<<<<< HEAD
     ('/records', Records),
     ('/zbooks', Zbooks),
     ('/saleslogin', SalesLogin),
-    ('/records', Records)
-=======
-    ('/saleslogin', SalesLogin),
+    ('/records', Records),
     ('/customerinfo', CustomerInfo),
     ('/records', Records),
     ('/zbooks', Zbooks),
-    #('/signup', Crm3)
->>>>>>> 90791061b8cbbb6cafa877dd8c5b62163a1211d0
 ], debug=True)
