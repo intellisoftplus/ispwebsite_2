@@ -27,7 +27,6 @@ from jinja2 import Template
 import random
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import parse
-import requests
 import urllib, json
 
 template_path = os.path.join(os.path.dirname(__file__))
@@ -107,7 +106,13 @@ class SalesLogin(webapp2.RequestHandler):
     def get(self):
         template_values = {}
         template = jinja2_env.get_template('main/saleslogin.html')
-        self.response.out.write(template.render(template_values))        
+        self.response.out.write(template.render(template_values))
+
+class CustomerInfo(webapp2.RequestHandler):
+    def get(self):
+        template_values = {} 
+        template = jinja2_env.get_template('main/customerinfo.html')
+        self.response.out.write(template.render(template_values))               
 
 class ContactUs(webapp2.RequestHandler):
 	def post(self):
@@ -301,8 +306,16 @@ app = webapp2.WSGIApplication([
     ('/crm', Crm),
     ('/crm2', Crm2),
     ('/crm3', Crm3),
+<<<<<<< HEAD
     ('/records', Records),
     ('/zbooks', Zbooks),
     ('/saleslogin', SalesLogin),
     ('/records', Records)
+=======
+    ('/saleslogin', SalesLogin),
+    ('/customerinfo', CustomerInfo),
+    ('/records', Records),
+    ('/zbooks', Zbooks),
+    #('/signup', Crm3)
+>>>>>>> 90791061b8cbbb6cafa877dd8c5b62163a1211d0
 ], debug=True)
