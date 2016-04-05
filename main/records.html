@@ -4,10 +4,72 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<style>
+h1 {
+    border-bottom: 3px solid #cc9900;
+    color: #996600;
+    font-size: 30px;
+}
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(odd)	{
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+</style>
 <body>
 
-{{ xml_response }}
+{{ accounts.response.result.Accounts.row }}
 
+<table id="accounts">
+    {% for a in accounts.response.result.Accounts.row %}
 
+        <tr>
+            {% for afl in a.FL%}
+
+                <th>{{ afl.val }}</th>
+
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for afl in a.FL%}
+
+                <td>{{ afl.content }}</td>
+
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+</table>
+
+<!--
+
+<table id="leads">
+    {% for l in leads.response.result.Leads.row %}
+
+        <tr>
+            {% for lfl in l.FL%}
+
+                <th>{{ lfl.val }}</th>
+
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for lfl in l.FL%}
+
+                <td>{{ lfl.content }}</td>
+
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+</table> -->
 </body>
 </html>

@@ -246,21 +246,22 @@ class Records(webapp2.RequestHandler):
 
     def get(self):
 
-        module_name = 'Leads'
-        authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
-        params = {'authtoken':authtoken,'scope':'crmapi'}
-        final_URL = "https://crm.zoho.com/crm/private/xml/"+module_name+"/getRecords"
-        data = urllib.urlencode(params)
-        request = urllib2.Request(final_URL,data)
-        response = urllib2.urlopen(request)
-        xml_response = response.read()
-        self.response.out.write(xml_response)
+        url = "https://crm.zoho.com/crm/private/json/Leads/getRecords?authtoken=b72f0f5ed3d2afa9b8a314649d3cf66f&scope=crmapi"
+        response = urllib.urlopen(url)
+        leads = json.loads(response.read())
 
-        #template_values = {
-        #    'xml_response':xml_response,
-        #}
-        #template = jinja2_env.get_template('main/records.html')
-        #self.response.out.write(template.render(template_values))
+
+        url_accounts = "https://crm.zoho.com/crm/private/json/Accounts/getRecords?authtoken=b72f0f5ed3d2afa9b8a314649d3cf66f&scope=crmapi"
+        response_accounts = urllib.urlopen(url_accounts)
+        accounts = json.loads(response_accounts.read())
+
+
+        template_values = {
+            'leads':leads,
+            'accounts':accounts
+        }
+        template = jinja2_env.get_template('main/records.html')
+        self.response.out.write(template.render(template_values))
 
 
 
@@ -300,15 +301,8 @@ app = webapp2.WSGIApplication([
     ('/crm', Crm),
     ('/crm2', Crm2),
     ('/crm3', Crm3),
-<<<<<<< HEAD
     ('/records', Records),
-    ('/zbooks', Zbooks)
-=======
-<<<<<<< HEAD
-    ('/saleslogin', SalesLogin)
-=======
+    ('/zbooks', Zbooks),
+    ('/saleslogin', SalesLogin),
     ('/records', Records)
->>>>>>> 815ac92d0272539ff7325b9b0410f7a1f3bef4fa
-    #('/signup', Crm3)
->>>>>>> 301d01f7b8f8e409d94f6cfc7caff65d31614a34
 ], debug=True)
