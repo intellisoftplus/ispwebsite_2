@@ -174,30 +174,48 @@ class Team(webapp2.RequestHandler):
 class Crm(webapp2.RequestHandler):
 
     def get(self):
-        module_name = 'Leads'
 
-        authtoken_d = '0f6d5b3e2cb345f1780860a34c154fc9'
-        authtoken_r = 'b72f0f5ed3d2afa9b8a314649d3cf66f'
-        authtoken_i = '28c0030acc0560e35c24edf7917d9228'
-
-        authtoken = random.choice(['0f6d5b3e2cb345f1780860a34c154fc9', 'b72f0f5ed3d2afa9b8a314649d3cf66f', '28c0030acc0560e35c24edf7917d9228' ])
+        if users.get_current_user():
 
 
+            staff = (str(users.get_current_user().email()))
+            #check if user is admin method goes here
+            domain = re.search("(?<=@)[\w.]+", staff)
+            mydomain = domain.group()
+
+            if mydomain == 'intellisoftplus.com':
 
 
-        params = {'authtoken':authtoken,'scope':'crmapi'}
-        final_URL = "https://crm.zoho.com/crm/private/xml/"+module_name+"/getRecords"
-        data = urllib.urlencode(params)
-        request = urllib2.Request(final_URL,data)
-        response = urllib2.urlopen(request)
-        xml_response = response.read()
-        #print xml_response
+                module_name = 'Leads'
 
-        template_values = {
-            'xml_response':xml_response,
-        }
-        template = jinja2_env.get_template('main/xml_response.html')
-        self.response.out.write(template.render(template_values))
+                authtoken_d = '0f6d5b3e2cb345f1780860a34c154fc9'
+                authtoken_r = 'b72f0f5ed3d2afa9b8a314649d3cf66f'
+                authtoken_i = '28c0030acc0560e35c24edf7917d9228'
+
+                authtoken = random.choice(['0f6d5b3e2cb345f1780860a34c154fc9', 'b72f0f5ed3d2afa9b8a314649d3cf66f', '28c0030acc0560e35c24edf7917d9228' ])
+
+
+
+
+                params = {'authtoken':authtoken,'scope':'crmapi'}
+                final_URL = "https://crm.zoho.com/crm/private/xml/"+module_name+"/getRecords"
+                data = urllib.urlencode(params)
+                request = urllib2.Request(final_URL,data)
+                response = urllib2.urlopen(request)
+                xml_response = response.read()
+                #print xml_response
+
+                template_values = {
+                    'xml_response':xml_response,
+                }
+                template = jinja2_env.get_template('main/xml_response.html')
+                self.response.out.write(template.render(template_values))
+
+            else:
+                    self.redirect(users.create_login_url(self.request.uri))
+
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
 
 class Crm3(webapp2.RequestHandler):
 
@@ -275,22 +293,39 @@ class Records(webapp2.RequestHandler):
 
     def get(self):
 
-        url = "https://crm.zoho.com/crm/private/json/Leads/getRecords?authtoken=b72f0f5ed3d2afa9b8a314649d3cf66f&scope=crmapi"
-        response = urllib.urlopen(url)
-        leads = json.loads(response.read())
+
+        if users.get_current_user():
 
 
-        url_accounts = "https://crm.zoho.com/crm/private/json/Accounts/getRecords?authtoken=b72f0f5ed3d2afa9b8a314649d3cf66f&scope=crmapi"
-        response_accounts = urllib.urlopen(url_accounts)
-        accounts = json.loads(response_accounts.read())
+            staff = (str(users.get_current_user().email()))
+            #check if user is admin method goes here
+            domain = re.search("(?<=@)[\w.]+", staff)
+            mydomain = domain.group()
+
+            if mydomain == 'intellisoftplus.com':
+
+                url = "https://crm.zoho.com/crm/private/json/Leads/getRecords?authtoken=b72f0f5ed3d2afa9b8a314649d3cf66f&scope=crmapi"
+                response = urllib.urlopen(url)
+                leads = json.loads(response.read())
 
 
-        template_values = {
-            'leads':leads,
-            'accounts':accounts
-        }
-        template = jinja2_env.get_template('main/records.html')
-        self.response.out.write(template.render(template_values))
+                url_accounts = "https://crm.zoho.com/crm/private/json/Accounts/getRecords?authtoken=b72f0f5ed3d2afa9b8a314649d3cf66f&scope=crmapi"
+                response_accounts = urllib.urlopen(url_accounts)
+                accounts = json.loads(response_accounts.read())
+
+
+                template_values = {
+                    'leads':leads,
+                    'accounts':accounts
+                }
+                template = jinja2_env.get_template('main/records.html')
+                self.response.out.write(template.render(template_values))
+
+            else:
+                    self.redirect(users.create_login_url(self.request.uri))
+
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
 
 
 
@@ -303,21 +338,38 @@ class Crm2(webapp2.RequestHandler):
 class Zbooks(webapp2.RequestHandler):
     def get(self):
 
-        url = "https://books.zoho.com/api/v3/customerpayments?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
-        response = urllib.urlopen(url)
-        data = json.loads(response.read())
 
-        url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
-        response_invoice = urllib.urlopen(url_invoice)
-        data_invoice = json.loads(response_invoice.read())
+        if users.get_current_user():
 
 
-        template_values = {
-            'data':data,
-            'data_invoice':data_invoice
-        }
-        template = jinja2_env.get_template('main/zbooks.html')
-        self.response.out.write(template.render(template_values))
+            staff = (str(users.get_current_user().email()))
+            #check if user is admin method goes here
+            domain = re.search("(?<=@)[\w.]+", staff)
+            mydomain = domain.group()
+
+            if mydomain == 'intellisoftplus.com':
+
+                url = "https://books.zoho.com/api/v3/customerpayments?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
+                response = urllib.urlopen(url)
+                data = json.loads(response.read())
+
+                url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
+                response_invoice = urllib.urlopen(url_invoice)
+                data_invoice = json.loads(response_invoice.read())
+
+
+                template_values = {
+                    'data':data,
+                    'data_invoice':data_invoice
+                }
+                template = jinja2_env.get_template('main/zbooks.html')
+                self.response.out.write(template.render(template_values))
+
+            else:
+                    self.redirect(users.create_login_url(self.request.uri))
+
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
 
 
 
