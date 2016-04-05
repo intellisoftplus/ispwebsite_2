@@ -25,9 +25,13 @@ import urllib
 import urllib2
 from jinja2 import Template
 import random
-
+from xml.etree import ElementTree as ET
+from xml.etree.ElementTree import parse
+import requests
+import urllib, json
 
 template_path = os.path.join(os.path.dirname(__file__))
+
 
 jinja2_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_path))
 
@@ -247,6 +251,7 @@ def insert_lead(authtoken,fname,lname,status,phone,email,industry,Lead_Source,Co
 class Records(webapp2.RequestHandler):
 
     def get(self):
+
         module_name = 'Leads'
         authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
         params = {'authtoken':authtoken,'scope':'crmapi'}
@@ -255,8 +260,13 @@ class Records(webapp2.RequestHandler):
         request = urllib2.Request(final_URL,data)
         response = urllib2.urlopen(request)
         xml_response = response.read()
-        print xml_response
-        
+        self.response.out.write(xml_response)
+
+        #template_values = {
+        #    'xml_response':xml_response,
+        #}
+        #template = jinja2_env.get_template('main/records.html')
+        #self.response.out.write(template.render(template_values))
 
 
 
@@ -265,6 +275,26 @@ class Crm2(webapp2.RequestHandler):
         template_values = {}
         template = jinja2_env.get_template('main/xml.xml')
         self.response.out.write(template.render(template_values))
+
+class Zbooks(webapp2.RequestHandler):
+    def get(self):
+
+        url = "https://books.zoho.com/api/v3/customerpayments?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
+        response = urllib.urlopen(url)
+        data = json.loads(response.read())
+
+        url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
+        response_invoice = urllib.urlopen(url_invoice)
+        data_invoice = json.loads(response_invoice.read())
+
+
+        template_values = {
+            'data':data,
+            'data_invoice':data_invoice
+        }
+        template = jinja2_env.get_template('main/zbooks.html')
+        self.response.out.write(template.render(template_values))
+
 
 
 app = webapp2.WSGIApplication([
@@ -277,7 +307,8 @@ app = webapp2.WSGIApplication([
     ('/crm2', Crm2),
     ('/crm3', Crm3),
     ('/saleslogin', SalesLogin),
+    ('/customerinfo', CustomerInfo),
     ('/records', Records),
-    ('/customerinfo', CustomerInfo)
+    ('/zbooks', Zbooks),
     #('/signup', Crm3)
 ], debug=True)
