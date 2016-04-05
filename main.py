@@ -103,7 +103,13 @@ class SalesLogin(webapp2.RequestHandler):
     def get(self):
         template_values = {}
         template = jinja2_env.get_template('main/saleslogin.html')
-        self.response.out.write(template.render(template_values))        
+        self.response.out.write(template.render(template_values))
+
+class CustomerInfo(webapp2.RequestHandler):
+    def get(self):
+        template_values = {} 
+        template = jinja2_env.get_template('main/customerinfo.html')
+        self.response.out.write(template.render(template_values))               
 
 class ContactUs(webapp2.RequestHandler):
 	def post(self):
@@ -270,10 +276,8 @@ app = webapp2.WSGIApplication([
     ('/crm', Crm),
     ('/crm2', Crm2),
     ('/crm3', Crm3),
-<<<<<<< HEAD
-    ('/saleslogin', SalesLogin)
-=======
-    ('/records', Records)
->>>>>>> 815ac92d0272539ff7325b9b0410f7a1f3bef4fa
+    ('/saleslogin', SalesLogin),
+    ('/records', Records),
+    ('/customerinfo', CustomerInfo)
     #('/signup', Crm3)
 ], debug=True)

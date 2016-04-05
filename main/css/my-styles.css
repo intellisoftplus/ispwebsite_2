@@ -379,9 +379,26 @@ Footer
   border-radius: 2px;
   border: none;
   font-size: 1.5em;
-  font-weight: 600;
-  
+  font-weight: 600;  
 }
+/*******************
+Customer Info
+********************/
+.customer-card {
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  height: 55px;
+  background-color: #f9f9f9;
+  margin-top: 1px;
+}
+.customer-info h1 {
+  text-align: center;
+  padding: 30px 0px;
+}
+.customer-card p {
+  text-align: center;
+  padding-top: 20px;
+}
+
 /*******************
 Media Queries
 ********************/
