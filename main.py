@@ -27,7 +27,6 @@ from jinja2 import Template
 import random
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import parse
-import requests
 import urllib, json
 
 template_path = os.path.join(os.path.dirname(__file__))
