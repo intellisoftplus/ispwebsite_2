@@ -63,20 +63,24 @@
 				</div>
 				</a>
 			</div>
-			
-			
+
+
+
 			<div class="customer-card">
 				<a href="#">
+			{% for iv in data_invoice.invoices %}
 				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>Cellulant</p></a>
+					<a href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name}}</p></a>
 				</div>
 				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placmement="top" title="Invoice Status"><p>Invoice</p></a>
+					<a href="#" data-toggle="tooltip" data-placmement="top" title="Invoice Status"><p>{{iv.status}}</p></a>
 				</div>
 				<div class="col-sm-4">
 					<a href="#" data-toggle="tooltip" data-placmement="top" title="Due Date"><p>Due Date</p></a>
+					<a href="#" data-toggle="tooltip" data-placmement="top" title="Due Date"><p>{{iv.due_date}}</p></a>
 				</div>
 				</a>
+			{% endfor %}
 			</div>
 		</div>
 	</div>	
