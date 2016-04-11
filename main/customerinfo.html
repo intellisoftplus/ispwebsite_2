@@ -20,7 +20,7 @@
   	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   	<![endif]-->
 </head>
-<body>
+<body class="cbody">
 	<!-- navigation -->
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -49,41 +49,121 @@
 	<div class="customer-info">
 		<div class="container">
 			<h1>Customer Information</h1>
-			
 			<div class="customer-card">
-				<a href="/">
-				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placmement="top" title="Customer Name"><p>Cellulant</p></a>
-				</div>
-				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placmement="top" title="Invoice Status"><p>Invoice</p></a>
-				</div>
-				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placmement="top" title="Due Date"><p>Due date</p></a>
-				</div>
-				</a>
-			</div>
-
-
-
-			<div class="customer-card">
-				<a href="#">
 			{% for iv in data_invoice.invoices %}
+				<span data-toggle="modal" data-target="#myModal">
 				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name}}</p></a>
+						<a href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name}}</p></a>
+					
 				</div>
 				<div class="col-sm-4">
 					<a href="#" data-toggle="tooltip" data-placmement="top" title="Invoice Status"><p>{{iv.status}}</p></a>
 				</div>
 				<div class="col-sm-4">
-					<a href="#" data-toggle="tooltip" data-placmement="top" title="Due Date"><p>Due Date</p></a>
+	
 					<a href="#" data-toggle="tooltip" data-placmement="top" title="Due Date"><p>{{iv.due_date}}</p></a>
 				</div>
-				</a>
+				</span>	
 			{% endfor %}
+
 			</div>
 		</div>
-	</div>	
+	</div>
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!--Modal content -->
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="contanier">
+						<div class="col-sm-6">
+							<h3>Cellulant</h3>
+							<a href="#">www.cellulant.com</a>
+						</div>
+						<div class="col-sm-6 cbr-card">
+							<div class="">
+								<h3>Contacts</h3>
+								<hr>
+								<p>IT Manager: Ian</p>
+								<p>Mobile: 0722122456</p>
+							</div>	
+						</div>	
+						<div class="col-sm-6">
+						</div>
+						<div class="col-sm-6 cbr-card">
+							<div class="">
+								<h3>Products</h3>
+								<hr>
+								<p>Google Apps</p>
+								<p>Microsoft</p>
+								<p>Pace</p>
+							</div>	
+						</div>	
+						<div class="col-sm-6">
+						</div>
+						<div class="col-sm-6 cbr-card">
+							<div class="">
+								<h3>Licenses</h3>
+								<hr>
+								<h4>Google</h4>
+								<div class="licenses">
+									<div class="row">
+										<div class="col-sm-4">
+											<p>2016</p>
+										</div>	
+										<div class="col-sm-4">
+											<p>100</p>
+										</div>
+										<div class="col-sm-4">
+											<p>20,000</p>
+										</div>
+									</div>	
+									<div class="row">
+										<div class="col-sm-4">
+											<p>2015</p>
+										</div>	
+										<div class="col-sm-4">
+											<p>110</p>
+										</div>
+										<div class="col-sm-4">
+											<p>18,000</p>
+										</div>
+									</div>
+								</div>	
+
+								<h4>Microsoft</h4>
+								<div class="licenses">
+									<div class="row">
+										<div class="col-sm-4">
+											<p>2016</p>
+										</div>	
+										<div class="col-sm-4">
+											<p>100</p>
+										</div>
+										<div class="col-sm-4">
+											<p>20,000</p>
+										</div>
+									</div>	
+									<div class="row">
+										<div class="col-sm-4">
+											<p>2015</p>
+										</div>	
+										<div class="col-sm-4">
+											<p>110</p>
+										</div>
+										<div class="col-sm-4">
+											<p>18,000</p>
+										</div>
+									</div>
+								</div>		
+							</div>	
+						</div>	
+					</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div >
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>					
+	<script src="js/bootstrap.min.js"></script>
 </body>

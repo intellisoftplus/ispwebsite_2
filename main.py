@@ -110,6 +110,12 @@ class SalesLogin(webapp2.RequestHandler):
         template = jinja2_env.get_template('main/saleslogin.html')
         self.response.out.write(template.render(template_values))
 
+class CustomerBd(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/customerbd.html')
+        self.response.out.write(template.render(template_values))
+
 class CustomerInfo(webapp2.RequestHandler):
     def get(self):
 
@@ -223,7 +229,7 @@ class Crm3(webapp2.RequestHandler):
 
 
         #authtoken = '0f6d5b3e2cb345f1780860a34c154fc9'
-        
+
         template_values = {
 
         }
@@ -389,4 +395,5 @@ app = webapp2.WSGIApplication([
     ('/customerinfo', CustomerInfo),
     ('/records', Records),
     ('/zbooks', Zbooks),
+    ('/customerbd', CustomerBd)
 ], debug=True)

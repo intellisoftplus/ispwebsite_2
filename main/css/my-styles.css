@@ -360,25 +360,31 @@ Footer
 .footer .social .fa:hover {
   color: #34A853;
 }
+/*******************
+Sales Signin
+********************/
 .signin {
   text-align: center;
 }
 .saleslogin-card {
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-  padding: 50px;
-}
-.signin h1 {
   
 }
+.signin h1 {
+  padding-top: 100px;
+  font-weight: 400;
+}
+.signin p {
+  color: rgba(0,0,0,0.5);
+  font-size: 1.15em;
+  padding: 10px 0px;
+}
 .signin button {
-  width: 100%;
-  padding: 20px;
+  box-shadow: 3px 3px 1px rgba(0,0,0,0.7);
+  width: 28.5%;
+  padding: 10px;
   border-radius: 2px;
   border: none;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;  
 }
 /*******************
@@ -386,9 +392,10 @@ Customer Info
 ********************/
 .customer-card {
   box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-  height: 55px;
-  background-color: #f9f9f9;
-  margin-top: 1px;
+  height: 49px;
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
 }
 .customer-info h1 {
   text-align: center;
@@ -396,7 +403,23 @@ Customer Info
 }
 .customer-card p {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 15px;
+}
+
+/*******************
+Customer Break Down Modal
+********************/
+.modal-body{
+  background-color: rgb(238,238,238);
+}
+.cbr-card {
+  background-color: #fff;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  margin-top: 20px;
+  padding: 20px;
+}
+body.cbody {
+  background-color: rgb(229,229,229);
 }
 
 /*******************
