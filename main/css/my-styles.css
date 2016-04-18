@@ -480,10 +480,14 @@ Reports
 .report table .week {
   background-color: #31BC86 !important;
   color: #fff;
-  font-weight: 400;
+  font-weight: 600;
+}
+.report-cont form table td {
+  font-size: 0.9em;
+  font-weight: 600;
 }
 .report-cont input {
-  border-radius: 1.5px;
+  border-radius: 0;
   border-top: none;
   border-right: none;
   border-left: none;
