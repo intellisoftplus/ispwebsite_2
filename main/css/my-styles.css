@@ -395,7 +395,7 @@ Customer Info
   width: 80%;
   margin: 0 auto;
 }
-.customer-info h1, .trc h1 {
+.customer-info h1, .trc h1, .report h1 {
   font-size: 2em;
   text-align: center;
   padding: 30px 0px;
@@ -448,6 +448,9 @@ Targets & Commisions
 .trc h2 {
   font-size: 1.8em;
 }
+.targets hr {
+  border-color: rgba(0,0,0,0.3);
+}
 .quarters p {
   display: inline-block;
 }
@@ -457,6 +460,70 @@ Targets & Commisions
 .quarters.year h2, .quarters.year{
   padding-bottom: 20px;
 }
+.vl {
+  border-left: thick solid #000;
+}
+/*******************
+Reports
+********************/
+.report-cont {
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.1);
+  padding: 10px;
+  border-top: 2px solid rgb(18,75,101);
+}
+.report-cont table .month {
+  background-color: #2ca978;
+  color: #fff;
+}
+.report table .week {
+  background-color: #31BC86 !important;
+  color: #fff;
+  font-weight: 400;
+}
+.report-cont input {
+  border-radius: 1.5px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.report-cont input:focus, .report .prep input:focus {
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 3px solid #2ca978;
+}
+.report .prep {
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.1);
+}
+.report .prep input {
+  width: 20%;
+  display: inline-block;
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-shadow: none;
+  margin-left: 15px;
+}
+.report .prep button {
+  width: 10%;
+  padding: 8px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: rgb(44,169,120);
+  border-color: rgb(44,169,120);
+  font-weight: 700;
+}
+.report .prep button:hover {
+  box-shadow: 2px 2px 3px 2px rgba(0,0,0,.5);
+}
+
 /*******************
 Media Queries
 ********************/

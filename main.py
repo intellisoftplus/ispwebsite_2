@@ -116,6 +116,12 @@ class Targets(webapp2.RequestHandler):
         template = jinja2_env.get_template('main/targets.html')
         self.response.out.write(template.render(template_values))
 
+class Reports(webapp2.RequestHandler): 
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/reports.html')
+        self.response.out.write(template.render(template_values))        
+
 class CustomerInfo(webapp2.RequestHandler):
     def get(self):
 
@@ -395,5 +401,6 @@ app = webapp2.WSGIApplication([
     ('/customerinfo', CustomerInfo),
     ('/records', Records),
     ('/zbooks', Zbooks),
-    ('/targets', Targets)
+    ('/targets', Targets),
+    ('/reports', Reports)
 ], debug=True)
