@@ -110,10 +110,10 @@ class SalesLogin(webapp2.RequestHandler):
         template = jinja2_env.get_template('main/saleslogin.html')
         self.response.out.write(template.render(template_values))
 
-class CustomerBd(webapp2.RequestHandler):
+class Targets(webapp2.RequestHandler):
     def get(self):
         template_values = {}
-        template = jinja2_env.get_template('main/customerbd.html')
+        template = jinja2_env.get_template('main/targets.html')
         self.response.out.write(template.render(template_values))
 
 class CustomerInfo(webapp2.RequestHandler):
@@ -395,5 +395,5 @@ app = webapp2.WSGIApplication([
     ('/customerinfo', CustomerInfo),
     ('/records', Records),
     ('/zbooks', Zbooks),
-    ('/customerbd', CustomerBd)
+    ('/targets', Targets)
 ], debug=True)
