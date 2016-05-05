@@ -130,6 +130,29 @@ Section styles
   text-align: center;  
   padding: 40px;
 }
+.contacts {
+  background-color: #f9f9f9;
+}
+.services {
+  background-color: #5DACCD;
+  margin-top: -30px;
+}
+.services .col-sm-6 .ent-services-item {
+  background-color: #fff;
+  width: 350px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  transform: skewX(2deg);
+  transform: skewY(2deg);
+  transition: all 0.4s ease-in-out;
+  margin-bottom: 50px;
+  
+}
+.services .col-sm-6 .ent-services-item:hover {
+  transform: scale(1.1);
+  
+}
 /*  
 End of section  styles
 */
@@ -150,18 +173,30 @@ Typography
   padding-top: 30px;
   padding-bottom: 20px;
 }
+.services h1 {
+  color: #fff;
+  margin-top: -20px;
+  padding-bottom: 30px;
+  font-size: 3.5em;
+}
 .services h3  {
-  padding-top: 20px;
-  font-weight: 600;
-  color: #34A853;
+  padding-top: 60px;
+  font-weight: 700;
+  font-size: 2.1em;
+  color: rgb(183,94,56);
 }
 .services .ent-services-item p {
-  max-width: 75%;
-  font-size: 1.15em;
+  padding: 20px;
+  font-size: 1.3em;
+  color: rgb(183,94,56);
 }
 .benefits-card .fa {
   font-size: 4em;
   color: #34A853;
+  transition: transform .5s ease-out;
+}
+.benefits-card:hover .fa {
+  transform: rotate(180deg);
 }
 .benefits-card h3 {
   font-size: 1.4em;
@@ -207,15 +242,7 @@ Benefits
 /********************
 Partners
 *********************/
-.partners {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-.partners .partners-card {
-	
-	
-	
-}
+
 .partners img {
   max-width: 100%;
 }
@@ -226,22 +253,66 @@ Partners
 .partners img {
   max-width: 90%;
 }
-.partners .microsoft {
+.for-work {
+  background-color: #4285F4;
+  padding: 50px;
+}
+.for-work h3 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 3em;
+}
+.for-work.two {
+  background-color: #FCCF48;
+}
+.for-work.two p, .for-work.two h3 {
+  color: #000;
+}
+.for-work button {
+  background-color: #EDAB40;
+}
+.for-work.two button {
+  background-color: #4285F4;
+}
+.for-work.two button, .microsoft.for-work button, .for-work button {
+  transition-property: background-color box-shadow;
+  transition-duration: .5s;
+}
+.for-work button:hover {
+  background-color: #DB8D0D;
+}
+.for-work.two button:hover {
+  background-color: #0335CB;
+}
+.for-work.two button:hover, .microsoft.for-work button:hover, .for-work button:hover {
+  box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.5);
+}
+.for-work p {
+  color: #fff;
+  font-weight: 400;
+}
+.microsoft.for-work {
+  background: #78C340; 
+}
+.microsoft.for-work button {
+  background-color: #8B65DC;
+}
+
+.partners img{
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.partners .microsoft img{
-  max-width: 70%;
-  margin-top: -90px;
-}
+
 .partners button {
-  background-color: rgb(52,168,83);
   color: #fff;
   border: none;
-  border-radius: 2px;
+  border-radius: 1px;
+  font-weight: bold;
+}
+.microsoft.for-work button:hover {
+  background-color: #6C3098;
 }
 .partners button:hover {
-  background-color:rgba(52,168,83,0.7);
   color: #fff;
 }
 
@@ -493,6 +564,8 @@ Reports
   border-left: none;
   box-shadow: none;
   background-color: transparent;
+  transition-duration: .45s;
+  border-bottom: 1px solid;
 }
 .report-cont input:focus, .report .prep input:focus {
   box-shadow: none;
@@ -523,6 +596,7 @@ Reports
   background-color: rgb(44,169,120);
   border-color: rgb(44,169,120);
   font-weight: 700;
+  transition-duration: .4s;
 }
 .report .prep button:hover {
   box-shadow: 2px 2px 3px 2px rgba(0,0,0,.5);

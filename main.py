@@ -51,7 +51,6 @@ class MainHandler(webapp2.RequestHandler):
         self.response.set_status(200)
         template = jinja2_env.get_template('main/index.html')
         self.response.out.write(template.render(template_values))
-
 class Signup(webapp2.RequestHandler):
 	def get(self):
 
@@ -97,6 +96,11 @@ class Signup(webapp2.RequestHandler):
             message.send()
 
             self.redirect('/signup?notification=Successfu!')
+class NewIndex(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/newindex.html')
+        self.response.out.write(template.render(template_values))
 
 class Careers(webapp2.RequestHandler):
     def get(self):
@@ -387,6 +391,7 @@ class Zbooks(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    ('/newindex', NewIndex),
     ('/signup', Signup),
     ('/careers', Careers),
     ('/contactus', ContactUs),

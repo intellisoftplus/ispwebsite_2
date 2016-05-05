@@ -49,10 +49,7 @@ Images
 	transform: scale(1.1);
 }
 .about-card.family {
-	background:  linear-gradient(
-  rgba(18,75,101, 0.4), 
-  rgba(18,75,101, 0.4)
-  ), url("../images/fam.JPG");
+	
 }
 .about-card.entre {
 	background: linear-gradient(
