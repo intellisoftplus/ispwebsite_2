@@ -9,10 +9,10 @@ Jumbotron
 	  background:  linear-gradient(
   rgba(0,0,0,0.4), 
   rgba(0,0,0, 0.4)
-  ),url("../images/jimathi.JPG");
+  ),url("../images/Accenture.JPG");
   background-size: cover;
 	background-repeat: no-repeat;
-	height: 600px;
+	height: 710px;
 	margin-bottom: 0;
 }
 /*****************************
@@ -28,7 +28,9 @@ Navigation
 	height: auto;
 	margin-top: -97px;
 }
-
+.navbar-right {
+	margin-right: 18px;
+}
 /*****************************
 Typograpghy
 *****************************/
@@ -37,6 +39,14 @@ Typograpghy
 }
 .jumbotron h1 {
 	margin-top: 7.41289844329%;
+	font-weight: 300;
+}
+.jumbotron p {
+	text-align: center;
+	padding-top: 40px;
+	font-size: 2em;
+	color: #fff;
+	font-weight: 300;
 }
 .committed h2+p {
 	margin-top: -30px;
@@ -49,53 +59,27 @@ Typograpghy
 	margin-bottom: 20px;
 }
 .comm-cards p {
-	font-size: 1.1em;
-	color: #777;
+	font-size: 1.3em;
+	color: #fff;
 }
 .partners p{
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 1.7;
 }
-.partners button {
-	background-color: transparent;
-	border: 2px solid #fff;
-	border-radius: 30px;
-	font-size: 1.5em;
-	color: #fff;
-	padding: 10px;
-	width: 40%;
-	transition: all 0.6s ease-in-out;
-}
-.partners button .fa-arrow-right {
-	position: relative;
-	left: -20%;
-	opacity: 0;
-	transition: opacity ease-in-out, left ease-out;
-	transition-duration: .5s;
-	transition-delay: .3s;
-}
-.partners button:hover .fa-arrow-right {
-	left: 20%;
-	opacity: 1;
-}
-.partners button:hover {
-	background-color: transparent;
-	color: #fff;
-	border-color: #fff;
-	width: 50%;
-	right: -40px;
-}
 .h2s {
 	color: #fff;
-	font-weight: 100;
+	font-weight: 300;
 	font-family: 'Roboto';
 	font-size: 3em;
 	margin: 50px;
 }
+.testimonials h2.h2s {
+	color: #000;
+}
 .help-icon .fa {
 	font-size: 5em;
-	color: #fff;
+	color: #EBCE47;
 	transition:  transform 0.7s;
 }
 .help-icon .fa:hover {
@@ -107,6 +91,40 @@ Typograpghy
 	font-size: 1.3em;	
 	color: #fff;
 }
+.contacts-social .fa {
+	font-size: 3em;
+	color: #EBCE47;
+	padding: 20px;
+	transition: transform .5s;
+}
+.contacts-social .fa:hover {
+	transform: translate(0,-10px);
+}
+.newsletter h2 {
+	color: #000;
+}
+.newsletter p {
+	font-size: 1.6em;
+	text-align: center;
+	margin-top: -40px;
+}
+.footer ul li{
+	list-style-type: none;
+	padding: 5px 0px;
+}
+.footer ul a {
+	font-size: 1.1em;
+	color: #fff;
+	text-decoration: none;	
+}
+.footer ul a:hover {
+	color: #EBCE47;
+}
+.footer p {
+	text-align: center;
+	color: #fff;
+	padding-top: 50px;
+}
 /*****************************
 Colors
 *****************************/
@@ -116,18 +134,21 @@ Colors
 
 .committed {
 	background-color: #f9f9f9;
-	padding-bottom: 100px;
 }
-.committed h2, .committed h2+p {
+.committed h2{
 	color: #000;
+}
+.committed h2+p {
+	color: #2e3d49;
 }
 .help {
 	background-color: #165B7B;
 	text-align: center;
-	padding-bottom: 100px;
 }
 .partners {
 	background-color: #186B90;
+}
+.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter {
 	padding-bottom: 100px;
 }
 .partners {
@@ -135,6 +156,91 @@ Colors
 }
 .help .row .col-sm-2 {
 	margin-left: 30px;
+}
+.customers {
+	background-color: #2DA3D9;
+}
+.contacts {
+	background-color: #2088BC;
+}
+.contacts-social {
+	background-color: ;
+	text-align: center;
+	margin-top: 15px;
+}
+.newsletter, .testimonials, .committed {
+	background-color: #fafafa;
+}
+.customers .row:nth-of-type(2) {
+	margin-top: 50px;
+}
+footer {
+	background-color: #165B7B;
+	padding-top: 40px
+}
+/*****************************
+Buttons
+*****************************/
+
+.partners button, .contacts button, .newsletter button {
+	background-color: #EBCE47;
+	border-radius: 30px;
+	font-size: 1.5em;
+	color: #000;
+	padding: 10px;
+	width: 40%;
+	transition: all 0.6s ease-in-out;
+	border: none
+}
+.partners button .fa-arrow-right, .contacts button .fa-arrow-right, .newsletter button .fa-arrow-right {
+	position: relative;
+	left: -20%;
+	opacity: 0;
+	transition: opacity ease-in-out, left ease-out;
+	transition-duration: .5s;
+	transition-delay: .3s;
+}
+.partners button:hover .fa-arrow-right, .contacts button:hover .fa-arrow-right, .newsletter button:hover .fa-arrow-right {
+	left: 20%;
+	opacity: 1;
+}
+.partners button:hover, .contacts button:hover {
+	background-color: #EBCE47;
+	color: #000;
+	width: 50%;
+	right: -40px;
+}
+.newsletter button:hover {
+	width: 30%;
+	background-color: #EBCE47;
+}
+.contacts-btn{
+	text-align: center;
+}
+.newsletter form {
+	text-align: center;
+	padding-top: 50px
+}
+.newsletter button {
+	height: 60px;
+	border-radius: 0;
+	background-color: #EBCE47;
+	border-color: #EBCE47;
+	color: #000;
+	width: 20%;
+}
+.newsletter form input.form-control {
+	height: 60px;
+	width: 500px;
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+	border-bottom: 2px solid;
+	background-color: transparent;
+	transition: border-bottom .3s ease-in;
+}
+.newsletter form input.form-control:focus {
+	border-bottom: 5px solid #EBCE47;
 }
 
 /*****************************
@@ -147,7 +253,7 @@ Links
 	transition: 0.2s ease-in;
 }
 .navbar-default .navbar-right li a:hover {
-	background-color: rgba(18,75,101,0.8);
+	background-color: rgba(235, 206, 71,0.8);
 	color: #fff;
 }
 /*****************************
@@ -155,11 +261,77 @@ Layouts
 *****************************/
 
 .comm-cards {
-	min-height: 250px;
-	background-color:#fff;
+	min-height: 350px;
+	background-color:#EBCE47;
 	color: #000;
-	padding: 30px;
-	border-radius: 7px;
-	box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.1);
+	padding-top: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 2px;
+	box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.1);
+}
+.testi-card {
+	border-radius: 5px;
+	background-color: #EBCE47;
+	padding: 15px;
+	margin: 0 auto;
+  transform: skewY(4deg);
+	box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.1);
+	
+}
+.testi-pic {
+  display: inline-block;
+	position: relative;
+	top: -140px;
+	margin: 20px
+}
+.testi-text {
+	display: inline-block;
+	width: 70%;
+}
+.testi-text blockquote {
+	font-size: 1.1em;
+	font-style: italic;
+}
+#map {
+    width: 100%;
+    height: 361px;
 }
 
+
+/*****************************
+Images
+*****************************/
+
+.testi-card img {
+	width: 60px;
+	border-radius: 45%;
+}
+.customers img {
+	width: 190px;
+	height: 80px;	
+}
+.customers .logo-card{
+	background-color: #fff;
+	width: 300px;
+	height: 300px;
+	padding-left: 55px;
+	padding-top: 100px;
+	border-bottom-left-radius: .375rem;
+  border-top-left-radius: .375rem;
+	border-bottom-right-radius: .375rem;
+	border-top-right-radius: .375rem;
+	box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);
+}
+.customers .logo-card.one {
+	background-color: #f3f3f3;
+}
+.customers .logo-card.two {
+	background-color:  #f9f9f9;
+}
+.customers .logo-card.three {
+	background-color:  #f3f3f3;
+}
+.customers .logo-card.four {
+	background-color: #f9f9f9;
+}
