@@ -1,6 +1,135 @@
 body {
-	font-family: 'Open Sans';
+	font-family: 'Open Sans','Roboto',sans-serif,helvetica;
 	line-height: 1.5;
+}
+/*****************************
+Timeline
+*****************************/
+.timeline {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eeeeee;
+  left: 50%;
+  margin-left: -1.5px;
+}
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li > .timeline-panel {
+  width: 46%;
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+.timeline > li > .timeline-panel:before {
+  position: absolute;
+  top: 26px;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  content: " ";
+}
+.timeline > li > .timeline-panel:after {
+  position: absolute;
+  top: 27px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+.timeline > li > .timeline-badge {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  margin-left: -25px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+.timeline-badge.primary {
+  background-color: #2e6da4 !important;
+}
+.timeline-badge.success {
+  background-color: #3f903f !important;
+}
+.timeline-badge.warning {
+  background-color: #f0ad4e !important;
+}
+.timeline-badge.danger {
+  background-color: #d9534f !important;
+}
+.timeline-badge.info {
+  background-color: #5bc0de !important;
+}
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+}
+.timeline-body > p + p {
+  margin-top: 5px;
 }
 /*****************************
 Jumbotron
@@ -9,11 +138,11 @@ Jumbotron
 	  background:  linear-gradient(
   rgba(0,0,0,0.4), 
   rgba(0,0,0, 0.4)
-  ),url("../images/Accenture.JPG");
-  background-size: cover;
-	background-repeat: no-repeat;
-	height: 710px;
-	margin-bottom: 0;
+  ),url("../images/Accenture.jpg");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 677px;
+	  margin-bottom: 0;
 }
 /*****************************
 Navigation
@@ -93,7 +222,7 @@ Typograpghy
 }
 .help-text p {
 	line-height: 0.5;
-	margin-top: 5px;
+	margin-top: 10px;
 	font-size: 1.3em;
 	color: #f9f9f9;
 }
@@ -115,6 +244,10 @@ Typograpghy
 	margin-top: -40px;
 	color: #3a4a4d;
 }
+.footer ul {
+	text-align: center;
+	margin-left: 150px;
+}
 .footer ul li{
 	list-style-type: none;
 	padding: 5px 0px;
@@ -123,6 +256,7 @@ Typograpghy
 	font-size: 1.1em;
 	color: #3a4a4d;
 	text-decoration: none;
+	transition: all .2s;
 }
 .footer ul a:hover {
 	color: #026033;
@@ -131,7 +265,7 @@ Typograpghy
 .footer p {
 	text-align: center;
 	color: #3a4a4d;
-	padding-top: 50px;
+	padding-top: 20px;
 }
 /*****************************
 Colors
@@ -189,7 +323,7 @@ Colors
 	background-color: #fff;
 }
 .customers .row:nth-of-type(2) {
-	margin-top: 50px;
+	margin-top: 100px;
 }
 footer {
 	background-color: #fafafa;
@@ -205,9 +339,15 @@ Buttons
 	font-size: 1.5em;
 	color: #fff;
 	padding: 10px;
-  width: 40%;
+  	width: 40%;
 	transition: all 0.6s ease-in-out;
 	border: none;
+}
+.partners button{
+	position: absolute;
+	top: 290px;
+	left: 0;
+	right: 0;
 }
 .comm-cards button {
 	width: 80%;
@@ -284,7 +424,11 @@ Links
 	color: #fff;
 }
 .navbar-right li a:visited {
-	color: #000;
+	color: #fff;
+}
+.navbar-right li a:focus {
+	background-color: rgba(74, 174, 72,0.8);
+	color: #fff;
 }
 /*****************************
 Layouts
@@ -345,26 +489,16 @@ Images
 	width: 190px;
 	height: 80px;	
 }
-.customers .logo-card{
+.partners img {
+	width: 200px;
 	background-color: #fff;
-	width: 300px;
-	height: 300px;
-	padding-left: 55px;
-	padding-top: 100px;
-	border-bottom-left-radius: .375rem;
-  border-top-left-radius: .375rem;
-	border-bottom-right-radius: .375rem;
-	border-top-right-radius: .375rem;
+	border-radius: 2px;
+	padding: 20px;
+	margin-bottom: 30px;
 }
-.customers .logo-card.one {
-	background-color: #f3f3f3;
+.footer .black-logo img {
+	width: 400px;
 }
-.customers .logo-card.two {
-	background-color:  #fff;
-}
-.customers .logo-card.three {
-	background-color:  #f3f3f3;
-}
-.customers .logo-card.four {
-	background-color: #fff;
+.footer .black-logo {
+	text-align: center;
 }
