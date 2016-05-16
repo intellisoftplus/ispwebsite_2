@@ -261,7 +261,7 @@ Typograpghy
 	font-size: 1.5em;
 	color: #7b8b8e;
 }
-.comm-cards h3 {
+.comm-cards h3, .people-cards h3 {
 	font-weight: 600;
 	padding-bottom: 10px;
 	color: #3a4a4d;
@@ -287,8 +287,8 @@ Typograpghy
 	font-size: 3em;
 	margin: 50px;
 }
-.testimonials h2.h2s {
-	color: #000;
+.testimonials h2.h2s, .history h2.h2s, .timeline-div h2.h2s {
+	color: #3a4a4d;
 }
 .help-icon .fa {
 	font-size: 5em;
@@ -345,6 +345,11 @@ Typograpghy
 	color: #3a4a4d;
 	padding-top: 20px;
 }
+.history p {
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: 300;
+}
 /*****************************
 Colors
 *****************************/
@@ -355,7 +360,7 @@ Colors
 .committed {
 	background-color: #f9f9f9;
 }
-.committed h2{
+.committed h2, .people h2{
 	color: #3a4a4d;
 }
 .committed h2+p {
@@ -368,7 +373,8 @@ Colors
 .partners {
 	background-color: #186b90;
 }
-.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter {
+.testimonials, .customers, .partners, .contacts, .help, 
+.committed, .newsletter, .history, .timeline-div, .people {
 	padding-bottom: 100px;
 }
 .partners {
@@ -391,7 +397,7 @@ Colors
 	text-align: center;
 	margin-top: 15px;
 }
-.testimonials {
+.testimonials, .history {
 	background-color: #fff;
 }
 .committed {
@@ -407,6 +413,16 @@ footer {
 	background-color: #fafafa;
 	padding-top: 40px;
 }
+.people-role p {
+	color: #6F808A;
+}
+.people .row h2 {
+	text-align: left;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	font-size: 2em;
+}
+
 /*****************************
 Buttons
 *****************************/
@@ -508,6 +524,20 @@ Links
 	background-color: rgba(74, 174, 72,0.8);
 	color: #fff;
 }
+ ul.people-social li{
+	 display: inline-block;
+	 padding: 0px 10px;
+	 opacity: 0;
+	 transition: padding-bottom 0.2s ease, opacity 0.2s ease;
+}
+ul.people-social li a .fa{
+	color: #515F65;
+	font-size: 1.1em;
+}
+ul.people-social {
+	margin-right: 35px;
+} 
+
 /*****************************
 Layouts
 *****************************/
@@ -553,6 +583,27 @@ Layouts
     width: 100%;
     height: 361px;
 }
+.people-cards {
+	z-index: 0;
+	position: relative;
+	width: 300px;
+	box-shadow: 0 0 0 1px #E2E9ED;
+	text-align: center;
+	padding-top: 20px;
+	transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+}
+.people-cards:hover {
+	z-index: 1;
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+}
+.people-cards:hover .people-social li {
+	opacity: 1;
+	padding-bottom: 20px;
+}
+.people-cards li a .fa:hover {
+	color: rgba(81, 95, 101,0.7);
+}
+
 
 
 /*****************************
@@ -582,3 +633,8 @@ Images
 .footer .black-logo {
 	text-align: center;
 	}
+.people-img img{
+	width: 98px;
+	height: 98px;
+	border-radius: 100%;
+}
