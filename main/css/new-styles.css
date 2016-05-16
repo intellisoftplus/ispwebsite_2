@@ -222,6 +222,16 @@ Jumbotron
 	  height: 677px;
 	  margin-bottom: 0;
 }
+.jumbotron.about{
+	  background:  linear-gradient(
+  rgba(0,0,0,0.4), 
+  rgba(0,0,0, 0.4)
+  ),url("../images/hist.jpg");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 677px;
+	  margin-bottom: 0;
+}
 /*****************************
 Navigation
 *****************************/
@@ -245,7 +255,7 @@ Typograpghy
 	text-align: center;
 }
 .jumbotron h1 {
-	margin-top: 7.41289844329%;
+	margin-top: 150px;
 	font-weight: 300;
 }
 .jumbotron p {
@@ -373,8 +383,7 @@ Colors
 .partners {
 	background-color: #186b90;
 }
-.testimonials, .customers, .partners, .contacts, .help, 
-.committed, .newsletter, .history, .timeline-div, .people {
+.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter, .history, .timeline-div, .people {
 	padding-bottom: 100px;
 }
 .partners {
@@ -514,14 +523,10 @@ Links
 	transition: 0.2s ease-in;
 }
 .navbar-default .navbar-right li a:hover {
-	background-color: rgba(74, 174, 72,0.8);
+	background-color: rgba(74, 174, 72,0.5);
 	color: #fff;
 }
 .navbar-right li a:visited {
-	color: #fff;
-}
-.navbar-right li a:focus {
-	background-color: rgba(74, 174, 72,0.8);
 	color: #fff;
 }
  ul.people-social li{
@@ -537,7 +542,10 @@ ul.people-social li a .fa{
 ul.people-social {
 	margin-right: 35px;
 } 
-
+.current {
+	background-color: rgba(74, 174, 72,0.8);
+	color: #fff;
+}
 /*****************************
 Layouts
 *****************************/
@@ -583,18 +591,39 @@ Layouts
     width: 100%;
     height: 361px;
 }
-.people-cards {
-	z-index: 0;
-	position: relative;
-	width: 300px;
-	box-shadow: 0 0 0 1px #E2E9ED;
+.people .row {
 	text-align: center;
-	padding-top: 20px;
-	transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+}
+.people-cards {
+	width: 300px;
+	height: 300px;
+	z-index: 0;
+  position: relative;
+  background: #FFF;
+  box-shadow: 0 0 0 1px #E2E9ED;
+  padding-top: 50px;
+  box-sizing: border-box;
+  -webkit-transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+	 display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
 .people-cards:hover {
-	z-index: 1;
+	 z-index: 1;
   box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+
 }
 .people-cards:hover .people-social li {
 	opacity: 1;
@@ -602,6 +631,9 @@ Layouts
 }
 .people-cards li a .fa:hover {
 	color: rgba(81, 95, 101,0.7);
+}
+.people-img,.people-name,.people-role,.people-social {
+	text-align: center;
 }
 
 
