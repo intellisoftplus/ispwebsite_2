@@ -268,7 +268,7 @@ Typograpghy
 .committed h2+p {
 	margin-top: -30px;
 	margin-bottom: 70px;
-	font-size: 1.5em;
+	font-size: 1.4em;
 	color: #7b8b8e;
 }
 .comm-cards h3, .people-cards h3 {
@@ -297,7 +297,7 @@ Typograpghy
 	font-size: 3em;
 	margin: 50px;
 }
-.testimonials h2.h2s, .history h2.h2s, .timeline-div h2.h2s {
+.h2s.dark {
 	color: #3a4a4d;
 }
 .help-icon .fa {
@@ -323,9 +323,6 @@ Typograpghy
 .contacts-social .fa:hover {
 	transform: translate(0,-10px);
 }
-.newsletter h2 {
-	color: #3a4a4d;
-}
 .newsletter p {
 	font-size: 1.6em;
 	text-align: center;
@@ -344,7 +341,7 @@ Typograpghy
 	font-size: 1.1em;
 	color: #3a4a4d;
 	text-decoration: none;
-	transition: all .2s;
+	transition: all .1s;
 }
 .footer ul a:hover {
 	color: #026033;
@@ -370,9 +367,6 @@ Colors
 .committed {
 	background-color: #f9f9f9;
 }
-.committed h2, .people h2{
-	color: #3a4a4d;
-}
 .committed h2+p {
 	color: #3a4a4d;
 }
@@ -383,7 +377,7 @@ Colors
 .partners {
 	background-color: #186b90;
 }
-.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter, .history, .timeline-div, .people {
+.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter, .history, .timeline-div, .people, .partners-long {
 	padding-bottom: 100px;
 }
 .partners {
@@ -559,7 +553,7 @@ Layouts
 	padding-top: 60px;
 	padding-left: 20px;
 	padding-right: 20px;
-	box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 15px 7px rgba(0,0,0,0.05);
 }
 .testi-card {
 	border-radius: 5px;
@@ -636,7 +630,40 @@ Layouts
 .people-img,.people-name,.people-role,.people-social {
 	text-align: center;
 }
-
+.partners-long {
+	background-color: #186b90;
+}
+.partners-long .row {
+	margin-top: 50px;
+}
+.partners-long .partners-img, .partners-long .partners-text{
+	min-height: 300px;
+}
+.partners-long .partners-img {
+	background-color: #fff;
+	margin-right: -16px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 20px;
+}
+.partners-long .partners-text {
+	padding: 20px;
+	margin-left: -16px;
+	background-color: #fafafa;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.partners-long .partners-text h3, .partners-long .partners-text p {
+	color: #3a4a4d;
+}
+.partners-long .partners-text p {
+	font-family: 'Roboto', sans-serif, 'Open Sans';
+	font-size: 1.1em;
+	font-weight: 300;
+}
+.partners-long .partners-img img {
+	width: 70%;
+}
 
 
 /*****************************
