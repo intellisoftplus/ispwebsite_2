@@ -300,6 +300,9 @@ Typograpghy
 .h2s.dark {
 	color: #3a4a4d;
 }
+@media screen and(min-width: 480px) .h2s {
+	font-size: 5em;
+}
 .help-icon .fa {
 	font-size: 5em;
 	color: #f9f9f9;
@@ -331,11 +334,11 @@ Typograpghy
 }
 .footer ul {
 	text-align: center;
-	margin-left: 150px;
 }
 .footer ul li{
 	list-style-type: none;
-	padding: 5px 0px;
+	padding: 0px 10px;
+	display: inline-block;
 }
 .footer ul a {
 	font-size: 1.1em;
@@ -377,7 +380,7 @@ Colors
 .partners {
 	background-color: #186b90;
 }
-.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter, .history, .timeline-div, .people, .partners-long {
+.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter, .history, .timeline-div, .people, .partners-long, .services {
 	padding-bottom: 100px;
 }
 .partners {
@@ -664,7 +667,43 @@ Layouts
 .partners-long .partners-img img {
 	width: 70%;
 }
+.services {
+	background-color: #fff;
+}
+.services .row {
+	margin-top: 50px;
+}
+.services-card {
+	background: linear-gradient(to right bottom, #186b90 50%, #165b7b 50%);
+	position: relative;
+	z-index: 1;
+	color: #fff;
+	box-shadow: 0 0 15px 10px rgba(0,0,0,0.1);
+	padding: 30px;
+	height: 550px;
+	width: 350px;
+}
+.services-heading h3 {
+	font-weight: 700;
+}
+.services-content p {
 
+	padding-top: 10px;
+	font-family: 'Roboto', sans-serif, 'Open Sans', 'helvetica';
+	font-size: 1.2em;
+	font-weight: 300;
+}
+.services-heading .fa {
+	font-size: 2em;
+	background-color:  #fff;
+	color: #000;
+	padding: 10px;
+	border-radius: 100%;
+	transition:  transform 0.7s;
+}
+ .services-heading .fa:hover {
+	transform: translate(0,-25px);
+}
 
 /*****************************
 Images
