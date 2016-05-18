@@ -7,33 +7,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-	<!-- This script downloads the code required to display maps on your page -->
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
-	<!-- The function runs when the page has loaded -->
-	<script>
-	var myCenter=new google.maps.LatLng(-1.2997085,36.8202496);
-
-	function initialize()
-	{
-	var mapProp = {
-	  center:myCenter,
-	  zoom:16,
-	  mapTypeId:google.maps.MapTypeId.ROADMAP
-	  };
-
-	var map=new google.maps.Map(document.getElementById("map"),mapProp);
-
-	var marker=new google.maps.Marker({
-	  position:myCenter,
-	  });
-
-	marker.setMap(map);
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
-
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   	<!--[if lt IE 9]>
@@ -52,14 +25,13 @@
 					</a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/about" class="current">About</a></li>
+          <li><a class="current" href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/solutions">Solutions</a></li>
           <li><a href="/partners">Partners</a></li>
-					<li><a href="#Benefits">Services</a></li>
-					<li><a href="#Partners">Solutions</a></li>
-					<li><a href="#careers">Careers</a></li>
-					<li><a href="#Contacts">Contacts</a></li>
-				</ul>
-			</div>	
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contacts">Contacts</a></li>
+        </ul>	
 		</nav>
 		<h1>About US</h1>
 		<p></p>
@@ -408,19 +380,18 @@
       <div class="row">
         <div class="col-sm-12">
           <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="/about">About</a></li>
             <span class="site-footer-separator">|</span>
-            <li><a href="#">Customers</a></li>
+            <li><a href="/services">Services</a></li>
             <span class="site-footer-separator">|</span>
-            <li><a href="#">Partners</a></li>
+            <li><a href="solutions">Solutions</a></li>
             <span class="site-footer-separator">|</span>
-            <li><a href="#">Services</a></li>
+            <li><a href="/partners">Partners</a></li>
             <span class="site-footer-separator">|</span>
-            <li><a href="#">Solutions</a></li>
+            <li><a href="/careers">Careers</a></li>
             <span class="site-footer-separator">|</span>
-            <li><a href="#">Contacts</a></li>
-            <span class="site-footer-separator">|</span>
-            <li><a href="#">Careers</a></li>
+            <li><a href="/contacts">Contacts</a></li>
+            
           </ul>
         </div>  
       </div>
@@ -433,6 +404,7 @@
       
     </div>  
   </footer>
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
