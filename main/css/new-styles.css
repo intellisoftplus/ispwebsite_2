@@ -380,7 +380,8 @@ Colors
 .partners {
 	background-color: #186b90;
 }
-.testimonials, .customers, .partners, .contacts, .help, .committed, .newsletter, .history, .timeline-div, .people, .partners-long, .services {
+.testimonials, .customers, .partners, .contacts, .help, .committed,
+.newsletter, .history, .timeline-div, .people, .partners-long, .services, .contacts-information {
 	padding-bottom: 100px;
 }
 .partners {
@@ -429,7 +430,9 @@ footer {
 	margin-left: 0px;
 	font-size: 2em;
 }
-
+.contacts-information .maps {
+	margin-top: 350px;
+}
 /*****************************
 Buttons
 *****************************/
@@ -676,12 +679,18 @@ Layouts
 .services-card {
 	background: linear-gradient(to right bottom, #186b90 50%, #165b7b 50%);
 	position: relative;
-	z-index: 1;
+	z-index: 0;
 	color: #fff;
 	box-shadow: 0 0 15px 10px rgba(0,0,0,0.1);
 	padding: 30px;
 	height: 550px;
 	width: 350px;
+	transition: transform 0.5s ease, box-shadow 0.5s ease, z-index 0.5s ease;
+}
+.services-card:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 15px 15px rgba(0,0,0,0.1);
+	z-index: 1;
 }
 .services-heading h3 {
 	font-weight: 700;
@@ -703,6 +712,66 @@ Layouts
 }
  .services-heading .fa:hover {
 	transform: translate(0,-25px);
+}
+.contacts-msg, .contacts-info {
+	box-shadow: 0 0 10px 10px rgba(0,0,0,0.15);
+	margin-top: -200px;
+	background-color: #fff;
+	height: 550px;
+}
+.contacts-info {
+	box-shadow: 10px 0px 10px 10px rgba(0,0,0,0.15);
+}
+.contacts-msg, .contacts-info {
+	padding: 30px 50px;
+}
+.contacts-msg {
+	margin-right: -15px;
+}
+.contacts-msg h3 {
+	color: #165b7b;
+}
+.contacts-info {
+	margin-left: -15px;
+	background: #165b7b;
+	color: #f9f9f9;
+}
+.contacts-info ul {
+	list-style: none;
+}
+.contacts-msg form input, .contacts-msg form textarea {
+	border-width: 0px; 
+	border-bottom: 2px solid;
+	box-shadow: none;
+	border-radius: 0;
+	margin: 40px 0px
+}
+.contacts-msg form input:hover, .contacts-msg form input:focus, .contacts-msg form textarea:hover, .contacts-msg form textarea:focus {
+	box-shadow: none;
+	border-bottom: 2px solid  #165b90;
+}
+.contacts-info li {
+	font-family: 'Roboto',sans-serif,'Open Sans',helvetica;
+	font-weight: 300;
+}
+.contacts-info ul h3 {
+	font-size: 1.3em;
+	margin-top: 40px;
+}
+.contacts-info .contacts-details .fa {
+	margin-right: 8px;
+}
+.contacts-msg form button {
+	background: none;
+	box-shadow: none;
+	border: none;
+}
+.contacts-msg form button .fa {
+	font-size: 3em;
+	background-color: #165b90;
+	color: #fff;
+	padding: 20px;
+	border-radius: 100%;
 }
 
 /*****************************
