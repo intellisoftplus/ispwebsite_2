@@ -108,6 +108,12 @@ class About(webapp2.RequestHandler):
         template = jinja2_env.get_template('main/about.html')
         self.response.out.write(template.render(template_values))
 
+class Partners(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/partners.html')
+        self.response.out.write(template.render(template_values))
+
 class Careers(webapp2.RequestHandler):
     def get(self):
         template_values = {}
@@ -399,6 +405,7 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/newindex', NewIndex),
     ('/about', About),
+    ('/partners', Partners),
     ('/signup', Signup),
     ('/careers', Careers),
     ('/contactus', ContactUs),
