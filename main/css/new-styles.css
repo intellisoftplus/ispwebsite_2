@@ -381,7 +381,8 @@ Colors
 	background-color: #186b90;
 }
 .testimonials, .customers, .partners, .contacts, .help, .committed,
-.newsletter, .history, .timeline-div, .people, .partners-long, .services, .contacts-information {
+.newsletter, .history, .timeline-div, .people, .partners-long, 
+.services, .contacts-information, .solutions, .exp {
 	padding-bottom: 100px;
 }
 .partners {
@@ -702,15 +703,20 @@ Layouts
 	font-size: 1.2em;
 	font-weight: 300;
 }
-.services-heading .fa {
+.services-heading .fa, .sol-content .fa {
 	font-size: 2em;
 	background-color:  #fff;
 	color: #000;
 	padding: 10px;
 	border-radius: 100%;
-	transition:  transform 0.7s;
+	transition:  transform 0.7s ease;
 }
- .services-heading .fa:hover {
+.sol-content .fa {
+	background-color: #000;
+	color: #fff;
+	margin-bottom: 20px;
+}
+ .services-heading .fa:hover, .sol-content .fa:hover {
 	transform: translate(0,-25px);
 }
 .contacts-msg, .contacts-info {
@@ -726,7 +732,7 @@ Layouts
 	box-shadow: -10px 10px 10px 10px rgba(0,0,0,0.07);
 }
 .contacts-msg h3 {
-	color: #165b7b;
+	color: #186b90;
 }
 .contacts-info {
 	margin-left: -15px;
@@ -744,9 +750,9 @@ Layouts
 	border-radius: 0;
 	margin: 40px 0px
 }
-.contacts-msg form input:hover, .contacts-msg form input:focus, .contacts-msg form textarea:hover, .contacts-msg form textarea:focus {
+.contacts-msg form input:focus, .contacts-msg form textarea:focus {
 	box-shadow: none;
-	border-bottom: 2px solid  #165b90;
+	border-bottom: 3px solid  #186b90;
 }
 .contacts-info li {
 	font-family: 'Roboto',sans-serif,'Open Sans',helvetica;
@@ -766,7 +772,7 @@ Layouts
 }
 .contacts-msg form button .fa {
 	font-size: 3em;
-	background-color: #165b90;
+	background-color: #186b90;
 	color: #fff;
 	padding: 20px;
 	border-radius: 100%;
@@ -777,6 +783,65 @@ Layouts
 	transform: scale(1.1);
 	background-color: #777;
 }
+.solutions {
+	background: linear-gradient(to right bottom, #186b90 50%, #165b7b 50%);
+}
+.sol-bgimg {
+	padding: 20px;
+	box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.1);
+	width: 500px;
+	height: 500px;
+	position: relative;
+	background: /* top, transparent red */
+		linear-gradient(
+		 rgba(0,0,0, 0.35),
+		 rgba(0, 160, 228, 0.35)
+		),
+		/* bottom, image */
+		url('../images/office.jpg');
+	 background-size: cover;
+	 background-repeat: no-repeat;
+}
+.sol-heading h3 {
+	text-align: center;
+	padding-top: 0px;;
+	color: #fff;
+	font-size: 3em;
+	font-weight: 600;
+}
+.sol-content {
+	position: absolute;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.93);
+	box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.1);
+	width: 500px;
+	height: 300px;
+	left: 50px;
+	top: 20px;
+	padding: 20px;
+}
+.sol-content p {
+	font-family: 'Roboto';
+	font-weight: 500;
+	font-size: 1.2em;
+	color: #3a4a4d;
+}
+.solutions .sol-content img {
+	width:25%;
+	padding-bottom: 20px;
+}
+.solutions .row.sol-right .sol-bgimg {
+	float: right;
+	margin-top: -36px;
+	margin-right: -515px;
+}
+.solutions .sol-right .sol-content {
+	left: -50px;
+}
+.solutions .sol-left .sol-bgimg {
+	left: 70px;
+}
+
 
 /*****************************
 Images
