@@ -232,6 +232,16 @@ Jumbotron
 	  height: 677px;
 	  margin-bottom: 0;
 }
+.jumbotron.careers{
+	  background:  linear-gradient(
+  rgba( 0,0,0, 0.5), 
+  rgba(74,174,72, 0.5)
+  ),url("../images/fam.JPG");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 677px;
+	  margin-bottom: 0;
+}
 /*****************************
 Navigation
 *****************************/
@@ -382,7 +392,7 @@ Colors
 }
 .testimonials, .customers, .partners, .contacts, .help, .committed,
 .newsletter, .history, .timeline-div, .people, .partners-long, 
-.services, .contacts-information, .solutions, .exp {
+.services, .contacts-information, .solutions, .exp, .we-are, .inspired {
 	padding-bottom: 100px;
 }
 .partners {
@@ -851,11 +861,121 @@ Layouts
 .solutions .sol-right .sol-content {
 	left: -50px;
 }
-
 .solutions .sol-left .sol-bgimg {
 	left: 70px;
 }
+.we-are {
+	background-color: #fafafa;
+}
+.we-are .row.two {
+	margin-top: 30px;
+}
+.we-are-img-cont {
+	height: 350px;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 1px;
+}
+.we-are-img{
+	  background:  linear-gradient(
+  rgba( 0,0,0, 0.5), 
+  rgba(74,174,72, 0.5)
+  ),url("../images/fam.JPG");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 100%;
+	  width: 100%;
+	  margin-bottom: 0;
+	transition: transform .7s ease;
+}
+.we-are-img.african{
+	  background:  linear-gradient(
+  rgba( 0,0,0, 0.5), 
+  rgba(74,174,72, 0.5)
+  ),url("../images/africanchild.jpg");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 100%;
+	  width: 100%;
+	  margin-bottom: 0;
+	transition: transform .7s ease;
+}
+.we-are-img.moon{
+	  background:  linear-gradient(
+  rgba( 0,0,0, 0.5), 
+  rgba(74,174,72, 0.5)
+  ),url("../images/Space.jpg");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 100%;
+	  width: 100%;
+	  margin-bottom: 0;
+	transition: transform .7s ease;
+}
+.we-are-img.trans{
+	  background:  linear-gradient(
+  rgba( 0,0,0, 0.5), 
+  rgba(74,174,72, 0.5)
+  ),url("../images/open.jpg");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 100%;
+	  width: 100%;
+	  margin-bottom: 0;
+	transition: transform .7s ease;
+}
+.we-are-img:hover {
+	transform: scale(1.1);
+}
+.we-are-text {
+	text-align: center;
+	padding-top: 50px;
+	color: #f9f9f9;
+}
+.we-are-text h3 {
+	font-size: 2.5em;
+}
+.we-are-text p {
+	font-size: 1.3em;
+}
+.inspired-card {
+	background-color: #f4f4f4;
+}
 
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.inspired-pics, .inspired-card {
+	height: 376.859px;
+	overflow: hidden;
+}
+.inspired-pics.istan img {
+	height: 376.859px;
+}
+.inspired-pics img{
+	transition: transform .7s ease;
+}
+.inspired-pics img:hover {
+	transform: scale(1.15);
+}
+.inspired-card {
+	text-align: center;
+	padding-top: 80px;
+	;
+}
+.inspired-card h3 {
+	font-weight: bold;
+}
+.inspired-card p {
+	font-size: 1.3em;
+	padding: 0px 20px;
+}
 
 /*****************************
 Images
