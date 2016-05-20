@@ -792,6 +792,7 @@ Layouts
 	width: 500px;
 	height: 500px;
 	position: relative;
+	z-index: 2;
 	background: /* top, transparent red */
 		linear-gradient(
 		 rgba(0,0,0, 0.35),
@@ -835,9 +836,22 @@ Layouts
 	margin-top: -36px;
 	margin-right: -515px;
 }
+.solutions .sol-left .sol-bgimg {
+	margin-left: -30px;
+	margin-top: -36px;
+}
+.solutions .sol-right.web .sol-bgimg {
+	margin-top: -83px;
+	margin-right: -556px;
+}
+.solutions .sol-left.mobile .sol-bgimg {
+	margin-left: 10px;
+	margin-top: -83px;
+}
 .solutions .sol-right .sol-content {
 	left: -50px;
 }
+
 .solutions .sol-left .sol-bgimg {
 	left: 70px;
 }
@@ -846,7 +860,6 @@ Layouts
 /*****************************
 Images
 *****************************/
-
 .testi-card img {
 	width: 60px;
 	border-radius: 45%;
