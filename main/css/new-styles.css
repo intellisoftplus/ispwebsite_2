@@ -273,13 +273,13 @@ Typograpghy
 	margin-top: 2.95420974889%;
 	font-size: 2em;
 	color: #fff;
-	font-weight: 300;
 }
-.committed h2+p {
+.h2s + p, .h2s.dark + p {
 	margin-top: -30px;
 	margin-bottom: 70px;
 	font-size: 1.4em;
-	color: #7b8b8e;
+	color: #3a4a4d;
+	font-weight: 300;
 }
 .comm-cards h3, .people-cards h3 {
 	font-weight: 600;
@@ -294,7 +294,7 @@ Typograpghy
 	font-size: 1.1em;
 	color: #3a4a4d;
 }
-.partners p{
+.partners p {
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 1.7;
@@ -309,9 +309,6 @@ Typograpghy
 }
 .h2s.dark {
 	color: #3a4a4d;
-}
-@media screen and(min-width: 480px) .h2s {
-	font-size: 5em;
 }
 .help-icon .fa {
 	font-size: 5em;
@@ -1105,10 +1102,15 @@ Media Queries
 		.jumbotron h1 {
 			margin-top: 19.53125%;
 		}
+		.jumbotron p {
+			font-size: 1.5em;
+		}
 		.comm-cards {
 			max-width: 50%;
-			margin-bottom: 50px;
 		}
+		.comm-cards:nth-child(1), .comm-cards:nth-child(2) {
+			margin-bottom: 50px;
+		} 
 		.comm-cards h3 {
 			font-size: 1.5em;
 		}
@@ -1125,7 +1127,7 @@ Media Queries
 			text-align: center;
 		}
 		.partners .col-sm-6 {
-			margin: 50px;
+			margin: 50px 20px;
 		}
 		.partners button {
 			position: relative;
@@ -1145,13 +1147,141 @@ Media Queries
 			margin: 0px auto;
 			padding: 30px 0px
 		}
+		.customers img {
+			width: 100%;
+		}
 		.newsletter form input.form-control {
 			margin: 0 auto;
+		}
+		.newsletter-form form button {
+			width: 48%;
+		}
+		.newsletter-form form button:hover {
+			width: 55%;
 		}
 		.h2s {
 			font-size: 2.5em;
 		}
-
+	}
+	@media screen and (max-width: 600px) {
+		.jumbotron h1{
+			font-size: 3em;
+			margin-top: 26.53125%; 
+			padding: 10px;
+		}
+		.jumbotron p {
+			font-size: em;
+			padding: 10px;
+		}
+		.comm-cards {
+			max-width: 70%;
+		}
+		.h2s {
+			font-size: 2.2em;
+		}
+		.h2s + p, .h2s.dark + p {
+			font-size: 1.2em;
+		}
+		.testi-card {
+			max-width: 95%;
+		}
+		.contacts-btn button, .newsletter-form button {
+			width: 60%;
+		}
+		.contacts-btn button:hover{
+			width: 65%;
+		}
+		.customers img {
+			width: 100%;
+		}
+		.newsletter-form form button {
+			width: 62%;
+		}
+		.newsletter-form form button:hover {
+			width: 70%;
+		}
+		@media screen and (max-width: 480px) {
+			.jumbotron {
+				background-position: 85% 50%;
+			}
+			.jumbotron h1 {
+				font-size: 2.5em;
+			}
+			.jumbotron p {
+				font-size: 1.35em;
+			}
+			.h2s {
+				font-size: 2em;
+			}
+			.comm-cards {
+				max-width: 80%;
+			}
+			.comm-cards p {
+				font-size: 1.1em;
+			}
+			.partners p {
+				font-size: 1.1em;
+			}
+			.partners button {
+				width: 80%;
+			}
+			.testi-card {
+				min-height: 350px;
+			}
+			.testi-text {
+				position: absolute;
+				top: 28.5714285714%;
+				bottom: 0;
+				left: 0;
+			}
+			.testi-pic {
+				display: block;
+				position: absolute;
+				left: 37.5102567108%;
+			}
+			.partners button:hover {
+				width: 88%;
+			}
+			.h2s {
+				font-size: 1.8em;
+			}
+			.customers .logo-card {
+				width: 40%;
+			}
+		}
+		@media screen and (max-width: 389px) {
+			.navbar-brand img {
+				width: 260px;
+				margin-top: -65px;
+				margin-left: -30px;
+			}
+			.jumbotron h1 {
+				margin-top: 36.53125%
+			}
+			.testi-card {
+				min-height: 400px
+			}
+			.testi-card:nth-child(1) {
+				margin-bottom: 40px;
+			}
+			.contacts-btn button {
+				width: 80%;
+			}
+			.contacts-btn button:hover {
+				width: 90%;
+			}
+			.newsletter form input.form-control {
+				width: 300px;
+			}
+			.newsletter-form form button {
+				width: 84%;
+			}
+			.newsletter-form form button:hover {
+				width: 90%;
+			}
+		}
+			
+		
 	}
 
 
