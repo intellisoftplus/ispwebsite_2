@@ -349,13 +349,14 @@ Typograpghy
 }
 .footer ul a {
 	font-size: 1.1em;
+	font-weight: 600;
 	color: #3a4a4d;
 	text-decoration: none;
 	transition: all .1s;
 }
 .footer ul a:hover {
 	color: #026033;
-	font-weight: bold;
+	
 }
 .footer p {
 	text-align: center;
