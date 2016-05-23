@@ -275,8 +275,8 @@ Typograpghy
 	color: #fff;
 }
 .h2s + p, .h2s.dark + p {
-	margin-top: -30px;
-	margin-bottom: 70px;
+	margin-top: -2.5641025641%;
+	margin-bottom: 5.98290598291%;
 	font-size: 1.4em;
 	color: #3a4a4d;
 	font-weight: 300;
@@ -615,9 +615,6 @@ Layouts
     width: 100%;
     height: 361px;
 }
-.people .row {
-	text-align: center;
-}
 .people-cards {
 	width: 300px;
 	height: 300px;
@@ -626,17 +623,12 @@ Layouts
   background: #FFF;
   box-shadow: 0 0 0 1px #E2E9ED;
   padding-top: 50px;
+	margin: auto;
   box-sizing: border-box;
   -webkit-transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
   transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
   transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
-	 display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
 }
 .people-cards:hover {
 	 z-index: 1;
@@ -1103,6 +1095,11 @@ Media Queries
 	.newsletter form button:hover {
 		width: 40%;
 	}
+	.h2s + p, .h2s.dark + p {
+		font-size: 1.2em; 
+	}
+	
+}	
 	@media screen and (max-width: 768px) {
 		.jumbotron h1 {
 			margin-top: 19.53125%;
@@ -1150,7 +1147,7 @@ Media Queries
 		.customers .logo-card{
 			width: 30%;
 			margin: 0px auto;
-			padding: 30px 0px
+			padding: 30px 0px;
 		}
 		.customers img {
 			width: 100%;
@@ -1167,6 +1164,9 @@ Media Queries
 		.h2s {
 			font-size: 2.5em;
 		}
+		.h2s + p, .h2s.dark + p {
+		font-size: 1.2em; 
+	}
 	}
 	@media screen and (max-width: 600px) {
 		.jumbotron h1{
@@ -1185,7 +1185,7 @@ Media Queries
 			font-size: 2.2em;
 		}
 		.h2s + p, .h2s.dark + p {
-			font-size: 1.2em;
+			font-size: 1.1em;
 		}
 		.testi-card {
 			max-width: 95%;
@@ -1204,6 +1204,9 @@ Media Queries
 		}
 		.newsletter-form form button:hover {
 			width: 70%;
+		}
+		.jumbotron.about {
+			background-position: 30% 50%;
 		}
 		@media screen and (max-width: 480px) {
 			.jumbotron {
@@ -1285,8 +1288,6 @@ Media Queries
 				width: 90%;
 			}
 		}
-			
-		
 	}
 
 
