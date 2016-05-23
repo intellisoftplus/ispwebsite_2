@@ -657,19 +657,20 @@ Layouts
 .partners-long .row {
 	margin-top: 50px;
 }
-.partners-long .partners-img, .partners-long .partners-text{
-	min-height: 300px;
+.partners-img, .partners-text{
+	min-height: 350px;
+	width: 100%;
 }
 .partners-long .partners-img {
 	background-color: #fff;
-	margin-right: -16px;
+	margin-right: -26px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	padding: 20px;
 }
 .partners-long .partners-text {
-	padding: 20px;
-	margin-left: -16px;
+	padding: 10px;
+	margin-left: -30px;
 	background-color: #fafafa;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -679,7 +680,7 @@ Layouts
 }
 .partners-long .partners-text p {
 	font-family: 'Roboto', sans-serif, 'Open Sans';
-	font-size: 1.1em;
+	font-size: 1em;
 	font-weight: 300;
 }
 .partners-long .partners-img img {
@@ -1185,6 +1186,31 @@ Media Queries
 			min-width: 60%;
 		}
 	}
+@media screen and (max-width: 767px) {
+	.partners-long .partners-img {
+			margin: 0;
+			border-radius: 0px;
+			width: 60%;
+			margin: auto;
+		text-align: center;
+		min-height: 100px;
+		}
+	.partners-long .partners-img img {
+		width: 100%;
+	}
+		.partners-long .partners-text {
+			margin: 0;
+			border-radius: 0px;
+			width: 60%;
+			margin: auto;
+		}
+	.partners-text p {
+		padding: 10px;
+	}
+	.partners-text h3 {
+		padding: 0px 10px;
+	}
+}
 	@media screen and (max-width: 600px) {
 		.jumbotron h1{
 			font-size: 3em;
@@ -1229,6 +1255,21 @@ Media Queries
 		max-width: 80%;
 		min-width: 80%;
 	}
+		@media screen and (max-width: 767px) {
+	.partners-long .partners-img {
+			margin: 0;
+			border-radius: 0px;
+			width: 80%;
+			margin: auto;
+		text-align: center;
+		min-height: 100px;
+		}
+		.partners-long .partners-text {
+			margin: 0;
+			border-radius: 0px;
+			width: 80%;
+			margin: auto;
+		}
 		@media screen and (max-width: 480px) {
 			.jumbotron {
 				background-position: 85% 50%;
@@ -1281,6 +1322,20 @@ Media Queries
 		max-width: 90%;
 		min-width: 90%;
 	}
+			.partners-long .partners-img {
+			margin: 0;
+			border-radius: 0px;
+			width: 100%;
+			margin: auto;
+		text-align: center;
+		min-height: 100px;
+		}
+		.partners-long .partners-text {
+			margin: 0;
+			border-radius: 0px;
+			width: 100%;
+			margin: auto;
+		}
 		}
 		@media screen and (max-width: 389px) {
 			.navbar-brand img {
