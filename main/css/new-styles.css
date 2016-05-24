@@ -803,10 +803,9 @@ Layouts
 }
 .sol-bgimg {
 	padding: 20px;
-	width: 500px;
+	max-width: 100%;
 	height: 500px;
 	position: relative;
-	z-index: 2;
 	background: /* top, transparent red */
 		linear-gradient(
 		 rgba(0,0,0, 0.11),
@@ -828,16 +827,32 @@ Layouts
 	padding-top: 0px;
 	color: #fff;
 	font-size: 3em;
-	font-weight: 600;
-	
+	font-weight: 600;	
+}
+.sol-bgimg-right {
+	margin-top: -48px;
+}
+.solutions .sol-cont-right {
+	position: inherit;
+	left: 100%;
+	top: 100px;
+}
+.solutions .sol-cont-left {
+	margin-top: -50px;
+}
+.sol-bgimg-left {
+	margin-top: -50px;
 }
 .sol-content {
-	position: absolute;
+	z-index: 1;
+	position: relative;
 	background-color: rgba(255,255,255,0.9);
-	width: 500px;
+	max-width: 100%;
 	height: 300px;
-	left: 15px;
-	top: 20px;
+	left: -100%;
+	top: 150px;
+	right: ;
+	bottom: 0;
 	padding: 20px;
 }
 .sol-content p {
@@ -847,32 +862,12 @@ Layouts
 	color: #000;
 }
 .solutions .sol-content img {
-	width:25%;
+	width: 25%;
 	padding-bottom: 20px;
 }
-.solutions .row.sol-right .sol-bgimg {
-	float: right;
-	margin-top: -36px;
-	margin-right: -480px;
-}
-.solutions .sol-left .sol-bgimg {
-	margin-left: -66px;
-	margin-top: -36px;
-}
-.solutions .sol-right.web .sol-bgimg {
-	margin-top: -83px;
-	margin-right: -485px;
-}
-.solutions .sol-left.mobile .sol-bgimg {
-	margin-left: -61px;
-	margin-top: -83px;
-}
-.solutions .sol-right .sol-content {
-	left: -50px;
-}
-.solutions .sol-left .sol-bgimg {
-	left: 70px;
-}
+
+
+
 .we-are {
 	background-color: #fafafa;
 }
