@@ -439,9 +439,6 @@ footer {
 	margin-left: 0px;
 	font-size: 2em;
 }
-.contacts-information .maps {
-	margin-top: 350px;
-}
 /*****************************
 Buttons
 *****************************/
@@ -769,13 +766,13 @@ Layouts
 	box-shadow: none;
 	border-bottom: 3px solid  #186b90;
 }
-.contacts-info li {
+.contacts-info ul li {
 	font-family: 'Roboto',sans-serif,'Open Sans',helvetica;
 	font-weight: 300;
 }
-.contacts-info ul h3 {
+.contacts-info .contacts-details ul h3 {
 	font-size: 1.3em;
-	margin-top: 40px;
+	font-weight: 400;
 }
 .contacts-info .contacts-details .fa {
 	margin-right: 8px;
@@ -1127,6 +1124,12 @@ Media Queries
 	.we-are-img.african, .we-are-img.fam, .we-are-img.moon  {
 		background-position: 60% 50%;
 	}
+	.contacts-info .contacts-details ul li{
+		font-size: 0.9em;
+	}
+	.contacts-details ul {
+		margin-left: -40px;
+	}
 }	
 	@media screen and (max-width: 768px) {
 		.jumbotron h1 {
@@ -1262,7 +1265,21 @@ Media Queries
 		.inspired-pics, .inspired-card {
 			max-width: 54%;
 			margin: 0 auto;
-		}
+	}
+	.contacts-msg {
+		margin-top: 400px;
+		z-index: 1;
+	}
+	.contacts-msg, .contacts-info {
+		margin: auto;
+		height: auto;
+	}
+	.contacts-msg {
+		margin-top: -200px;
+	}
+	.row.maps {
+		margin-top: 0px;
+	}
 }
 	@media screen and (max-width: 600px) {
 		.jumbotron h1{
