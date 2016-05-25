@@ -876,9 +876,9 @@ Layouts
 }
 .we-are-img-cont {
 	height: 350px;
-	width: 100%;
 	overflow: hidden;
 	border-radius: 1px;
+
 }
 .we-are-img{
 	  background:  linear-gradient(
@@ -933,7 +933,7 @@ Layouts
 }
 .we-are-text {
 	text-align: center;
-	padding-top: 50px;
+	padding: 50px;
 	color: #f9f9f9;
 }
 .we-are-text h3 {
@@ -944,6 +944,7 @@ Layouts
 }
 .inspired-card {
 	background-color: #f4f4f4;
+	min-height: 300px;
 }
 
 .row.no-gutters {
@@ -956,11 +957,12 @@ Layouts
   padding-left: 0;
 }
 .inspired-pics, .inspired-card {
-	height: 376.859px;
+	height: 300px;
 	overflow: hidden;
 }
+
 .inspired-pics.istan img {
-	height: 376.859px;
+	height: 300px;
 }
 .inspired-pics img{
 	transition: transform .7s ease;
@@ -1042,6 +1044,15 @@ Media Queries
 	.services-heading h3, .services-heading .fa {
 		font-size: 1.4em;
 	}
+	.we-are-text h3 {
+		font-size: 2em;
+	}
+	.inspired-card h3 {
+		font-size: 1.4em;
+	}
+	.we-are-text p, .inspired-card p {
+		font-size: 1em;
+	}
 }
 @media screen and (max-width: 1116px) {
 	.jumbotron {
@@ -1112,6 +1123,9 @@ Media Queries
 	}
 	.sol-heading h3 {
 		font-size: 2.3em;
+	}
+	.we-are-img.african, .we-are-img.fam, .we-are-img.moon  {
+		background-position: 60% 50%;
 	}
 }	
 	@media screen and (max-width: 768px) {
@@ -1186,6 +1200,9 @@ Media Queries
 			max-width: 60%;
 			min-width: 60%;
 		}
+		.footer .black-logo img {
+			width: 250px;
+		}
 	}
 @media screen and (max-width: 767px) {
 	.partners-long .partners-img {
@@ -1234,6 +1251,18 @@ Media Queries
 		left: 30px;
 		top: -100px;
 	}
+	.jumbotron.careers {
+			background-position: 80% 50%;
+		}
+		.we-are-img-cont {
+			width: 90%;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+		.inspired-pics, .inspired-card {
+			max-width: 54%;
+			margin: 0 auto;
+		}
 }
 	@media screen and (max-width: 600px) {
 		.jumbotron h1{
@@ -1285,6 +1314,10 @@ Media Queries
 		.sol-content {
 			max-width: 85%;
 		}
+		.inspired-pics, .inspired-card {
+			max-width: 70%;
+		}
+		
 }
 		
 /* 		@media screen and (max-width: 767px) {
@@ -1368,6 +1401,9 @@ Media Queries
 			width: 100%;
 			margin: auto;
 		}
+			.inspired-pics, .inspired-card {
+				max-width: 89%;
+			}
 		}
 		@media screen and (max-width: 389px) {
 			.navbar-brand img {
