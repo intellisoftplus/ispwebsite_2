@@ -31,12 +31,23 @@ from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import parse
 import urllib, json
 
+from google.appengine.ext import ndb
+
 template_path = os.path.join(os.path.dirname(__file__))
 
 
 jinja2_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_path))
 
 template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
+
+class User(ndb.Model):
+    """ Main model storing user data. """
+    name = ndb.StringProperty(indexed=True)
+    phone = ndb.StringProperty(indexed=True)
+    org = ndb.StringProperty(indexed=True)
+    ces = ndb.StringProperty(indexed=True)
+    email = ndb.StringProperty(indexed=True)
+    employees = ndb.StringProperty(indexed=True)
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -51,51 +62,77 @@ class MainHandler(webapp2.RequestHandler):
         self.response.set_status(200)
         template = jinja2_env.get_template('main/index.html')
         self.response.out.write(template.render(template_values))
-class Signup(webapp2.RequestHandler):
-	def get(self):
+# class Signup(webapp2.RequestHandler):
+# 	def get(self):
 
-            global signup
-            template_values = {
+#             global signup
+#             template_values = {
 
-            }
-            notification = self.request.get('notification')
-            if notification:
-                template_values['notification'] = notification
-            self.response.set_status(200)
-            template = jinja2_env.get_template('main/signup.html')
-            self.response.out.write(template.render(template_values))
+#             }
+#             notification = self.request.get('notification')
+#             if notification:
+#                 template_values['notification'] = notification
+#             self.response.set_status(200)
+#             template = jinja2_env.get_template('main/signup.html')
+#             self.response.out.write(template.render(template_values))
 
-	def post(self):
-            global signup
-            name = self.request.get('name')
-            phone = self.request.get('phone')
-            org = self.request.get('organization')
-            ces = self.request.get('ces')
-            email = self.request.get('email')
-            employees = self.request.get('employees')
+# 	def post(self):
+#             global signup
+#             name = self.request.get('name')
+#             phone = self.request.get('phone')
+#             org = self.request.get('organization')
+#             ces = self.request.get('ces')
+#             email = self.request.get('email')
+#             employees = self.request.get('employees')
 
-            message = mail.EmailMessage(sender="Contact Us form <ispwebsite@intellisoftpluswebsite.appspotmail.com>",
-                                        subject="NEW Contact")
+#             message = mail.EmailMessage(sender="Contact Us form <ispwebsite@intellisoftpluswebsite.appspotmail.com>",
+#                                         subject="NEW Contact")
 
-            message.to = 'reshiwani@intellisoftplus.com'
-            message.body = """
-                    Hi,
+#             message.to = 'reshiwani@intellisoftplus.com'
+#             message.body = """
+#                     Hi,
 
-                    The below client has filled the online (isp website) contact form .
+#                     The below client has filled the online (isp website) contact form .
 
-                    Name: %s
-                    Phone: %s
-                    Organization: %s
-                    Email: %s
-                    Current Email System: %s
-                    No of Employees: %s
+#                     Name: %s
+#                     Phone: %s
+#                     Organization: %s
+#                     Email: %s
+#                     Current Email System: %s
+#                     No of Employees: %s
 
-                    Please follow up.
-                    """ % (name,phone,org,email,ces,employees)
+#                     Please follow up.
+#                     """ % (name,phone,org,email,ces,employees)
 
-            message.send()
+#             message.send()
 
-            self.redirect('/signup?notification=Successfu!')
+#             self.redirect('/signup?notification=Successfu!')
+
+class Signup2(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        template = jinja2_env.get_template('main/signup.html')
+        self.response.set_status(200)
+        self.response.out.write(template.render(template_values))
+    def post(self):
+
+        name = self.request.get('name')
+        phone = self.request.get('phone')
+        org = self.request.get('organization')
+        ces = self.request.get('ces')
+        email = self.request.get('email')
+        employees = self.request.get('employees')
+
+        current_user = User(
+            name=name, phone= phone, org=org,
+            ces=ces, email=email, employees=employees)
+        current_user.put()
+
+        self.redirect('/signup')
+
+
+
+
 class NewIndex(webapp2.RequestHandler):
     def get(self):
         template_values = {}
@@ -146,9 +183,17 @@ class Careers(webapp2.RequestHandler):
 
 class SalesLogin(webapp2.RequestHandler):
     def get(self):
-        template_values = {}
-        template = jinja2_env.get_template('main/saleslogin.html')
-        self.response.out.write(template.render(template_values))
+        if users.get_current_user():
+            self.redirect('/customerinfo')
+        else:
+            url = users.create_login_url(self.request.uri)
+            login_text = 'Sign in with Google'
+            template_values = {
+                'login_text':login_text,
+                'google_login_url': url,
+            }
+            template = jinja2_env.get_template('main/saleslogin.html')
+            self.response.out.write(template.render(template_values))
 
 class Targets(webapp2.RequestHandler):
     def get(self):
@@ -180,7 +225,8 @@ class CustomerInfo(webapp2.RequestHandler):
                 data_invoice = json.loads(response_invoice.read())
 
                 template_values = {
-                    'data_invoice':data_invoice
+                    'data_invoice':data_invoice,
+                    'logout': users.create_logout_url(self.request.uri)
                 }
                 template = jinja2_env.get_template('main/customerinfo.html')
                 self.response.out.write(template.render(template_values))
@@ -434,7 +480,8 @@ app = webapp2.WSGIApplication([
     ('/contacts', Contacts),
     ('/solutions', Solutions),
     ('/landing', Landing),
-    ('/signup', Signup),
+    #('/signup', Signup),
+    ('/signup', Signup2),
     ('/careers', Careers),
     ('/contactus', ContactUs),
     ('/team', Team),
