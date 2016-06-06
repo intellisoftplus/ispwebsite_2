@@ -229,11 +229,21 @@ class CustomerInfo(webapp2.RequestHandler):
             if validate_staff_email(staff):
 
                 url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
-                response_invoice = urllib.urlopen(url_invoice)
-                data_invoice = json.loads(response_invoice.read())
+                invoices = []
+                try:
+                    response_invoice = urllib.urlopen(url_invoice)
+                    data_invoice = json.loads(response_invoice.read())
+                    present_keys = []
+                    for invoice in data_invoice['invoices']:
+                        name = invoice['customer_name']
+                        if name not in present_keys:
+                            present_keys.append(name)
+                            invoices.append(invoice)
+                except IOError:
+                    pass
 
                 template_values = {
-                    'data_invoice':data_invoice,
+                    'data_invoice':invoices,
                     'logout': users.create_logout_url(self.request.uri)
                 }
                 template = jinja2_env.get_template('main/customerinfo.html')

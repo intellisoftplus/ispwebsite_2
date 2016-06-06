@@ -48,12 +48,12 @@
 	<div class="customer-info">
 		<div class="container">
 			<h1>Customer Information</h1>
-			{% for iv in data_invoice.invoices %}
+			{% for iv in data_invoice %}
 			<div class="customer-card">
 			
 				<span data-toggle="modal" data-target="#myModal">
 				<div class="col-sm-4">
-						<a class="cname" href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name}}</p></a>
+						<a class="cname" href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name[:30]}}</p></a>
 					
 				</div>
 				<div class="col-sm-4">
