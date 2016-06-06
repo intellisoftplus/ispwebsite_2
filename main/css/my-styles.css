@@ -495,6 +495,10 @@ Customer Break Down Modal
 body.cbody {
   background-color: #EEEEEE;
 }
+.invoices{
+  overflow-y: scroll;
+  max-height: 70vh;
+}
 /*******************
 Targets & Commisions
 ********************/

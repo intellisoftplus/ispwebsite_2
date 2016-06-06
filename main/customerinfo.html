@@ -53,7 +53,7 @@
 			
 				<span data-toggle="modal" data-target="#myModal">
 				<div class="col-sm-4">
-						<a class="cname" href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name[:30]}}</p></a>
+						<a class="cname" href="#" data-toggle="tooltip" data-placement="top" title="Customer Name"><p>{{iv.customer_name}}</p></a>
 					
 				</div>
 				<div class="col-sm-4">
@@ -80,8 +80,11 @@
 				<div class="modal-body">
 					<div class="contanier">
 						<div class="col-sm-6">
-							<h3>Cellulant</h3>
+							<h3 id="company-name">Cellulant</h3>
 							<a href="#">www.cellulant.com</a>
+							<h3>Invoices</h3>
+							<div class="invoices">
+							</div>
 						</div>
 						<div class="col-sm-6 cbr-card">
 							<div class="">
@@ -188,5 +191,30 @@
 				$(invoices).hide();
 				$(invoices.slice(num, num + 10)).show();
 		});
+    </script>
+    <script type="text/javascript">
+    	$('.cname').click(function(){
+			$('.invoices').empty();
+			$('#company-name').text($(this).text());
+	    	$.ajax({
+				url:'/customerinfo',
+				type:'post',
+				data:JSON.stringify({
+					name: $(this).text(),
+				}),
+				success: function(data){
+					var invoices = JSON.parse(data).invoices;
+
+					for (val in invoices){
+						$('.invoices').append('<p>Balance: '+invoices[val].balance+'</p>');
+						$('.invoices').append('<p>Status: '+invoices[val].status+'</p>');
+						$('.invoices').append('<p>Due Date: '+invoices[val].due_date+'</p>');
+						$('.invoices').append('<p>'+invoices[val].due_days+'</p>');
+						$('.invoices').append('<hr>');
+					}
+				},
+			});	
+    	});
+		
     </script>
 </body>

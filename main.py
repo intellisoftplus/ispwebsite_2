@@ -255,6 +255,22 @@ class CustomerInfo(webapp2.RequestHandler):
             self.redirect(users.create_login_url(self.request.uri))
 
 
+    def post(self):
+        url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
+        invoices = []
+        try:
+            response_invoice = urllib.urlopen(url_invoice)
+            data_invoice = json.loads(response_invoice.read())
+            for invoice in data_invoice['invoices']:
+                name = invoice['customer_name']
+                if name == json.loads(self.request.body).get('name'):
+                    invoices.append(invoice)
+        except IOError:
+            pass
+
+        self.response.out.write(json.dumps({'invoices':invoices}))
+
+
 
 
 
