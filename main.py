@@ -49,6 +49,16 @@ class User(ndb.Model):
     email = ndb.StringProperty(indexed=True)
     employees = ndb.StringProperty(indexed=True)
 
+
+def validate_staff_email(email):
+    """Check for if email is contains the domain 'intellisoftplus.com'. """
+    domain = re.search(r'(?<=@)[\w.]+', email)
+    mydomain = domain.group()
+    if mydomain == 'intellisoftplus.com':
+        return True
+    else:
+        return False
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
@@ -215,10 +225,8 @@ class CustomerInfo(webapp2.RequestHandler):
 
             staff = (str(users.get_current_user().email()))
             #check if user is admin method goes here
-            domain = re.search("(?<=@)[\w.]+", staff)
-            mydomain = domain.group()
 
-            if mydomain == 'intellisoftplus.com':
+            if validate_staff_email(staff):
 
                 url_invoice = "https://books.zoho.com/api/v3/invoices?authtoken=640df7b6237bec6ccc0101aec2a1605d&organization_id=8470645"
                 response_invoice = urllib.urlopen(url_invoice)
@@ -235,6 +243,10 @@ class CustomerInfo(webapp2.RequestHandler):
 
         else:
             self.redirect(users.create_login_url(self.request.uri))
+
+
+
+
 
 class ContactUs(webapp2.RequestHandler):
 	def post(self):
