@@ -441,13 +441,13 @@ app = webapp2.WSGIApplication([
     ('/crm', Crm),
     ('/crm2', Crm2),
     ('/crm3', Crm3),
-    ('/records', Records),
-    ('/zbooks', Zbooks),
-    ('/saleslogin', SalesLogin),
-    ('/records', Records),
-    ('/customerinfo', CustomerInfo),
-    ('/records', Records),
-    ('/zbooks', Zbooks),
-    ('/targets', Targets),
-    ('/reports', Reports)
+    ('/records', Records), #no UI
+    ('/zbooks', Zbooks), #no UI
+    ('/saleslogin', SalesLogin), #has UI
+    ('/records', Records), #no UI
+    ('/customerinfo', CustomerInfo), #has UI
+    #('/records', Records),
+    #('/zbooks', Zbooks),
+    ('/targets', Targets), #has UI
+    ('/reports', Reports) #has UI
 ], debug=True)
