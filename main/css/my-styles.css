@@ -849,3 +849,9 @@ Sign Up Form
 .rs img {
   width: 100%;
 }
+/***************
+Pagination
+***************/
+#page-selection{
+  text-align: center;
+}

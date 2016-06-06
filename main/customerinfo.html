@@ -68,6 +68,8 @@
 
 			</div>
 			{% endfor %}
+
+			<div id="page-selection"></div>
 		</div>
 	</div>
 	<!-- Modal -->
@@ -167,4 +169,24 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.bootpag.min.js"></script>
+	<script>
+        // Get array of invoices
+		var invoices =  $('.customer-info').find('.customer-card');
+		$(invoices).hide();
+		$(invoices.slice(0,10)).show();
+
+		// Init bootpag
+		$('#page-selection').bootpag({
+			total: invoices.length - 10,
+			maxVisible: 10,
+			leaps: true,
+			firstLastUse: true,
+			first: '←',
+			last: '→',
+			}).on("page", function(event, num){
+				$(invoices).hide();
+				$(invoices.slice(num, num + 10)).show();
+		});
+    </script>
 </body>
